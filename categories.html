@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>أقسام المنتجات | مصنع الشروق للفايبر جلاس</title>
+<meta name="description" content="تصفح أقسام مصنع الشروق للفايبر جلاس: خزانات، أبراج تبريد، أعمدة إنارة، أكشاك حراسة، ألعاب أطفال، أجزاء أتوبيسات، مظلات، قوارب، مواسير GRP وديكورات.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230d2440'/><text y='68' x='50' text-anchor='middle' font-size='54' fill='%23cfa03b' font-family='Arial'>ش</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="categories">
+
+<div id="site-topbar"></div>
+<div id="site-header"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>أقسام المنتجات</h1>
+    <p>١١ قسماً متكاملاً يضم أكثر من ١١٠ منتج فايبر جلاس — جاهز أو مصنّع حسب الطلب.</p>
+  </div>
+</section>
+
+<nav class="crumbs" aria-label="مسار التنقل">
+  <div class="container">
+    <ol><li><a href="index.html">الرئيسية</a></li><li aria-current="page">الأقسام</li></ol>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <div class="cats-grid" id="catsGrid"></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>لم تجد ما تبحث عنه؟</h2>
+    <p>ننفذ أي منتج فايبر جلاس حسب الرسم أو الفكرة أو حتى صورة ترسلها لنا. تواصل معنا وسنتولى الباقي.</p>
+    <div class="cta__btns" id="ctaBtns"></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+boot(function () {
+  $('#catsGrid').innerHTML = CATEGORIES.map(categoryCard).join('');
+  $('#ctaBtns').innerHTML =
+    `<a class="btn btn-wa btn-lg" href="${waLink()}" target="_blank" rel="noopener">${icon('whatsapp')} اطلب عبر واتساب</a>` +
+    `<a class="btn btn-ghost-light btn-lg" href="contact.html">${icon('mail')} نموذج التواصل</a>`;
+});
+</script>
+</body>
+</html>

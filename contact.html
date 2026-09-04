@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تواصل معنا | مصنع الشروق للفايبر جلاس</title>
+<meta name="description" content="تواصل مع مصنع الشروق للفايبر جلاس — العنوان وأرقام الهاتف والبريد وروابط السوشيال ميديا، وأرسل طلبك مباشرة على واتساب.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230d2440'/><text y='68' x='50' text-anchor='middle' font-size='54' fill='%23cfa03b' font-family='Arial'>ش</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="contact">
+
+<div id="site-topbar"></div>
+<div id="site-header"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>تواصل معنا</h1>
+    <p>فريقنا في خدمتك — اختر الطريقة الأنسب لك، وسنرد على استفسارك في أسرع وقت.</p>
+  </div>
+</section>
+
+<nav class="crumbs" aria-label="مسار التنقل">
+  <div class="container">
+    <ol><li><a href="index.html">الرئيسية</a></li><li aria-current="page">تواصل معنا</li></ol>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container contact-grid">
+
+    <div class="reveal">
+      <div class="sec-head sec-head--start">
+        <span class="eyebrow">بيانات المصنع</span>
+        <h2 class="sec-title">نسعد <span>بتواصلك</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="info-stack" id="infoStack"></div>
+
+      <h3 style="margin:30px 0 14px;font-size:1.05rem">تابعنا على السوشيال ميديا</h3>
+      <div class="footer__social" id="socialGrid" style="margin-top:0"></div>
+    </div>
+
+    <div class="reveal d1">
+      <form class="form" id="orderForm" novalidate>
+        <h2 style="font-size:1.25rem;margin-bottom:6px">أرسل طلبك أو استفسارك</h2>
+        <p style="font-size:.9rem;color:var(--muted);margin-bottom:22px">
+          املأ البيانات وسيتم تجهيز رسالة واتساب جاهزة للإرسال إلى فريق المبيعات.
+        </p>
+
+        <div class="form__row">
+          <div class="field">
+            <label for="name">الاسم <i>*</i></label>
+            <input type="text" id="name" name="name" placeholder="الاسم بالكامل" required>
+            <span class="err">من فضلك اكتب اسمك</span>
+          </div>
+          <div class="field">
+            <label for="phone">رقم الهاتف <i>*</i></label>
+            <input type="tel" id="phone" name="phone" placeholder="01xxxxxxxxx" required>
+            <span class="err">من فضلك اكتب رقم هاتف صحيح</span>
+          </div>
+        </div>
+
+        <div class="form__row">
+          <div class="field">
+            <label for="city">المحافظة / المدينة</label>
+            <input type="text" id="city" name="city" placeholder="مثال: القاهرة">
+          </div>
+          <div class="field">
+            <label for="cat">القسم المطلوب</label>
+            <select id="cat" name="cat"></select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="subject">الموضوع</label>
+          <input type="text" id="subject" name="subject" placeholder="مثال: طلب عرض سعر خزان 5000 لتر">
+        </div>
+
+        <div class="field">
+          <label for="msg">تفاصيل الطلب <i>*</i></label>
+          <textarea id="msg" name="msg" placeholder="اكتب المقاسات والكميات وأي تفاصيل تساعدنا في تجهيز عرض السعر…" required></textarea>
+          <span class="err">من فضلك اكتب تفاصيل طلبك</span>
+        </div>
+
+        <div style="display:flex;gap:11px;flex-wrap:wrap">
+          <button type="submit" class="btn btn-wa btn-lg" id="submitBtn">إرسال عبر واتساب</button>
+          <a class="btn btn-ghost" id="mailBtn" href="#">إرسال بالبريد</a>
+        </div>
+        <p style="font-size:.82rem;color:var(--muted);margin-top:14px">
+          🔒 نسخة تجريبية — لا يتم حفظ أي بيانات على أي خادم، الرسالة تُفتح في تطبيق واتساب أو البريد لديك فقط.
+        </p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- الخريطة -->
+<section class="section section--tight section--soft">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">موقع المصنع</span>
+      <h2 class="sec-title">تجدنا <span>هنا</span></h2>
+      <p class="sec-sub" id="addrLine"></p>
+      <div class="divider"></div>
+    </div>
+    <div class="map reveal">
+      <iframe id="map" title="موقع المصنع على الخريطة" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- الأسئلة الشائعة -->
+<section class="section" id="faq-anchor">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">الأسئلة الشائعة</span>
+      <h2 class="sec-title">إجابات على <span>أكثر ما يُسأل</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>تفضل المكالمة المباشرة؟</h2>
+    <p>خط المبيعات متاح من السبت إلى الخميس، من 9 صباحاً حتى 6 مساءً.</p>
+    <div class="cta__btns" id="ctaBtns"></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+boot(function () {
+
+  /* بطاقات البيانات */
+  $('#infoStack').innerHTML = [
+    ['pin',   'عنوان المصنع', `<span>${SITE.address}</span>`],
+    ['phone', 'أرقام الهاتف',
+      `<a href="tel:${SITE.phone1.replace(/\s/g,'')}"><bdi>${SITE.phone1}</bdi></a>
+       <a href="tel:${SITE.phone2.replace(/\s/g,'')}"><bdi>${SITE.phone2}</bdi></a>
+       <a href="tel:${SITE.landline.replace(/\s/g,'')}"><bdi>${SITE.landline}</bdi> (أرضي)</a>`],
+    ['mail',  'البريد الإلكتروني',
+      `<a href="mailto:${SITE.email}">${SITE.email}</a>
+       <a href="mailto:${SITE.email2}">${SITE.email2}</a>`],
+    ['clock', 'مواعيد العمل', `<span>${SITE.hours}</span><span>${SITE.hoursNote}</span>`],
+    ['whatsapp', 'واتساب المبيعات',
+      `<a href="${waLink()}" target="_blank" rel="noopener"><bdi>+${SITE.whatsapp}</bdi> — رد فوري خلال دقائق</a>`]
+  ].map(([i, t, body]) => `
+    <div class="info-card">
+      <span class="info-card__ico">${icon(i)}</span>
+      <span><b>${t}</b>${body}</span>
+    </div>`).join('');
+
+  /* السوشيال ميديا */
+  $('#socialGrid').innerHTML = SITE.social.map(s =>
+    `<a href="${s.url}" target="_blank" rel="noopener" title="${s.name}" aria-label="${s.name}">${icon(s.key)}</a>`).join('');
+
+  /* قائمة الأقسام في النموذج */
+  $('#cat').innerHTML = `<option value="">— اختر القسم —</option>` +
+    CATEGORIES.map(c => `<option value="${esc(c.name)}">${esc(c.name)}</option>`).join('') +
+    `<option value="منتج مخصص حسب الطلب">منتج مخصص حسب الطلب</option>`;
+
+  /* الخريطة والعنوان */
+  $('#map').src = SITE.mapEmbed;
+  $('#addrLine').textContent = SITE.address;
+
+  /* الأسئلة الشائعة */
+  $('#faqList').innerHTML = SITE.faq.map(f => `
+    <div class="faq__item">
+      <button class="faq__q" type="button">${esc(f.q)} ${icon('chevron')}</button>
+      <div class="faq__a"><p>${esc(f.a)}</p></div>
+    </div>`).join('');
+
+  /* النموذج */
+  const form = $('#orderForm');
+
+  function buildMessage() {
+    const v = id => $('#' + id).value.trim();
+    return (
+      `السلام عليكم ${SITE.name} 👋\n\n` +
+      `الاسم: ${v('name')}\n` +
+      `الهاتف: ${v('phone')}\n` +
+      (v('city')    ? `المحافظة: ${v('city')}\n` : '') +
+      (v('cat')     ? `القسم المطلوب: ${v('cat')}\n` : '') +
+      (v('subject') ? `الموضوع: ${v('subject')}\n` : '') +
+      `\nتفاصيل الطلب:\n${v('msg')}\n\nبرجاء إفادتي بعرض السعر ومدة التنفيذ. وشكراً.`
+    );
+  }
+
+  function validate() {
+    let ok = true;
+    [['name', v => v.length >= 2],
+     ['phone', v => /[0-9٠-٩]{7,}/.test(v.replace(/[\s\-+()]/g, ''))],
+     ['msg',  v => v.length >= 8]
+    ].forEach(([id, test]) => {
+      const field = $('#' + id).closest('.field');
+      const good  = test($('#' + id).value.trim());
+      field.classList.toggle('has-error', !good);
+      if (!good) ok = false;
+    });
+    return ok;
+  }
+
+  ['name', 'phone', 'msg'].forEach(id =>
+    $('#' + id).addEventListener('input', () => $('#' + id).closest('.field').classList.remove('has-error')));
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!validate()) { toast('من فضلك أكمل الحقول المطلوبة'); return; }
+    window.open(`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(buildMessage())}`, '_blank', 'noopener');
+    toast('تم تجهيز رسالة واتساب — اضغط إرسال داخل التطبيق');
+  });
+
+  $('#mailBtn').addEventListener('click', e => {
+    e.preventDefault();
+    if (!validate()) { toast('من فضلك أكمل الحقول المطلوبة'); return; }
+    const subj = $('#subject').value.trim() || 'طلب عرض سعر من الموقع';
+    location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(buildMessage())}`;
+  });
+
+  $('#submitBtn').innerHTML = icon('whatsapp') + ' إرسال عبر واتساب';
+  $('#mailBtn').innerHTML   = icon('mail') + ' إرسال بالبريد';
+
+  $('#ctaBtns').innerHTML =
+    `<a class="btn btn-gold btn-lg" href="tel:${SITE.phone1.replace(/\s/g,'')}">${icon('phone')} <bdi>${SITE.phone1}</bdi></a>` +
+    `<a class="btn btn-ghost-light btn-lg" href="${waLink()}" target="_blank" rel="noopener">${icon('whatsapp')} محادثة واتساب</a>`;
+});
+</script>
+</body>
+</html>
