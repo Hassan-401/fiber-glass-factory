@@ -59,7 +59,7 @@ function renderHeader() {
   <header class="header" id="header">
     <div class="container header__in">
       <a class="logo" href="index.html">
-        <span class="logo__mark">${icon('factory')}</span>
+        <span class="logo__mark"><img src="${SITE.logo}" alt="${esc(SITE.name)}" width="52" height="52"></span>
         <span class="logo__txt">
           <span class="logo__name">${SITE.name}</span>
           <span class="logo__sub">${SITE.tagline}</span>
@@ -95,7 +95,7 @@ function renderHeader() {
     <aside class="drawer__panel" role="dialog" aria-label="القائمة">
       <div class="drawer__head">
         <a class="logo" href="index.html">
-          <span class="logo__mark">${icon('factory')}</span>
+          <span class="logo__mark"><img src="${SITE.logo}" alt="${esc(SITE.name)}" width="52" height="52"></span>
           <span class="logo__txt"><span class="logo__name">${SITE.short}</span></span>
         </a>
         <button class="drawer__close" data-close aria-label="إغلاق">${icon('close')}</button>
@@ -128,7 +128,7 @@ function renderFooter() {
       <div class="footer__grid">
         <div>
           <div class="footer__logo">
-            <span class="logo__mark">${icon('factory')}</span>
+            <span class="logo__mark"><img src="${SITE.logo}" alt="${esc(SITE.name)}" width="52" height="52"></span>
             <span class="logo__txt">
               <span class="logo__name">${SITE.name}</span>
               <span class="logo__sub">${SITE.tagline}</span>
@@ -176,9 +176,29 @@ function renderFooter() {
         </div>
       </div>
 
-      <div class="demo-note">
-        ⚠️ هذه نسخة تجريبية — جميع البيانات وأرقام التواصل والعناوين والروابط الواردة بالموقع بيانات وهمية لأغراض العرض فقط.
+      <div class="visits">
+        <div class="visits__grid">
+          <div class="visit">
+            <span class="visit__ico">${icon('eye')}</span>
+            <span class="visit__txt">
+              <span class="visit__n is-loading" id="visitsTotal">…</span>
+              <span class="visit__l">إجمالي زوار الموقع</span>
+            </span>
+          </div>
+          <div class="visit">
+            <span class="visit__ico">${icon('calendar')}</span>
+            <span class="visit__txt">
+              <span class="visit__n is-loading" id="visitsMonth">…</span>
+              <span class="visit__l">زوار هذا الشهر (${monthLabel()})</span>
+            </span>
+          </div>
+        </div>
       </div>
+
+      ${SITE.demo ? `<div class="demo-note">
+        ⚠️ نسخة تجريبية — أرقام التواصل والعناوين وروابط السوشيال ميديا مؤقتة لأغراض العرض فقط.
+        المنتجات والصور حقيقية من المصنع.
+      </div>` : ''}
 
       <div class="footer__bottom">
         <span>© <span id="year"></span> ${SITE.name} — جميع الحقوق محفوظة.</span>
@@ -199,8 +219,9 @@ function renderFooter() {
 /* ---------- بطاقة منتج ---------- */
 function productCard(p) {
   const c = catById(p.cat);
-  const specs = Object.entries(p.specs).slice(0, 2)
-    .map(([k, v]) => `<span class="prod__spec">${esc(k)}: ${esc(v)}</span>`).join('');
+  const specs =
+    `<span class="prod__spec">الكود: ${esc(p.id.toUpperCase())}</span>` +
+    (p.group ? `<span class="prod__spec">${esc(p.group)}</span>` : '');
   return `
   <article class="prod reveal">
     <div class="prod__media">
@@ -221,13 +242,23 @@ function productCard(p) {
   </article>`;
 }
 
+/* خامة مؤقتة للأقسام اللي لسه مفيش لها صور */
+function placeholder(label) {
+  return `<div class="ph" role="img" aria-label="${esc(label)} — الصور قريباً">
+    <img src="${SITE.logo}" alt="" aria-hidden="true">
+    <span>الصور قريباً</span>
+  </div>`;
+}
+
 /* ---------- بطاقة قسم ---------- */
 function categoryCard(c) {
   return `
   <article class="cat-card reveal">
     <a class="cat-card__media" href="products.html?cat=${c.id}" aria-label="${esc(c.name)}">
-      <img src="${c.img}" alt="${esc(c.name)}" loading="lazy" width="900" height="650">
-      <span class="cat-card__count">${c.count} منتج</span>
+      ${c.img
+        ? `<img src="${c.img}" alt="${esc(c.name)}" loading="lazy" width="900" height="650">`
+        : placeholder(c.name)}
+      <span class="cat-card__count">${c.count ? c.count + ' منتج' : 'حسب الطلب'}</span>
       <span class="cat-card__ico">${icon(c.icon)}</span>
     </a>
     <div class="cat-card__body">
@@ -307,6 +338,70 @@ function initUI() {
   });
 }
 
+/* ============================================================
+   عدّاد الزوار
+   ------------------------------------------------------------
+   عدّادان: إجمالي الزوار منذ إطلاق الموقع، وزوار الشهر الحالي.
+   يعتمد على خدمة abacus المجانية — عدّاد مجهول تماماً، لا يُرسل
+   أي بيانات عن الزائر، مجرد زيادة رقم.
+
+   الزيارة تُحسب مرة واحدة لكل جلسة تصفّح (sessionStorage)، فالتنقل
+   بين صفحات الموقع لا يزوّد العدّاد. باقي الصفحات تقرأ الرقم فقط.
+   ============================================================ */
+
+/* اسم الشهر الحالي بالعربي، مثل: أكتوبر 2026 */
+function monthLabel(d = new Date()) {
+  const m = ['يناير','فبراير','مارس','أبريل','مايو','يونيو',
+             'يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+  return m[d.getMonth()] + ' ' + d.getFullYear();
+}
+/* مفتاح الشهر: m-2026-10 */
+function monthKey(d = new Date()) {
+  return 'm-' + d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0');
+}
+
+function initVisits() {
+  const elTotal = $('#visitsTotal'), elMonth = $('#visitsMonth');
+  if (!elTotal || !elMonth || !SITE.counter) return;
+
+  const { api, ns } = SITE.counter;
+  const mKey = monthKey();
+
+  // أول زيارة في الجلسة = hit (زيادة)، وبعدها get (قراءة فقط)
+  let counted = false;
+  try { counted = sessionStorage.getItem('sm-visit') === '1'; } catch (e) {}
+  const verb = counted ? 'get' : 'hit';
+  if (!counted) { try { sessionStorage.setItem('sm-visit', '1'); } catch (e) {} }
+
+  const ask = key =>
+    fetch(`${api}/${verb}/${encodeURIComponent(ns)}/${encodeURIComponent(key)}`, { cache: 'no-store' })
+      .then(r => r.json())
+      .then(j => (typeof j.value === 'number' ? j.value : null))
+      .catch(() => null);
+
+  const show = (el, v) => {
+    if (v === null) { el.textContent = '—'; return; }          // الخدمة مش متاحة
+    el.classList.remove('is-loading');
+    countUp(el, v);
+  };
+
+  ask('total').then(v => show(elTotal, v));
+  ask(mKey).then(v => show(elMonth, v === null ? null : v));
+}
+
+/* عدّ تصاعدي قصير للرقم */
+function countUp(el, target) {
+  const dur = 1100, t0 = performance.now();
+  const fmt = n => n.toLocaleString('ar-EG');
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = fmt(target); return; }
+  const tick = now => {
+    const k = Math.min((now - t0) / dur, 1);
+    el.textContent = fmt(Math.round(target * (1 - Math.pow(1 - k, 3))));
+    if (k < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+
 /* ---------- إشعار ---------- */
 function toast(msg) {
   const t = $('#toast'); if (!t) return;
@@ -323,4 +418,5 @@ function boot(pageInit) {
   if (typeof pageInit === 'function') pageInit();
   renderFooter();
   initUI();
+  initVisits();
 }

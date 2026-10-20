@@ -1,27 +1,31 @@
 /* =========================================================
-   مصنع الشروق للفايبر جلاس — ملف التنسيقات الرئيسي
+   سوق مصرية فيبر جلاس — ملف التنسيقات الرئيسي
+   لوحة الألوان مأخوذة مباشرة من ألوان الشعار:
+     كحلي  #012e76   |   أزرق متوسط #0162cd   |   أزرق فاتح #0094f5
    ========================================================= */
 
 /* ---------- 1. المتغيرات ---------- */
 :root {
-  --navy-900: #0a1e36;
-  --navy-800: #0d2440;
-  --navy-700: #12304f;
-  --navy-600: #1b3f63;
-  --navy-500: #2b567f;
+  /* الكحلي — اللون الأساسي في الشعار */
+  --navy-900: #01122f;
+  --navy-800: #011c4a;
+  --navy-700: #012e76;
+  --navy-600: #0141a0;
+  --navy-500: #0162cd;
 
-  --gold-600: #b8862b;
-  --gold-500: #cfa03b;
-  --gold-400: #e0b95e;
-  --gold-100: #fbf3e0;
+  /* الأزرق الفاتح — لون الموجة في الشعار (بديل الذهبي) */
+  --gold-600: #0077c8;
+  --gold-500: #0094f5;
+  --gold-400: #5cc0ff;
+  --gold-100: #e6f4ff;
 
-  --ink: #14263b;
-  --body: #4d6076;
-  --muted: #7d8fa3;
-  --line: #e3e9f0;
+  --ink: #0b1f3f;
+  --body: #4a5e78;
+  --muted: #7b8da4;
+  --line: #e1e9f3;
   --bg: #ffffff;
-  --bg-soft: #f4f7fb;
-  --bg-soft2: #eef3f9;
+  --bg-soft: #f3f7fc;
+  --bg-soft2: #eaf2fb;
   --white: #fff;
 
   --wa: #25d366;
@@ -348,19 +352,23 @@ p:last-child {
   flex: none;
 }
 .logo__mark {
-  width: 46px;
-  height: 46px;
-  border-radius: 13px;
+  width: 52px;
+  height: 52px;
   flex: none;
-  background: linear-gradient(140deg, var(--navy-700), var(--navy-900));
   display: grid;
   place-items: center;
-  box-shadow: 0 6px 16px rgba(13, 36, 64, 0.24);
 }
-.logo__mark svg {
-  width: 26px;
-  height: 26px;
-  color: var(--gold-500);
+.logo__mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/* الشعار على الخلفيات الداكنة (الفوتر/الدرج) يحتاج أرضية فاتحة */
+.footer .logo__mark,
+.drawer__head .logo__mark {
+  background: #fff;
+  border-radius: 12px;
+  padding: 5px;
 }
 .logo__txt {
   display: flex;
@@ -629,97 +637,65 @@ p:last-child {
 /* ---------- 6. الهيرو ---------- */
 .hero {
   position: relative;
-  background: var(--navy-900);
+  background:
+    radial-gradient(120% 90% at 85% -10%, rgba(0, 148, 245, 0.28), transparent 58%),
+    linear-gradient(135deg, var(--navy-900) 0%, var(--navy-700) 55%, var(--navy-600) 100%);
   overflow: hidden;
 }
-
-/* نسخة الديسكتوب: صورة البانر الأصلية + مناطق تفاعلية */
-.hero__banner {
-  position: relative;
-  display: none;
-}
-.hero__banner img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.hero__hot {
-  position: absolute;
-  display: block;
-  border-radius: 12px;
-  transition: 0.25s;
-}
-.hero__hot:hover {
-  background: rgba(255, 255, 255, 0.11);
-  box-shadow: 0 0 0 2px rgba(207, 160, 59, 0.6) inset;
-}
-.hero__hot--cta {
-  border-radius: 999px;
-}
-.hero__hot--cat {
-  width: 10%;
-}
-
-/* نسخة الموبايل/التابلت: هيرو مبني بالكود */
-.hero__alt {
-  position: relative;
-  padding: 56px 0 0;
-  background:
-    linear-gradient(
-      120deg,
-      rgba(10, 30, 54, 0.92) 0%,
-      rgba(13, 36, 64, 0.86) 45%,
-      rgba(27, 63, 99, 0.72) 100%
-    ),
-    url("../img/site/factory-2.jpg") center/cover no-repeat;
-}
-.hero__alt::after {
+/* موجة الشعار كعنصر خلفي */
+.hero::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset-inline-end: -8%;
+  top: -22%;
+  width: 70%;
+  height: 150%;
+  background: radial-gradient(closest-side, rgba(92, 192, 255, 0.16), transparent 70%);
   pointer-events: none;
-  background: radial-gradient(
-    120% 80% at 100% 0%,
-    rgba(207, 160, 59, 0.16),
-    transparent 60%
-  );
 }
-.hero__alt-in {
+
+.hero__in {
   position: relative;
   z-index: 2;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1.02fr 1fr;
+  align-items: center;
+  gap: 48px;
+  padding: 62px 0 70px;
 }
+
+/* --- النص --- */
 .hero__title {
-  font-size: clamp(1.8rem, 7vw, 2.7rem);
+  font-size: clamp(1.9rem, 4.4vw, 3.25rem);
   color: #fff;
   font-weight: 800;
-  line-height: 1.35;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
 }
 .hero__title-gold {
   display: block;
-  color: var(--gold-500);
-  font-size: clamp(1.15rem, 4.6vw, 1.6rem);
-  margin-top: 8px;
+  color: var(--gold-400);
+  font-size: clamp(1.1rem, 2.4vw, 1.75rem);
+  margin-top: 10px;
 }
 .hero__rule {
-  width: 64px;
-  height: 3px;
-  background: var(--gold-500);
-  border-radius: 3px;
-  margin: 16px auto 18px;
+  width: 72px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold-500), var(--gold-400));
+  border-radius: 4px;
+  margin: 20px 0 20px;
 }
 .hero__lead {
-  color: #c6d5e5;
-  font-size: 1rem;
-  max-width: 520px;
-  margin: 0 auto 24px;
+  color: #c3d8ef;
+  font-size: clamp(0.95rem, 1.3vw, 1.08rem);
+  max-width: 540px;
+  margin: 0 0 26px;
 }
 .hero__chips {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 10px;
-  margin-bottom: 26px;
+  margin-bottom: 30px;
 }
 .hero__chip {
   display: flex;
@@ -727,41 +703,85 @@ p:last-child {
   gap: 8px;
   font-size: 0.83rem;
   font-weight: 700;
-  color: #dce7f2;
+  color: #dcebfa;
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(146, 200, 255, 0.22);
   border-radius: 999px;
-  padding: 7px 15px;
+  padding: 8px 16px;
+  backdrop-filter: blur(4px);
 }
 .hero__chip svg {
-  width: 16px;
-  height: 16px;
-  color: var(--gold-500);
+  width: 17px;
+  height: 17px;
+  color: var(--gold-400);
 }
-.hero__alt-img {
-  margin-top: 30px;
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  padding-top: 35.9%;
-  border-radius: 16px 16px 0 0;
-  background-image: url("../img/hero.png");
-  background-repeat: no-repeat;
-  background-size: 152% auto;
-  background-position: 100% 41%;
+.hero__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-/* شريط الأقسام أسفل الهيرو */
+/* --- كولاج صور المنتجات الحقيقية --- */
+.hero__shots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 108px);
+  gap: 12px;
+}
+.hero__shot {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(146, 200, 255, 0.18);
+  box-shadow: 0 16px 38px rgba(1, 18, 47, 0.45);
+  transition: 0.35s var(--ease);
+}
+.hero__shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.6s var(--ease);
+}
+.hero__shot span {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 16px 12px 9px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(1, 18, 47, 0.88));
+  text-align: center;
+}
+.hero__shot:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-500);
+}
+.hero__shot:hover img {
+  transform: scale(1.07);
+}
+.hero__shot--tall {
+  grid-row: span 2;
+}
+.hero__shot--wide {
+  grid-column: span 2;
+}
+
+/* --- شريط الأقسام أسفل الهيرو --- */
 .hero__strip {
-  background: linear-gradient(180deg, var(--navy-800), var(--navy-900));
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  position: relative;
+  z-index: 2;
+  background: rgba(1, 18, 47, 0.55);
+  border-top: 1px solid rgba(146, 200, 255, 0.16);
+  backdrop-filter: blur(6px);
 }
 .hero__strip-list {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
 }
 .hero__strip-list li {
-  border-inline-start: 1px solid rgba(255, 255, 255, 0.09);
+  border-inline-start: 1px solid rgba(146, 200, 255, 0.13);
 }
 .hero__strip-list li:first-child {
   border-inline-start: 0;
@@ -772,26 +792,28 @@ p:last-child {
   align-items: center;
   gap: 9px;
   text-align: center;
-  padding: 20px 8px;
-  color: #c3d2e2;
-  font-size: 0.82rem;
+  padding: 18px 8px;
+  color: #bed4ea;
+  font-size: 0.8rem;
   font-weight: 700;
   line-height: 1.5;
   transition: 0.25s var(--ease);
 }
 .hero__strip svg {
-  width: 32px;
-  height: 32px;
-  color: var(--gold-500);
+  width: 30px;
+  height: 30px;
+  color: var(--gold-400);
   transition: 0.3s var(--ease);
 }
 .hero__strip a:hover {
   color: #fff;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 148, 245, 0.14);
 }
 .hero__strip a:hover svg {
   transform: translateY(-4px) scale(1.08);
+  color: var(--gold-500);
 }
+
 
 /* ---------- 7. شريط المزايا السريعة ---------- */
 .quick {
@@ -1535,8 +1557,8 @@ p:last-child {
   padding: 70px 0;
   color: #fff;
   background:
-    linear-gradient(120deg, rgba(10, 30, 54, 0.94), rgba(13, 36, 64, 0.9)),
-    url("../img/site/factory-5.jpg") center/cover fixed no-repeat;
+    linear-gradient(120deg, rgba(1, 18, 47, 0.93), rgba(1, 46, 118, 0.88)),
+    url("../img/products/caravans/01.jpg") center/cover fixed no-repeat;
 }
 .stats__grid {
   display: grid;
@@ -1794,7 +1816,7 @@ p:last-child {
   text-align: center;
   background:
     linear-gradient(120deg, rgba(10, 30, 54, 0.93), rgba(27, 63, 99, 0.86)),
-    url("../img/site/cta.jpg") center/cover no-repeat;
+    url("../img/products/cooling-towers/15.jpg") center/cover no-repeat;
 }
 .cta h2 {
   color: #fff;
@@ -2179,8 +2201,8 @@ p:last-child {
   text-align: center;
   color: #fff;
   background:
-    linear-gradient(120deg, rgba(10, 30, 54, 0.93), rgba(27, 63, 99, 0.84)),
-    url("../img/site/factory-1.jpg") center/cover no-repeat;
+    linear-gradient(120deg, rgba(1, 18, 47, 0.94), rgba(1, 65, 160, 0.86)),
+    url("../img/products/caravans/20.jpg") center/cover no-repeat;
 }
 .page-hero h1 {
   color: #fff;
@@ -2259,17 +2281,35 @@ p:last-child {
 }
 
 /* ---------- 26. الاستجابة ---------- */
-@media (min-width: 1100px) {
-  .hero__banner {
-    display: block;
+@media (max-width: 991px) {
+  .hero__in {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding: 46px 0 54px;
+    text-align: center;
   }
-  .hero__alt {
-    display: none;
+  .hero__rule {
+    margin-inline: auto;
+  }
+  .hero__lead {
+    margin-inline: auto;
+  }
+  .hero__chips,
+  .hero__btns {
+    justify-content: center;
+  }
+  .hero__shots {
+    grid-template-rows: repeat(3, 92px);
   }
 }
-@media (max-width: 1099px) {
-  .hero__banner {
-    display: none;
+@media (max-width: 560px) {
+  .hero__shots {
+    grid-template-rows: repeat(3, 76px);
+    gap: 9px;
+  }
+  .hero__shot span {
+    font-size: 0.66rem;
+    padding: 12px 6px 7px;
   }
 }
 @media (max-width: 1024px) {
@@ -2442,4 +2482,108 @@ bdi {
 .quick__t,
 .quick__d {
   display: block;
+}
+
+/* ---------- 27. خامة مؤقتة للأقسام بلا صور ---------- */
+.ph {
+  position: relative;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  min-height: 190px;
+  text-align: center;
+  padding: 18px;
+  color: #cfe4f8;
+  background:
+    radial-gradient(90% 80% at 50% 0%, rgba(0, 148, 245, 0.25), transparent 65%),
+    linear-gradient(140deg, var(--navy-700), var(--navy-900));
+}
+.ph::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.045) 0 10px,
+      transparent 10px 20px
+    );
+  pointer-events: none;
+}
+.ph img {
+  width: 74px;
+  opacity: 0.95;
+  filter: brightness(0) invert(1);
+}
+.ph span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #a9cdee;
+}
+
+/* ---------- 28. عدّاد الزوار ---------- */
+.visits {
+  border-top: 1px solid rgba(146, 200, 255, 0.14);
+  border-bottom: 1px solid rgba(146, 200, 255, 0.14);
+  margin: 30px 0 4px;
+  padding: 22px 0;
+}
+.visits__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 580px;
+  margin-inline: auto;
+}
+.visit {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(146, 200, 255, 0.16);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.visit__ico {
+  width: 42px;
+  height: 42px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(0, 148, 245, 0.16);
+  color: var(--gold-400);
+}
+.visit__ico svg {
+  width: 22px;
+  height: 22px;
+}
+.visit__txt {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35;
+}
+.visit__n {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.visit__n.is-loading {
+  color: #7fa6cd;
+  font-size: 1.1rem;
+}
+.visit__l {
+  font-size: 0.78rem;
+  color: #a9c3dd;
+  font-weight: 600;
+}
+@media (max-width: 520px) {
+  .visits__grid {
+    grid-template-columns: 1fr;
+  }
 }

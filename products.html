@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>كل المنتجات | مصنع الشروق للفايبر جلاس</title>
-<meta name="description" content="أكثر من 110 منتج فايبر جلاس: خزانات، أبراج تبريد، أعمدة إنارة، أكشاك حراسة، ألعاب أطفال، مظلات، قوارب، مواسير GRP وأجزاء أتوبيسات. اطلب عبر واتساب.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230d2440'/><text y='68' x='50' text-anchor='middle' font-size='54' fill='%23cfa03b' font-family='Arial'>ش</text></svg>">
+<title>كل المنتجات | سوق مصرية فيبر جلاس</title>
+<meta name="description" content="كل منتجات سوق مصرية فيبر جلاس بالصور — ابحث وفلتر حسب القسم واطلب مباشرة عبر واتساب.">
+<link rel="icon" href="assets/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
 <section class="page-hero">
   <div class="container">
     <h1 id="pageTitle">كل المنتجات</h1>
-    <p id="pageSub">تصفح أكثر من ١١٠ منتج فايبر جلاس، واطلب أي منتج مباشرة عبر واتساب بضغطة واحدة.</p>
+    <p id="pageSub">تصفح أكثر من ١١٠ منتج فيبر جلاس، واطلب أي منتج مباشرة عبر واتساب بضغطة واحدة.</p>
   </div>
 </section>
 
@@ -63,6 +63,7 @@
 
 <div id="site-footer"></div>
 
+<script src="assets/js/config.js"></script>
 <script src="assets/js/data.js"></script>
 <script src="assets/js/icons.js"></script>
 <script src="assets/js/main.js"></script>
@@ -81,7 +82,7 @@ boot(function () {
   function head() {
     const c = catById(activeCat);
     $('#pageTitle').textContent = c ? c.name : 'كل المنتجات';
-    $('#pageSub').textContent   = c ? c.desc : 'تصفح أكثر من ١١٠ منتج فايبر جلاس، واطلب أي منتج مباشرة عبر واتساب بضغطة واحدة.';
+    $('#pageSub').textContent   = c ? c.desc : 'تصفح أكثر من ١١٠ منتج فيبر جلاس، واطلب أي منتج مباشرة عبر واتساب بضغطة واحدة.';
     $('#crumbs').innerHTML =
       `<li><a href="index.html">الرئيسية</a></li>` +
       (c ? `<li><a href="categories.html">الأقسام</a></li><li aria-current="page">${esc(c.short)}</li>`
@@ -104,8 +105,8 @@ boot(function () {
       const t = term.toLowerCase();
       list = list.filter(p => {
         const c = catById(p.cat);
-        return (p.name + ' ' + p.desc + ' ' + (c ? c.name : '') + ' ' +
-                Object.values(p.specs).join(' ') + ' ' + p.feat.join(' ')).toLowerCase().includes(t);
+        return (p.name + ' ' + p.desc + ' ' + (p.group || '') + ' ' +
+                (c ? c.name + ' ' + c.short : '') + ' ' + p.id).toLowerCase().includes(t);
       });
     }
 
@@ -115,13 +116,25 @@ boot(function () {
 
     $('#count').textContent = `${list.length} منتج`;
     $('#grid').innerHTML = list.map(productCard).join('');
-    $('#empty').innerHTML = list.length ? '' : `
+    /* قسم موجود فعلاً لكن لسه مفيش له صور ≠ بحث بدون نتيجة */
+    const emptyCat = !list.length && !term && activeCat !== 'all' ? catById(activeCat) : null;
+
+    $('#empty').innerHTML = list.length ? '' : (emptyCat ? `
+      <div class="empty">
+        ${icon(emptyCat.icon)}
+        <h3>${esc(emptyCat.name)} — الصور قريباً</h3>
+        <p>${esc(emptyCat.desc)}</p>
+        <p>القسم ده شغّال في المصنع وبننفّذه حسب الطلب، بس لسه منزّلناش صوره على الموقع.
+           ابعتلنا على واتساب بالمقاس أو الرسم المطلوب ونرد عليك بالتفاصيل والسعر.</p>
+        <a class="btn btn-wa" href="${waLink({ id: emptyCat.id, name: emptyCat.name, cat: emptyCat.id })}"
+           target="_blank" rel="noopener" style="margin-top:14px">${icon('whatsapp')} اسأل عن ${esc(emptyCat.short)}</a>
+      </div>` : `
       <div class="empty">
         ${icon('search')}
         <h3>لا توجد نتائج مطابقة</h3>
         <p>جرّب كلمة بحث أخرى أو اختر قسماً مختلفاً، أو اسألنا مباشرة على واتساب.</p>
         <a class="btn btn-wa" href="${waLink()}" target="_blank" rel="noopener" style="margin-top:14px">${icon('whatsapp')} اسأل عن منتجك</a>
-      </div>`;
+      </div>`);
 
     /* تفعيل حركة الظهور للعناصر الجديدة */
     $$('#grid .reveal').forEach(el => el.classList.add('in'));

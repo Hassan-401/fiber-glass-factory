@@ -8,6 +8,33 @@ const F = 'xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentC
 const ICONS = {
 
   /* ---------- أيقونات الأقسام ---------- */
+
+  planter: `<svg ${S}><path d="M4.5 10h15l-1.6 9.1a2 2 0 0 1-2 1.9H8.1a2 2 0 0 1-2-1.9L4.5 10Z"/><path d="M3.3 10h17.4"/><path d="M12 10V7.2a4 4 0 0 1 4-4"/><path d="M12 10C12 6.7 10 4.5 7 4.5c0 3.3 2 5.5 5 5.5Z"/></svg>`,
+
+  lining: `<svg ${S}><path d="M4 5h16v14H4z"/><path d="M6.4 7.4h11.2v9.2H6.4z"/><path d="M8.8 9.8h6.4v4.4H8.8z"/></svg>`,
+
+  roof: `<svg ${S}><path d="M3 13 12 6l9 7"/><path d="M6.5 11.3V20h11v-8.7"/><rect x="9.3" y="13.6" width="5.4" height="6.4" rx="1"/><path d="M12 6V3.2"/></svg>`,
+
+  slide: `<svg ${S}><path d="M5 20c0-6 4.5-11 10.5-13.5"/><path d="M8.6 20c0-4.4 3.3-8.2 7.9-10.2"/><path d="M5 20h5.5"/><path d="M19 20v-8M16.5 20h5"/><circle cx="17.6" cy="4.6" r="1.6"/></svg>`,
+
+  skylight: `<svg ${S}><path d="m3 15 6-9h12l-6 9z"/><path d="M9.2 6 3.2 15M13 6l-6 9M16.8 6l-6 9"/><path d="M3 18.6h18"/></svg>`,
+
+  grating: `<svg ${S}><rect x="3" y="5" width="18" height="14" rx="1.6"/><path d="M7.5 5v14M12 5v14M16.5 5v14M3 9.7h18M3 14.3h18"/></svg>`,
+
+  caravan: `<svg ${S}><path d="M3 17V7.5A1.5 1.5 0 0 1 4.5 6h12.8a2 2 0 0 1 1.6.8l2.1 2.9V17"/><path d="M3 17h3.3M10.7 17H21"/><circle cx="8.5" cy="17.5" r="2.2"/><rect x="6" y="9" width="5" height="4" rx="0.8"/><path d="M14.5 9h4.3"/></svg>`,
+
+  medical: `<svg ${S}><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M12 9.5v5M9.5 12h5"/><path d="M7 21h10M9 6V4.5A1.5 1.5 0 0 1 10.5 3h3A1.5 1.5 0 0 1 15 4.5V6"/></svg>`,
+
+  fan: `<svg ${S}><circle cx="12" cy="12" r="2.2"/><path d="M12 9.8c0-3 .8-5.3 2.6-5.3 1.5 0 2.3 1.6 1 3.4-1 1.4-2.4 1.9-3.6 1.9Z"/><path d="M14.2 12c3 0 5.3.8 5.3 2.6 0 1.5-1.6 2.3-3.4 1-1.4-1-1.9-2.4-1.9-3.6Z"/><path d="M12 14.2c0 3-.8 5.3-2.6 5.3-1.5 0-2.3-1.6-1-3.4 1-1.4 2.4-1.9 3.6-1.9Z"/><path d="M9.8 12c-3 0-5.3-.8-5.3-2.6 0-1.5 1.6-2.3 3.4-1 1.4 1 1.9 2.4 1.9 3.6Z"/></svg>`,
+
+  manhole: `<svg ${S}><ellipse cx="12" cy="12" rx="9" ry="6"/><ellipse cx="12" cy="12" rx="5.6" ry="3.6"/><path d="M3.3 10.7c1.1 1.4 4.5 2.4 8.7 2.4s7.6-1 8.7-2.4"/><path d="M12 6v1.2M12 16.8V18"/></svg>`,
+
+  /* ---------- أيقونات عدّاد الزوار ---------- */
+
+  eye: `<svg ${S}><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3.2"/></svg>`,
+
+  calendar: `<svg ${S}><rect x="3" y="5" width="18" height="16" rx="2.4"/><path d="M3 9.8h18M8 3v4M16 3v4"/><path d="M7.5 13.5h3M7.5 17h3M13.5 13.5h3"/></svg>`,
+
   bus: `<svg ${S}><rect x="3" y="4" width="18" height="12" rx="2.5"/><path d="M3 9h18M8 4v5M16 4v5"/><circle cx="7.5" cy="19" r="1.8"/><circle cx="16.5" cy="19" r="1.8"/><path d="M3 16h1.7M19.3 16H21M9.3 19h5.4"/></svg>`,
 
   tower: `<svg ${S}><path d="M7 3h10l-1.4 5.2a3 3 0 0 0 .3 2.2l2 3.4a2 2 0 0 1-1.7 3H7.8a2 2 0 0 1-1.7-3l2-3.4a3 3 0 0 0 .3-2.2L7 3Z"/><path d="M6.6 14h10.8M8 21v-2M16 21v-2M12 21v-3"/></svg>`,

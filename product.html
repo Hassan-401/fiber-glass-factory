@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>تفاصيل المنتج | مصنع الشروق للفايبر جلاس</title>
-<meta name="description" content="تفاصيل ومواصفات منتجات الفايبر جلاس من مصنع الشروق — اطلب عرض السعر مباشرة عبر واتساب.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230d2440'/><text y='68' x='50' text-anchor='middle' font-size='54' fill='%23cfa03b' font-family='Arial'>ش</text></svg>">
+<title>تفاصيل المنتج | سوق مصرية فيبر جلاس</title>
+<meta name="description" content="تفاصيل منتج فيبر جلاس من مصنع سوق مصرية — اطلب عرض سعر عبر واتساب.">
+<link rel="icon" href="assets/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -39,6 +39,7 @@
 
 <div id="site-footer"></div>
 
+<script src="assets/js/config.js"></script>
 <script src="assets/js/data.js"></script>
 <script src="assets/js/icons.js"></script>
 <script src="assets/js/main.js"></script>
@@ -89,16 +90,25 @@ boot(function () {
         </span>
       </div>
 
-      <h3 style="margin-bottom:12px;font-size:1.05rem">المواصفات الفنية</h3>
+      <h3 style="margin-bottom:12px;font-size:1.05rem">بيانات المنتج</h3>
       <table class="spec-table">
         <tbody>
-          ${Object.entries(p.specs).map(([k, v]) => `<tr><th>${esc(k)}</th><td>${esc(v)}</td></tr>`).join('')}
+          <tr><th>القسم</th><td>${esc(c.name)}</td></tr>
+          ${p.group ? `<tr><th>النوع</th><td>${esc(p.group)}</td></tr>` : ''}
+          <tr><th>كود المنتج</th><td>${p.id.toUpperCase()}</td></tr>
+          <tr><th>المقاسات</th><td>تُنفَّذ حسب الطلب — ابعتلنا المقاس المطلوب</td></tr>
+          <tr><th>الخامة</th><td>فيبر جلاس (راتنج + ألياف زجاجية) بطبقة جل كوت خارجية</td></tr>
         </tbody>
       </table>
 
-      <h3 style="margin-bottom:12px;font-size:1.05rem">أبرز المميزات</h3>
+      <h3 style="margin-bottom:12px;font-size:1.05rem">مميزات الفيبر جلاس</h3>
       <ul class="feat-list">
-        ${p.feat.map(f => `<li>${icon('checkSolid')}<span>${esc(f)}</span></li>`).join('')}
+        ${[
+          'لا يصدأ ولا يتأثر بالرطوبة أو الكيماويات',
+          'خفيف الوزن مقارنة بالحديد والخرسانة — أسهل في النقل والتركيب',
+          'عازل للكهرباء والحرارة',
+          'يُصنَّع بأي مقاس أو لون أو شكل حسب الرسم'
+        ].map(f => `<li>${icon('checkSolid')}<span>${f}</span></li>`).join('')}
       </ul>
 
       <div class="pd__actions">
