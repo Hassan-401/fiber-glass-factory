@@ -180,6 +180,7 @@ const UI = {
   'بحث في المنتجات': 'Search products',
   'ابحث عن منتج … مثال: خزان، برج تبريد، كشك': 'Search for a product… e.g. tank, cooling tower, cabin',
   'ترتيب النتائج': 'Sort results',
+  'تصفية حسب القسم': 'Filter by category',
   'الترتيب: الافتراضي': 'Sort: default',
   'الأكثر طلباً أولاً': 'Most requested first',
   'الاسم: أ ← ي': 'Name: A → Z',
@@ -356,6 +357,9 @@ function tr(s) {
   }
   return null;
 }
+
+/* ترجمة نص واحد — بترجّع العربي زي ما هو لو مفيش ترجمة */
+function T(s) { const v = tr(s); return v === null ? s : v; }
 
 /* ---------- تطبيق الترجمة على الصفحة ---------- */
 const SKIP = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA']);
