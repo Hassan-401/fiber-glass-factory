@@ -535,9 +535,9 @@ $('#addStepEn').addEventListener('click', () => { S.settings.steps_en.push({ t: 
 $('#addFaqEn').addEventListener('click', () => { S.settings.faq_en.push({ q: '', a: '' }); renderContent(); });
 
 /* تبويبات عربي/إنجليزي في صفحة المحتوى */
-$('[data-ctab]').forEach(b => b.addEventListener('click', () => {
-  $('[data-ctab]').forEach(x => x.classList.toggle('is-active', x === b));
-  $('[data-cpane]').forEach(p => p.hidden = p.dataset.cpane !== b.dataset.ctab);
+$$('[data-ctab]').forEach(b => b.addEventListener('click', () => {
+  $$('[data-ctab]').forEach(x => x.classList.toggle('is-active', x === b));
+  $$('[data-cpane]').forEach(p => p.hidden = p.dataset.cpane !== b.dataset.ctab);
 }));
 $('#saveContent').addEventListener('click', guard(async () => {
   await put('/admin/settings', {
@@ -585,11 +585,11 @@ function closeModal() { $('#modal').hidden = true; $('#modalBody').innerHTML = '
 
 /* تبويبات عربي/إنجليزي جوّه النافذة */
 function bindLangTabs() {
-  const tabs = $('#modalBody [data-ltab]');
+  const tabs = $$('#modalBody [data-ltab]');
   if (!tabs.length) return;
   tabs.forEach(b => b.addEventListener('click', () => {
     tabs.forEach(x => x.classList.toggle('is-active', x === b));
-    $('#modalBody [data-lpane]').forEach(p => p.hidden = p.dataset.lpane !== b.dataset.ltab);
+    $$('#modalBody [data-lpane]').forEach(p => p.hidden = p.dataset.lpane !== b.dataset.ltab);
   }));
 }
 $$('#modal [data-close]').forEach(b => b.addEventListener('click', closeModal));

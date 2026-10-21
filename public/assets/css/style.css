@@ -2908,3 +2908,231 @@ bdi {
   margin-inline-end: 0;
   margin-inline-start: 14px;
 }
+
+/* ---------- 34. زر اللغة داخل الهيدر (بعد حذف الشريط العلوي) ---------- */
+.nav__lang {
+  margin-inline-start: 6px;
+}
+.nav__lang .lang,
+.drawer__lang .lang {
+  margin-inline-end: 0;
+  border-color: var(--line);
+  background: var(--bg-soft);
+}
+.nav__lang .lang button,
+.drawer__lang .lang button {
+  color: var(--body);
+  padding: 4px 13px;
+}
+.nav__lang .lang button:hover,
+.drawer__lang .lang button:hover {
+  background: var(--gold-100);
+  color: var(--navy-700);
+}
+.nav__lang .lang button.is-active,
+.drawer__lang .lang button.is-active {
+  background: var(--gold-500);
+  color: #fff;
+}
+/* نسخة الدرج الجانبي للموبايل */
+.drawer__lang {
+  padding: 14px 18px 2px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 8px;
+}
+.drawer__lang .lang {
+  width: 100%;
+}
+.drawer__lang .lang button {
+  flex: 1;
+  padding: 9px 0;
+  font-size: 0.86rem;
+}
+/* الهيدر بقى أول عنصر في الصفحة */
+.header {
+  border-top: 0;
+}
+
+/* ---------- 35. الموبايل: كارتين في الصف ---------- */
+@media (max-width: 640px) {
+  .cats-grid,
+  .prod-grid,
+  .why-grid,
+  .gal-grid,
+  .quick__grid,
+  .steps,
+  .visits__grid,
+  .stats__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px;
+  }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 150px;
+    gap: 12px;
+  }
+  .gallery a:nth-child(1),
+  .gallery a:nth-child(6) {
+    grid-column: span 1;
+  }
+
+  /* تصغير محتوى الكروت عشان تبان كويس في نص العرض */
+  .cat-card__media img,
+  .cat-card__media .ph {
+    height: 128px;
+    min-height: 128px;
+  }
+  .cat-card__body {
+    padding: 14px 13px 16px;
+  }
+  .cat-card__title {
+    font-size: 0.92rem;
+  }
+  .cat-card__desc {
+    font-size: 0.78rem;
+    -webkit-line-clamp: 3;
+  }
+  .cat-card__count,
+  .cat-card__ico {
+    transform: scale(0.85);
+  }
+
+  .prod__media img {
+    height: 132px;
+  }
+  .prod__body {
+    padding: 12px 12px 0;
+  }
+  .prod__title {
+    font-size: 0.88rem;
+  }
+  .prod__desc {
+    font-size: 0.76rem;
+    -webkit-line-clamp: 2;
+  }
+  .prod__specs {
+    padding: 8px 12px;
+    gap: 5px;
+  }
+  .prod__spec {
+    font-size: 0.66rem;
+  }
+  .prod__foot {
+    padding: 10px 12px 12px;
+    gap: 7px;
+  }
+  .prod__foot .btn {
+    padding: 7px 10px;
+    font-size: 0.74rem;
+    flex: 1;
+  }
+  .prod__foot .icon-btn {
+    display: none;
+  }
+
+  .quick__item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 14px 13px;
+  }
+  .quick__t {
+    font-size: 0.84rem;
+  }
+  .quick__d {
+    font-size: 0.74rem;
+  }
+
+  .why {
+    padding: 18px 15px;
+  }
+  .why h3 {
+    font-size: 0.92rem;
+  }
+  .why p {
+    font-size: 0.78rem;
+  }
+  .why__ico {
+    width: 44px;
+    height: 44px;
+  }
+  .why__ico svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .step {
+    padding: 18px 14px;
+  }
+  .step h3 {
+    font-size: 0.9rem;
+  }
+  .step p {
+    font-size: 0.77rem;
+  }
+
+  .stats__grid {
+    gap: 18px 12px;
+  }
+  .stat__n {
+    font-size: 1.7rem;
+  }
+  .stat__l {
+    font-size: 0.74rem;
+  }
+  .stats__grid > div {
+    border-inline-start: 0;
+  }
+
+  .visit {
+    flex-direction: column;
+    gap: 7px;
+    text-align: center;
+    padding: 13px 10px;
+  }
+  .visit__n {
+    font-size: 1.15rem;
+  }
+  .visit__l {
+    font-size: 0.68rem;
+  }
+
+  .gal-item img {
+    height: 118px;
+  }
+  .gal-item figcaption {
+    opacity: 1;
+    transform: none;
+    padding: 18px 8px 7px;
+  }
+  .gal-item figcaption b {
+    font-size: 0.68rem;
+  }
+  .gal-item figcaption span {
+    font-size: 0.62rem;
+  }
+
+  /* بطاقات التواصل تفضل عمود واحد — مش كروت معرض */
+  .info-stack {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* شاشات صغيرة جداً: نفضل كارتين بس بمقاسات أصغر */
+@media (max-width: 400px) {
+  .prod-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px;
+  }
+  .cat-card__media img,
+  .cat-card__media .ph {
+    height: 108px;
+    min-height: 108px;
+  }
+  .prod__media img {
+    height: 112px;
+  }
+  .gal-item img {
+    height: 100px;
+  }
+}

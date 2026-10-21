@@ -83,25 +83,6 @@ async function loadLive() {
   }
 }
 
-/* ---------- الشريط العلوي ---------- */
-function renderTopbar() {
-  const el = $('#site-topbar'); if (!el) return;
-  el.outerHTML = `
-  <div class="topbar">
-    <div class="container topbar__in">
-      <ul class="topbar__list">
-        <li><a href="tel:${SITE.phone1.replace(/\s/g,'')}">${icon('phone')}<bdi>${SITE.phone1}</bdi></a></li>
-        ${SITE.email ? `<li class="hide-xs"><a href="mailto:${SITE.email}">${icon('mail')}<span>${SITE.email}</span></a></li>` : ''}
-        <li class="hide-xs"><span>${icon('clock')}${SITE.hours}</span></li>
-      </ul>
-      ${langToggleHTML()}
-      <div class="topbar__social">
-        ${socialLinks().map(s => `<a href="${s.url}" target="_blank" rel="noopener" title="${s.name}" aria-label="${s.name}">${icon(s.key)}</a>`).join('')}
-      </div>
-    </div>
-  </div>`;
-}
-
 /* ---------- الهيدر ---------- */
 function renderHeader() {
   const el = $('#site-header'); if (!el) return;
@@ -132,6 +113,7 @@ function renderHeader() {
           <li><a href="products.html"${on('products')}>المنتجات</a></li>
           <li><a href="gallery.html"${on('gallery')}>معرض الصور</a></li>
           <li><a href="contact.html"${on('contact')}>تواصل معنا</a></li>
+          <li class="nav__lang">${langToggleHTML()}</li>
         </ul>
       </nav>
 
@@ -154,6 +136,7 @@ function renderHeader() {
         </a>
         <button class="drawer__close" data-close aria-label="إغلاق">${icon('close')}</button>
       </div>
+      <div class="drawer__lang">${langToggleHTML()}</div>
       <nav class="drawer__nav">
         <a href="index.html"${on('home')}>الرئيسية</a>
         <a href="about.html"${on('about')}>عن المصنع</a>
@@ -465,7 +448,6 @@ function toast(msg) {
 /* ---------- التشغيل ---------- */
 async function boot(pageInit) {
   await loadLive();
-  renderTopbar();
   renderHeader();
   if (typeof pageInit === 'function') pageInit();
   renderFooter();
