@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>عن المصنع | سوق مصرية فيبر جلاس</title>
-<meta name="description" content="سوق مصرية فيبر جلاس — مصنع متخصص في أبراج التبريد والكرفانات وأجزاء الأتوبيسات ورووف كيرب وعزل الأسطح والجريتينج وحمامات السباحة وغيرها. تصنيع حسب الطلب.">
+<title>عن الشركة | سوق مصرية فيبر جلاس</title>
+<meta name="description" content="سوق مصرية فيبر جلاس — شركة متخصص في أبراج التبريد والكرفانات وأجزاء الأتوبيسات ورووف كيرب وعزل الأسطح والجريتينج وحمامات السباحة وغيرها. توفير حسب الطلب.">
 <link rel="icon" href="assets/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,18 +17,18 @@
 
 <section class="page-hero">
   <div class="container">
-    <h1>عن المصنع</h1>
-    <p>مصنع متخصص في تصنيع منتجات الفيبر جلاس لمختلف القطاعات — تصنيع حسب الرسم والمقاس المطلوب.</p>
+    <h1>عن الشركة</h1>
+    <p>شركة متخصصة في توفير منتجات الفيبر جلاس لمختلف القطاعات — توفير حسب الرسم والمقاس المطلوب.</p>
   </div>
 </section>
 
 <nav class="crumbs" aria-label="مسار التنقل">
   <div class="container">
-    <ol><li><a href="index.html">الرئيسية</a></li><li aria-current="page">عن المصنع</li></ol>
+    <ol><li><a href="index.html">الرئيسية</a></li><li aria-current="page">عن الشركة</li></ol>
   </div>
 </nav>
 
-<!-- قصة المصنع -->
+<!-- قصة الشركة -->
 <section class="section">
   <div class="container about-split">
     <div class="about-media reveal">
@@ -39,7 +39,7 @@
     <div class="reveal d1">
       <div class="sec-head sec-head--start">
         <span class="eyebrow">قصتنا</span>
-        <h2 class="sec-title">تصنيع الفيبر جلاس <span>لكل القطاعات</span></h2>
+        <h2 class="sec-title">توفير الفيبر جلاس <span>لكل القطاعات</span></h2>
         <div class="divider"></div>
       </div>
       <p id="aboutText"></p>
@@ -110,7 +110,7 @@
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">معرض الصور</span>
-      <h2 class="sec-title">لقطات من <span>إنتاج المصنع</span></h2>
+      <h2 class="sec-title">لقطات من <span>أعمالنا</span></h2>
       <div class="divider"></div>
     </div>
     <div class="gallery reveal" id="galleryGrid"></div>
@@ -136,12 +136,12 @@
 boot(function () {
 
   $('#aboutText').textContent = SITE.about;
-  $('#aboutBadge').innerHTML = `<b>${CATEGORIES.length}</b><span>قسم إنتاج</span>`;
+  $('#aboutBadge').innerHTML = `<b>${CATEGORIES.length}</b><span>قسم</span>`;
 
   $('#aboutList').innerHTML = [
-    `${CATEGORIES.length} قسم إنتاج يغطي المصانع والنقل والمقاولات والمرافق`,
+    `${CATEGORIES.length} قسم يغطي المصانع والنقل والمقاولات والمرافق`,
     'أبراج تبريد دائرية ومربعة من 10 طن حتى 5000 طن تبريد',
-    'تصنيع حسب الرسم والمقاس — مش مقاسات جاهزة بس',
+    'توفير حسب الرسم والمقاس — مش مقاسات جاهزة بس',
     'توريد وتركيب في الموقع مع متابعة بعد التسليم'
   ].map(t => `<li>${icon('checkSolid')}<span>${t}</span></li>`).join('');
 
@@ -167,7 +167,7 @@ boot(function () {
     </article>`).join('');
 
   $('#statsGrid').innerHTML = [
-    { n: CATEGORIES.length, label: 'قسم إنتاج' },
+    { n: CATEGORIES.length, label: 'قسم' },
     { n: PRODUCTS.length,   label: 'منتج معروض بالصور' },
     { n: 5000,              label: 'طن تبريد — أقصى سعة برج' },
     { n: 10,                label: 'طن تبريد — أصغر سعة برج' }
@@ -188,7 +188,7 @@ boot(function () {
       <div class="step__n"></div><h3>${s.t}</h3><p>${s.d}</p>
     </article>`).join('');
 
-  /* القطاعات — مبنية من أقسام المصنع الحقيقية */
+  /* القطاعات — مبنية من أقسامنا الحقيقية */
   $('#sectorsGrid').innerHTML = [
     ['المصانع والمنشآت الصناعية',
      'أبراج تبريد دائرية ومربعة، تبطين خزانات الحديد والخرسانة، عزل الأسطح والمداخن، ومراوح شفط الهواء.',

@@ -44,7 +44,7 @@ const CATS = {
   'caravans':        ['Fiberglass Caravans', 'Caravans',
     'Steel and fiberglass caravans in every size — offices, guard cabins, rest rooms and mobile units.'],
   'medical-covers':  ['Medical & Lab Equipment Covers', 'Medical Covers',
-    'Fiberglass covers for medical and laboratory equipment, made to your drawing and dimensions.'],
+    'Fiberglass covers for medical and laboratory equipment, supplied to your drawing and dimensions.'],
   'boats':           ['Fiberglass Boats & Launches', 'Boats & Launches',
     'Fiberglass boats and launches, plus repair and restoration work.'],
   'fans':            ['Wind-Driven Air Extraction Fans', 'Extraction Fans',
@@ -97,14 +97,14 @@ const SETTINGS_EN = {
   hours_en: 'Saturday – Thursday, 9am – 6pm',
   hoursNote_en: 'Closed on Friday',
   about_en:
-    'A factory specialised in fiberglass products across many sectors: cooling towers, caravans, ' +
+    'A company specialised in supplying fiberglass products across many sectors: cooling towers, caravans, ' +
     'bus and vehicle parts, roof curbs and skylights, roof and chimney insulation, grating and ' +
     'handrails, planters, swimming pools and more.',
   why_en: [
     { icon: 'shield', title: 'Corrosion and rust resistant',
       text: 'Fiberglass doesn’t rust and isn’t affected by moisture or chemicals, so it lasts for years in the harshest environments.' },
     { icon: 'ruler', title: 'Made to your dimensions',
-      text: 'We produce any size, shape or colour to your drawing — from a single piece to complete production runs.' },
+      text: 'We supply any size, shape or colour to your drawing — from a single piece to complete production runs.' },
     { icon: 'gear', title: 'Experience across sectors',
       text: 'From industrial cooling towers to medical equipment covers and bus parts — hands-on experience in every sector.' },
     { icon: 'award', title: 'Genuine materials',
@@ -117,14 +117,14 @@ const SETTINGS_EN = {
   steps_en: [
     { t: 'Message us on WhatsApp', d: 'Send a photo, a drawing, or just describe the product and size you need.' },
     { t: 'Quote and specification', d: 'We reply with the technical specification, the price and the lead time.' },
-    { t: 'Manufacturing', d: 'Your item goes into production and is checked before handover.' },
+    { t: 'Supply', d: 'We prepare your item and check it before handover.' },
     { t: 'Delivery and installation', d: 'We deliver to your site and install where needed.' }
   ],
   faq_en: [
     { q: 'How do I place an order?',
       a: 'Tap “Order on WhatsApp” on any product and a chat opens with a ready-made message containing the product name, code and link. Send it and add the size or quantity you need.' },
     { q: 'Do you make custom sizes?',
-      a: 'Yes. Most of our work is made to your drawing and dimensions, not just off-the-shelf sizes. Send us the drawing or measurements and we’ll come back with details.' },
+      a: 'Yes. Most of our work is supplied to your drawing and dimensions, not just off-the-shelf sizes. Send us the drawing or measurements and we’ll come back with details.' },
     { q: 'What cooling tower capacities are available?',
       a: 'Round and square cooling towers from 10 up to 5,000 tons of cooling, plus tower fill and spare parts.' },
     { q: 'Why choose fiberglass over steel or concrete?',
@@ -132,7 +132,7 @@ const SETTINGS_EN = {
     { q: 'Do you deliver outside Cairo?',
       a: 'Yes, we deliver nationwide. Transport cost depends on distance and shipment size and is quoted along with the price.' },
     { q: 'Is there a warranty?',
-      a: 'Yes — we warrant against manufacturing defects. The period varies by product type and is confirmed in the quote.' }
+      a: 'Yes — we warrant against product defects. The period varies by product type and is confirmed in the quote.' }
   ]
 };
 

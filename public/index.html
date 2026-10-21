@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>سوق مصرية فيبر جلاس | جودة فائقة .. تدوم طويلاً</title>
-<meta name="description" content="سوق مصرية فيبر جلاس — تصنيع أبراج تبريد، كرفانات، أجزاء أتوبيسات وسيارات، رووف كيرب وسكاي لايت، عزل أسطح ومداخن، جريتينج وهندريل، أحواض زهور، حمامات سباحة وغيرها. اطلب عبر واتساب.">
+<meta name="description" content="سوق مصرية فيبر جلاس — توفير أبراج تبريد، كرفانات، أجزاء أتوبيسات وسيارات، رووف كيرب وسكاي لايت، عزل أسطح ومداخن، جريتينج وهندريل، أحواض زهور، حمامات سباحة وغيرها. اطلب عبر واتساب.">
 <link rel="icon" href="assets/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@
         <span class="hero__title-gold">منتجات فيبر جلاس لكل الاحتياجات</span>
       </h1>
       <div class="hero__rule"></div>
-      <p class="hero__lead">نصنع في مصنعنا منتجات فيبر جلاس عالية الجودة تلبي احتياجات مختلف القطاعات بكفاءة ومتانة استثنائية.</p>
+      <p class="hero__lead">بنوفّرلك منتجات فيبر جلاس عالية الجودة تلبي احتياجات مختلف القطاعات بكفاءة ومتانة استثنائية.</p>
       <div class="hero__chips" id="heroChips"></div>
       <div class="hero__btns">
         <a class="btn btn-gold btn-lg" href="products.html">استكشف منتجاتنا <span id="heroArrow"></span></a>
@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <!-- كولاج من صور المصنع الحقيقية -->
+    <!-- كولاج من صور الشركة الحقيقية -->
     <div class="hero__shots" id="heroShots"></div>
   </div>
 
@@ -55,7 +55,7 @@
 <section class="section">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow">أقسام المصنع</span>
+      <span class="eyebrow">أقسامنا</span>
       <h2 class="sec-title">منتجات فيبر جلاس <span>لكل الاحتياجات</span></h2>
       <p class="sec-sub" id="catsSub"></p>
       <div class="divider"></div>
@@ -64,18 +64,18 @@
   </div>
 </section>
 
-<!-- ============ عن المصنع ============ -->
+<!-- ============ عن الشركة ============ -->
 <section class="section section--soft">
   <div class="container about-split">
     <div class="about-media reveal">
-      <div class="about-media__main"><img src="assets/img/products/caravans/05.webp" alt="كرفانات فيبر جلاس من إنتاج المصنع" loading="lazy"></div>
+      <div class="about-media__main"><img src="assets/img/products/caravans/05.webp" alt="كرفانات فيبر جلاس من أعمالنا" loading="lazy"></div>
       <div class="about-media__sub"><img src="assets/img/products/cooling-towers/06.webp" alt="أبراج تبريد فيبر جلاس" loading="lazy"></div>
       <div class="about-media__badge" id="aboutBadge"></div>
     </div>
     <div class="reveal d1">
       <div class="sec-head sec-head--start">
         <span class="eyebrow">من نحن</span>
-        <h2 class="sec-title">تصنيع الفيبر جلاس <span>لكل القطاعات</span></h2>
+        <h2 class="sec-title">توفير الفيبر جلاس <span>لكل القطاعات</span></h2>
         <div class="divider"></div>
       </div>
       <p id="aboutText"></p>
@@ -140,7 +140,7 @@
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">معرض الصور</span>
-      <h2 class="sec-title">من <span>إنتاج المصنع</span></h2>
+      <h2 class="sec-title">من <span>أعمالنا</span></h2>
       <div class="divider"></div>
     </div>
     <div class="gallery reveal" id="galleryGrid"></div>
@@ -169,7 +169,7 @@ boot(function () {
   /* شرائح الهيرو (الموبايل) */
   $('#heroChips').innerHTML = [
     ['shield', 'متانة عالية ومقاومة للتآكل'],
-    ['gear',   'تصنيع وفق أعلى المعايير'],
+    ['gear',   'مطابق لأعلى المعايير'],
     ['check',  'حلول مخصصة تناسب احتياجك']
   ].map(([i, t]) => `<span class="hero__chip">${icon(i)}${t}</span>`).join('');
   $('#heroArrow').innerHTML = icon('arrow');
@@ -200,7 +200,7 @@ boot(function () {
   /* المزايا السريعة */
   $('#quickGrid').innerHTML = [
     ['award',   'جودة معتمدة',      'خامات أصلية ومطابقة للمواصفات القياسية'],
-    ['ruler',   'تصنيع حسب الطلب',  'أي مقاس أو لون أو شكل تحتاجه'],
+    ['ruler',   'توفير حسب الطلب',  'أي مقاس أو لون أو شكل تحتاجه'],
     ['truck',   'توريد لكل المحافظات', 'أسطول نقل خاص وفرق تركيب معتمدة'],
     ['headset', 'دعم فني دائم',     'استشارة هندسية مجانية قبل الشراء']
   ].map(([i, t, d], n) => `
@@ -212,9 +212,9 @@ boot(function () {
   /* الأقسام */
   $('#catsGrid').innerHTML = CATEGORIES.map(categoryCard).join('');
 
-  /* قائمة «عن المصنع» */
+  /* قائمة «عن الشركة» */
   $('#aboutList').innerHTML = [
-    'تصنيع حسب الرسم والمقاس المطلوب — من القطعة الواحدة إلى التوريدات الكبيرة',
+    'توفير حسب الرسم والمقاس المطلوب — من القطعة الواحدة إلى التوريدات الكبيرة',
     'خبرة في قطاعات متعددة: المصانع، النقل، المقاولات، المرافق والمستشفيات',
     'خامات أصلية وطبقة جل كوت خارجية تحمي السطح من الشمس والرطوبة',
     'توريد وتركيب في الموقع مع متابعة فنية بعد التسليم'
@@ -222,15 +222,15 @@ boot(function () {
 
   /* نبذة ونصوص مشتقة من البيانات الفعلية */
   $('#aboutText').textContent = SITE.about;
-  $('#aboutBadge').innerHTML = `<b>${CATEGORIES.length}</b><span>قسم إنتاج</span>`;
+  $('#aboutBadge').innerHTML = `<b>${CATEGORIES.length}</b><span>قسم</span>`;
   $('#catsSub').textContent =
     `${CATEGORIES.length} قسماً يغطي احتياجات المصانع والنقل والمقاولات والمرافق، ` +
-    `بـ ${PRODUCTS.length} منتجاً معروضاً بالصور — وأي مقاس آخر يُصنَّع حسب الطلب.`;
+    `بـ ${PRODUCTS.length} منتجاً معروضاً بالصور — وأي مقاس آخر يتوفّر حسب الطلب.`;
   $('#allProductsBtn').textContent = `عرض كل المنتجات (${PRODUCTS.length} منتج)`;
 
-  /* الإحصائيات — أرقام حقيقية من كتالوج المصنع */
+  /* الإحصائيات — أرقام حقيقية من كتالوج الشركة */
   $('#statsGrid').innerHTML = [
-    { n: CATEGORIES.length, suffix: '',   label: 'قسم إنتاج' },
+    { n: CATEGORIES.length, suffix: '',   label: 'قسم' },
     { n: PRODUCTS.length,   suffix: '',   label: 'منتج معروض بالصور' },
     { n: 5000,              suffix: '',   label: 'طن تبريد — أقصى سعة برج' },
     { n: 10,                suffix: '',   label: 'طن تبريد — أصغر سعة برج' }

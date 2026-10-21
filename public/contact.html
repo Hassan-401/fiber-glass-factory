@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>تواصل معنا | سوق مصرية فيبر جلاس</title>
-<meta name="description" content="تواصل مع مصنع سوق مصرية فيبر جلاس — واتساب، تليفون، وعنوان المصنع.">
+<meta name="description" content="تواصل مع شركة سوق مصرية فيبر جلاس — واتساب، تليفون، وعنوان الشركة.">
 <link rel="icon" href="assets/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
 
     <div class="reveal">
       <div class="sec-head sec-head--start">
-        <span class="eyebrow">بيانات المصنع</span>
+        <span class="eyebrow">بيانات الشركة</span>
         <h2 class="sec-title">نسعد <span>بتواصلك</span></h2>
         <div class="divider"></div>
       </div>
@@ -102,13 +102,13 @@
 <section class="section section--tight section--soft">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow">موقع المصنع</span>
+      <span class="eyebrow">موقع الشركة</span>
       <h2 class="sec-title">تجدنا <span>هنا</span></h2>
       <p class="sec-sub" id="addrLine"></p>
       <div class="divider"></div>
     </div>
     <div class="map reveal">
-      <iframe id="map" title="موقع المصنع على الخريطة" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe id="map" title="موقع الشركة على الخريطة" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>
@@ -145,7 +145,7 @@ boot(function () {
 
   /* بطاقات البيانات */
   $('#infoStack').innerHTML = [
-    ['pin',   'عنوان المصنع', `<span>${SITE.address}</span>`],
+    ['pin',   'عنوان الشركة', `<span>${SITE.address}</span>`],
     ['phone', 'أرقام الهاتف',
       [[SITE.phone1, ''], [SITE.phone2, ''], [SITE.landline, ' (أرضي)']]
         .filter(([n]) => n)

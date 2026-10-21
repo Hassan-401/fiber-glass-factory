@@ -103,7 +103,7 @@ function renderHeader() {
       <nav class="nav">
         <ul class="nav__list">
           <li><a href="index.html"${on('home')}>الرئيسية</a></li>
-          <li><a href="about.html"${on('about')}>عن المصنع</a></li>
+          <li><a href="about.html"${on('about')}>عن الشركة</a></li>
           <li class="has-drop">
             <a href="categories.html"${on('categories')}>الأقسام ${icon('chevron','caret')}</a>
             <div class="drop">
@@ -139,7 +139,7 @@ function renderHeader() {
       <div class="drawer__lang">${langToggleHTML()}</div>
       <nav class="drawer__nav">
         <a href="index.html"${on('home')}>الرئيسية</a>
-        <a href="about.html"${on('about')}>عن المصنع</a>
+        <a href="about.html"${on('about')}>عن الشركة</a>
         <a href="categories.html"${on('categories')}>الأقسام</a>
         <a href="products.html"${on('products')}>كل المنتجات</a>
         <a href="gallery.html"${on('gallery')}>معرض الصور</a>
@@ -182,7 +182,7 @@ function renderFooter() {
           <h4>روابط سريعة</h4>
           <ul class="footer__links">
             <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="about.html">عن المصنع</a></li>
+            <li><a href="about.html">عن الشركة</a></li>
             <li><a href="categories.html">أقسام المنتجات</a></li>
             <li><a href="products.html">كل المنتجات</a></li>
             <li><a href="gallery.html">معرض الصور</a></li>
@@ -237,7 +237,7 @@ function renderFooter() {
 
       ${SITE.demo ? `<div class="demo-note">
         ⚠️ نسخة تجريبية — أرقام التواصل والعناوين وروابط السوشيال ميديا مؤقتة لأغراض العرض فقط.
-        المنتجات والصور حقيقية من المصنع.
+        المنتجات والصور حقيقية من الشركة.
       </div>` : ''}
 
       <div class="footer__bottom">

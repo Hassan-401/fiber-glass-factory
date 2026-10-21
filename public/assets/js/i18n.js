@@ -43,13 +43,13 @@ function L(obj, field) {
 
 /* ---------- قاموس الواجهة ---------- */
 const UI = {
-  /* اسم المصنع — يُستخدم في عنوان الصفحة */
+  /* اسم الشركة — يُستخدم في عنوان الصفحة */
   'سوق مصرية فيبر جلاس': 'Souq Masreya Fiberglass',
   'سوق مصرية': 'Souq Masreya',
 
   /* التنقل والهيدر */
   'الرئيسية': 'Home',
-  'عن المصنع': 'About',
+  'عن الشركة': 'About',
   'الأقسام': 'Categories',
   'المنتجات': 'Products',
   'معرض الصور': 'Gallery',
@@ -68,10 +68,10 @@ const UI = {
   /* الهيرو */
   'جودة فائقة .. تدوم طويلاً': 'Outstanding quality .. built to last',
   'منتجات فيبر جلاس لكل الاحتياجات': 'Fiberglass products for every need',
-  'نصنع في مصنعنا منتجات فيبر جلاس عالية الجودة تلبي احتياجات مختلف القطاعات بكفاءة ومتانة استثنائية.':
-    'We manufacture high-quality fiberglass products that serve a wide range of sectors with exceptional efficiency and durability.',
+  'بنوفّرلك منتجات فيبر جلاس عالية الجودة تلبي احتياجات مختلف القطاعات بكفاءة ومتانة استثنائية.':
+    'We supply high-quality fiberglass products that serve a wide range of sectors with exceptional efficiency and durability.',
   'متانة عالية ومقاومة للتآكل': 'Highly durable and corrosion-resistant',
-  'تصنيع وفق أعلى المعايير': 'Manufactured to the highest standards',
+  'مطابق لأعلى المعايير': 'Meets the highest standards',
   'حلول مخصصة تناسب احتياجك': 'Custom solutions built around your needs',
   'استكشف منتجاتنا': 'Explore our products',
   'اطلب عبر واتساب': 'Order on WhatsApp',
@@ -79,7 +79,7 @@ const UI = {
   /* المزايا السريعة */
   'جودة معتمدة': 'Certified quality',
   'خامات أصلية ومطابقة للمواصفات القياسية': 'Genuine materials that meet standard specifications',
-  'تصنيع حسب الطلب': 'Made to order',
+  'توفير حسب الطلب': 'Available to order',
   'أي مقاس أو لون أو شكل تحتاجه': 'Any size, colour or shape you need',
   'توريد لكل المحافظات': 'Delivery nationwide',
   'أسطول نقل خاص وفرق تركيب معتمدة': 'Our own transport fleet and certified installation teams',
@@ -87,13 +87,13 @@ const UI = {
   'استشارة هندسية مجانية قبل الشراء': 'Free engineering consultation before you buy',
 
   /* عناوين الأقسام */
-  'أقسام المصنع': 'Our divisions',
+  'أقسامنا': 'Our divisions',
   'منتجات فيبر جلاس': 'Fiberglass products',
   'لكل الاحتياجات': 'for every need',
   'من نحن': 'About us',
-  'تصنيع الفيبر جلاس': 'Fiberglass manufacturing',
+  'توفير الفيبر جلاس': 'Fiberglass supply',
   'لكل القطاعات': 'for every sector',
-  'قسم إنتاج': 'production divisions',
+  'قسم': 'divisions',
   'منتج معروض بالصور': 'products shown with photos',
   'طن تبريد — أقصى سعة برج': 'tons — largest cooling tower',
   'طن تبريد — أصغر سعة برج': 'tons — smallest cooling tower',
@@ -112,7 +112,7 @@ const UI = {
   'التركيب': 'installation',
   'في أربع خطوات': 'in four steps',
   'لقطات من': 'A look at',
-  'إنتاج المصنع': 'what we build',
+  'أعمالنا': 'our work',
   'جاهزون لتنفيذ طلبك مهما كان حجمه': 'Ready to handle your order, whatever its size',
   'أرسل لنا المواصفات أو الرسم المطلوب وسيتواصل معك القسم الهندسي بعرض سعر مفصل خلال 48 ساعة.':
     'Send us your specifications or drawing and our engineering team will come back with a detailed quote within 48 hours.',
@@ -122,9 +122,9 @@ const UI = {
   'عرض التفاصيل': 'View details',
   'اطلب الآن': 'Order now',
   'الصور قريباً': 'Photos coming soon',
-  'حسب الطلب': 'Made to order',
+  'حسب الطلب': 'Available to order',
 
-  /* عن المصنع */
+  /* عن الشركة */
   'قصتنا': 'Our story',
   'مبادئنا': 'Our principles',
   'الرؤية و': 'Vision, ',
@@ -134,7 +134,7 @@ const UI = {
   'رسالتنا': 'Our mission',
   'قيمنا': 'Our values',
   'أن نكون الاسم الأول في صناعة الفيبر جلاس في مصر والشرق الأوسط، بمنتجات تنافس المستورد جودةً وسعراً.':
-    'To be the leading fiberglass manufacturer in Egypt and the Middle East, with products that match imported quality at a fair price.',
+    'To be the leading fiberglass supplyr in Egypt and the Middle East, with products that match imported quality at a fair price.',
   'تقديم حلول فيبر جلاس متكاملة تجمع بين الجودة الهندسية والسعر العادل والالتزام بمواعيد التسليم.':
     'To deliver complete fiberglass solutions that combine engineering quality, fair pricing and on-time delivery.',
   'الأمانة في الخامة، والوضوح في السعر، والاحترام في التعامل، والالتزام بما نعد به عملاءنا.':
@@ -159,10 +159,10 @@ const UI = {
   'ابدأ مشروعك معنا اليوم': 'Start your project with us today',
   'فريقنا الهندسي جاهز لدراسة احتياجك وتقديم أفضل حل بأنسب تكلفة.':
     'Our engineering team is ready to study your requirements and propose the best solution at the right cost.',
-  'مصنع متخصص في تصنيع منتجات الفيبر جلاس لمختلف القطاعات — تصنيع حسب الرسم والمقاس المطلوب.':
-    'A factory specialised in fiberglass products for a wide range of sectors — manufactured to your drawing and dimensions.',
-  'تصنيع حسب الرسم والمقاس المطلوب — من القطعة الواحدة إلى التوريدات الكبيرة':
-    'Made to your drawing and dimensions — from a single piece to large supply contracts',
+  'شركة متخصصة في توفير منتجات الفيبر جلاس لمختلف القطاعات — توفير حسب الرسم والمقاس المطلوب.':
+    'A company specialised in supplying fiberglass products for a wide range of sectors — supplied to your drawing and dimensions.',
+  'توفير حسب الرسم والمقاس المطلوب — من القطعة الواحدة إلى التوريدات الكبيرة':
+    'Supplied to your drawing and dimensions — from a single piece to large supply contracts',
   'خبرة في قطاعات متعددة: المصانع، النقل، المقاولات، المرافق والمستشفيات':
     'Experience across many sectors: industry, transport, contracting, utilities and hospitals',
   'خامات أصلية وطبقة جل كوت خارجية تحمي السطح من الشمس والرطوبة':
@@ -170,7 +170,7 @@ const UI = {
   'توريد وتركيب في الموقع مع متابعة فنية بعد التسليم':
     'Delivery and on-site installation with technical follow-up after handover',
   'توريد وتركيب في الموقع مع متابعة بعد التسليم': 'Delivery and on-site installation with follow-up after handover',
-  'تصنيع حسب الرسم والمقاس — مش مقاسات جاهزة بس': 'Made to your drawing and dimensions — not just off-the-shelf sizes',
+  'توفير حسب الرسم والمقاس — مش مقاسات جاهزة بس': 'Supplied to your drawing and dimensions — not just off-the-shelf sizes',
   'أبراج تبريد دائرية ومربعة من 10 طن حتى 5000 طن تبريد':
     'Round and square cooling towers from 10 up to 5,000 tons',
   'شغلنا بيغطي قطاعات مختلفة: المصانع (أبراج التبريد وتبطين الخزانات وعزل الأسطح والمداخن)، والنقل (أجزاء الأتوبيسات والسيارات وشيتات العربات المثلجة)، والمقاولات والمرافق (الكرفانات والجريتينج والهندريل وأغطية البلاعات ورووف كيرب والسكاي لايت)، بالإضافة للحدائق وحمامات السباحة وأحواض الزهور والزحاليق.':
@@ -190,13 +190,13 @@ const UI = {
   'اسأل عن منتجك': 'Ask about your product',
   'تصفح أكثر من ١١٠ منتج فيبر جلاس، واطلب أي منتج مباشرة عبر واتساب بضغطة واحدة.':
     'Browse our fiberglass catalogue and order any product on WhatsApp with a single tap.',
-  'القسم ده شغّال في المصنع وبننفّذه حسب الطلب، بس لسه منزّلناش صوره على الموقع. ابعتلنا على واتساب بالمقاس أو الرسم المطلوب ونرد عليك بالتفاصيل والسعر.':
-    'We do produce this line to order — we just haven’t uploaded its photos yet. Send us the size or drawing on WhatsApp and we’ll come back with details and pricing.',
+  'القسم ده متوفّر عندنا وبنوفّره حسب الطلب، بس لسه منزّلناش صوره على الموقع. ابعتلنا على واتساب بالمقاس أو الرسم المطلوب ونرد عليك بالتفاصيل والسعر.':
+    'We do supply this line to order — we just haven’t uploaded its photos yet. Send us the size or drawing on WhatsApp and we’ll come back with details and pricing.',
   'لم تجد ما تبحث عنه؟': 'Didn’t find what you need?',
   'ننفذ': 'We build',
   'أي مقاس أو شكل': 'any size or shape',
-  'ننفذ أي منتج فيبر جلاس حسب الرسم أو الفكرة أو حتى صورة ترسلها لنا. تواصل معنا وسنتولى الباقي.':
-    'We can produce any fiberglass item from a drawing, an idea, or even a photo you send us. Get in touch and we’ll handle the rest.',
+  'بنوفّر أي منتج فيبر جلاس حسب الرسم أو الفكرة أو حتى صورة ترسلها لنا. تواصل معنا وسنتولى الباقي.':
+    'We can supply any fiberglass item from a drawing, an idea, or even a photo you send us. Get in touch and we’ll handle the rest.',
   'تواصل عبر واتساب': 'Chat on WhatsApp',
   'أرسل استفسارك': 'Send your enquiry',
 
@@ -213,7 +213,7 @@ const UI = {
   'كود المنتج': 'Product code',
   'المقاسات': 'Sizes',
   'الخامة': 'Material',
-  'تُنفَّذ حسب الطلب — ابعتلنا المقاس المطلوب': 'Made to order — send us the size you need',
+  'تتوفّر حسب الطلب — ابعتلنا المقاس المطلوب': 'Available to order — send us the size you need',
   'فيبر جلاس (راتنج + ألياف زجاجية) بطبقة جل كوت خارجية':
     'Fiberglass (resin + glass fibre) with an outer gel-coat layer',
   'مميزات الفيبر جلاس': 'Why fiberglass',
@@ -221,7 +221,7 @@ const UI = {
   'خفيف الوزن مقارنة بالحديد والخرسانة — أسهل في النقل والتركيب':
     'Much lighter than steel or concrete — easier to transport and install',
   'عازل للكهرباء والحرارة': 'Electrically and thermally insulating',
-  'يُصنَّع بأي مقاس أو لون أو شكل حسب الرسم': 'Made in any size, colour or shape to your drawing',
+  'يتوفّر بأي مقاس أو لون أو شكل حسب الرسم': 'Available in any size, colour or shape to your drawing',
   'اطلب هذا المنتج عبر واتساب': 'Order this product on WhatsApp',
   'اتصل بنا': 'Call us',
   'مشاركة': 'Share',
@@ -240,7 +240,7 @@ const UI = {
   'بتواصلك': 'hear from you',
   'فريقنا في خدمتك — اختر الطريقة الأنسب لك، وسنرد على استفسارك في أسرع وقت.':
     'Our team is here to help — pick whichever channel suits you and we’ll reply as soon as we can.',
-  'عنوان المصنع': 'Factory address',
+  'عنوان الشركة': 'Company address',
   'أرقام الهاتف': 'Phone',
   'البريد الإلكتروني': 'Email',
   'مواعيد العمل': 'Working hours',
@@ -274,10 +274,10 @@ const UI = {
   'من فضلك أكمل الحقول المطلوبة': 'Please complete the required fields',
   'تم تجهيز رسالة واتساب — اضغط إرسال داخل التطبيق':
     'Your WhatsApp message is ready — just hit send in the app',
-  'موقع المصنع': 'Factory location',
+  'موقع الشركة': 'Company location',
   'تجدنا': 'Find us',
   'هنا': 'here',
-  'موقع المصنع على الخريطة': 'Factory location on the map',
+  'موقع الشركة على الخريطة': 'Company location on the map',
   'الأسئلة الشائعة': 'FAQ',
   'أكثر ما يُسأل': 'Frequently asked',
   'إجابات على': 'Answers to',
@@ -306,7 +306,7 @@ const UI = {
   'الصفحة الرئيسية': 'Home page',
 
   /* معرض الصور */
-  'كل صور إنتاج المصنع في مكان واحد — اضغط أي صورة لعرضها بالحجم الكامل.':
+  'كل صور أعمالنا في مكان واحد — اضغط أي صورة لعرضها بالحجم الكامل.':
     'Every photo of our work in one place — tap any image to view it full size.',
   'كل الصور': 'All photos',
   'صورة': 'photo',
@@ -316,7 +316,7 @@ const UI = {
   'إغلاق المعرض': 'Close viewer',
 
   /* عام */
-  'بيانات المصنع': 'Factory details',
+  'بيانات الشركة': 'Company details',
   'طلبك': 'your order',
   'كيف': 'How',
   'من': 'from'
@@ -326,7 +326,7 @@ const UI = {
 const RX = [
   [/^(\d[\d,٬.٠-٩]*)\s+منتج$/, (m, n) => `${n} product${n === '1' ? '' : 's'}`],
   [/^(\d[\d,٬.٠-٩]*)\s+صور(?:ة)?$/, (m, n) => `${n} photo${n === '1' ? '' : 's'}`],
-  [/^(\d[\d,٬.٠-٩]*)\s+قسم إنتاج$/, (m, n) => `${n} production divisions`],
+  [/^(\d[\d,٬.٠-٩]*)\s+قسم$/, (m, n) => `${n} divisions`],
   [/^الكود:\s*(.+)$/, (m, c) => `Code: ${c}`],
   [/^صورة\s+(\d+)$/, (m, n) => `Image ${n}`],
   [/^زوار هذا الشهر\s*\((.+)\)$/, (m, mo) => `Visitors this month (${mo})`],
@@ -337,12 +337,12 @@ const RX = [
   [/^اسأل عن\s+(.+)$/, (m, name) => `Ask about ${name}`],
   [/^(.+?)\s+—\s+الصور قريباً$/, (m, name) => `${name} — photos coming soon`],
   [/^عرض كل المنتجات\s*\((\d+)\s*منتج\)$/, (m, n) => `View all products (${n})`],
-  [/^(\d+)\s*قسماً يغطي احتياجات المصانع والنقل والمقاولات والمرافق،\s*بـ\s*(\d+)\s*منتجاً معروضاً بالصور — وأي مقاس آخر يُصنَّع حسب الطلب\.$/,
-    (m, c, p) => `${c} divisions covering industry, transport, contracting and utilities, with ${p} products shown in photos — and any other size made to order.`],
-  [/^(\d+)\s*قسم إنتاج يغطي المصانع والنقل والمقاولات والمرافق$/,
-    (m, c) => `${c} production divisions covering industry, transport, contracting and utilities`],
-  [/^(\d+)\s*قسماً متكاملاً يضم أكثر من .+ منتج فيبر جلاس — جاهز أو مصنّع حسب الطلب\.$/,
-    (m, c) => `${c} complete divisions covering our full fiberglass range — in stock or made to order.`]
+  [/^(\d+)\s*قسماً يغطي احتياجات المصانع والنقل والمقاولات والمرافق،\s*بـ\s*(\d+)\s*منتجاً معروضاً بالصور — وأي مقاس آخر يتوفّر حسب الطلب\.$/,
+    (m, c, p) => `${c} divisions covering industry, transport, contracting and utilities, with ${p} products shown in photos — and any other size available to order.`],
+  [/^(\d+)\s*قسم يغطي المصانع والنقل والمقاولات والمرافق$/,
+    (m, c) => `${c} divisions covering industry, transport, contracting and utilities`],
+  [/^(\d+)\s*قسماً متكاملاً يضم أكثر من .+ منتج فيبر جلاس — جاهز أو متوفّر حسب الطلب\.$/,
+    (m, c) => `${c} complete divisions covering our full fiberglass range — in stock or available to order.`]
 ];
 
 function tr(s) {
