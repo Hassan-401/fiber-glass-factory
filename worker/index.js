@@ -225,9 +225,15 @@ async function api(req, env, url, ctx) {
     const id = p.slice('/api/img/'.length);
     const r = await env.DB.prepare('SELECT mime, data FROM uploads WHERE id = ?').bind(id).first();
     if (!r) return new Response('غير موجود', { status: 404 });
-    return new Response(r.data, {
+    // D1 بترجّع الـ BLOB كمصفوفة أرقام — لازم نحوّلها لبايتات قبل الإرسال
+    let bytes = r.data;
+    if (Array.isArray(bytes)) bytes = new Uint8Array(bytes);
+    else if (bytes instanceof ArrayBuffer) bytes = new Uint8Array(bytes);
+    else if (typeof bytes === 'string') bytes = Uint8Array.from(atob(bytes), c => c.charCodeAt(0));
+    return new Response(bytes, {
       headers: {
         'Content-Type': r.mime,
+        'Content-Length': String(bytes.byteLength),
         'Cache-Control': 'public, max-age=31536000, immutable'
       }
     });

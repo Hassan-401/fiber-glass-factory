@@ -12,7 +12,7 @@ const SITE = {
   name: 'سوق مصرية فيبر جلاس',
   short: 'سوق مصرية',
   tagline: 'جودة فائقة .. تدوم طويلاً',
-  logo: 'assets/img/logo.png',
+  logo: 'assets/img/logo.webp',
 
   /* ---------- وضع العرض ---------- */
   demo: false,                     // true = يظهر تنبيه أن بيانات التواصل مؤقتة

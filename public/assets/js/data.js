@@ -12,7 +12,7 @@ const CATEGORIES = [
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "icon": "tower",
     "count": 24,
-    "img": "assets/img/products/cooling-towers/01.png"
+    "img": "assets/img/products/cooling-towers/01.webp"
   },
   {
     "id": "bus-parts",
@@ -21,7 +21,7 @@ const CATEGORIES = [
     "desc": "أكصدامات فيبر جلاس، وش أتوبيس فيبر جلاس، وجميع أجزاء الأتوبيسات والسيارات من الفيبر جلاس.",
     "icon": "bus",
     "count": 6,
-    "img": "assets/img/products/bus-parts/01.jpg"
+    "img": "assets/img/products/bus-parts/01.webp"
   },
   {
     "id": "planters",
@@ -30,7 +30,7 @@ const CATEGORIES = [
     "desc": "جميع أنواع أحواض الزهور فيبر جلاس، مربعة ودائرية، بمقاسات وألوان مختلفة.",
     "icon": "planter",
     "count": 11,
-    "img": "assets/img/products/planters/01.jpg"
+    "img": "assets/img/products/planters/01.webp"
   },
   {
     "id": "light-poles",
@@ -39,7 +39,7 @@ const CATEGORIES = [
     "desc": "أعمدة إنارة فيبر جلاس بمقاسات وتصميمات مختلفة، خفيفة الوزن وعازلة للكهرباء ومقاومة للصدأ.",
     "icon": "lamp",
     "count": 3,
-    "img": "assets/img/products/light-poles/01.jpg"
+    "img": "assets/img/products/light-poles/01.webp"
   },
   {
     "id": "tank-lining",
@@ -48,7 +48,7 @@ const CATEGORIES = [
     "desc": "تبطين أحواض وخزانات الحديد والخرسانة بالفيبر جلاس المقاوم للكيماويات.",
     "icon": "lining",
     "count": 2,
-    "img": "assets/img/products/tank-lining/01.jpg"
+    "img": "assets/img/products/tank-lining/01.webp"
   },
   {
     "id": "pools",
@@ -57,7 +57,7 @@ const CATEGORIES = [
     "desc": "وحدات حمامات السباحة والمنطّات وجميع مقاسات حمامات السباحة فيبر جلاس.",
     "icon": "pool",
     "count": 5,
-    "img": "assets/img/products/pools/01.jpg"
+    "img": "assets/img/products/pools/01.webp"
   },
   {
     "id": "roof-curb",
@@ -66,7 +66,7 @@ const CATEGORIES = [
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "icon": "roof",
     "count": 18,
-    "img": "assets/img/products/roof-curb/01.jpg"
+    "img": "assets/img/products/roof-curb/01.webp"
   },
   {
     "id": "slides",
@@ -75,7 +75,7 @@ const CATEGORIES = [
     "desc": "زحاليق فيبر جلاس للأطفال بمقاسات وألوان مختلفة، آمنة وسطح ناعم لا يسبب احتكاكاً.",
     "icon": "slide",
     "count": 2,
-    "img": "assets/img/products/slides/01.jpg"
+    "img": "assets/img/products/slides/01.webp"
   },
   {
     "id": "skylight",
@@ -84,7 +84,7 @@ const CATEGORIES = [
     "desc": "ألواح شفافة ومعرجة فيبر جلاس لإضاءة وتغطية المنشآت.",
     "icon": "skylight",
     "count": 1,
-    "img": "assets/img/products/skylight/01.jpg"
+    "img": "assets/img/products/skylight/01.webp"
   },
   {
     "id": "reefer-panels",
@@ -93,7 +93,7 @@ const CATEGORIES = [
     "desc": "شيتات وبلمات فيبر جلاس للعربات المثلجة.",
     "icon": "truck",
     "count": 2,
-    "img": "assets/img/products/reefer-panels/01.jpg"
+    "img": "assets/img/products/reefer-panels/01.webp"
   },
   {
     "id": "roof-insulation",
@@ -102,7 +102,7 @@ const CATEGORIES = [
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "icon": "shield",
     "count": 17,
-    "img": "assets/img/products/roof-insulation/01.jpg"
+    "img": "assets/img/products/roof-insulation/01.webp"
   },
   {
     "id": "grating",
@@ -111,7 +111,7 @@ const CATEGORIES = [
     "desc": "جميع مقاسات مشايات الفيبر جلاس (الجريتينج) والهندريل والسلالم والأسوار.",
     "icon": "grating",
     "count": 2,
-    "img": "assets/img/products/grating/01.jpg"
+    "img": "assets/img/products/grating/01.webp"
   },
   {
     "id": "caravans",
@@ -120,7 +120,7 @@ const CATEGORIES = [
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "icon": "caravan",
     "count": 55,
-    "img": "assets/img/products/caravans/01.jpg"
+    "img": "assets/img/products/caravans/01.webp"
   },
   {
     "id": "medical-covers",
@@ -165,7 +165,7 @@ const CATEGORIES = [
     "desc": "أغطية بلاعات فيبر جلاس خفيفة الوزن وغير قابلة للصدأ أو السرقة.",
     "icon": "manhole",
     "count": 3,
-    "img": "assets/img/products/manhole-covers/01.jpg"
+    "img": "assets/img/products/manhole-covers/01.webp"
   }
 ];
 
@@ -177,9 +177,9 @@ const PRODUCTS = [
     "group": "برج تبريد دائري",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": true,
-    "img": "assets/img/products/cooling-towers/01.png",
+    "img": "assets/img/products/cooling-towers/01.webp",
     "images": [
-      "assets/img/products/cooling-towers/01.png"
+      "assets/img/products/cooling-towers/01.webp"
     ]
   },
   {
@@ -189,9 +189,9 @@ const PRODUCTS = [
     "group": "برج تبريد دائري",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/02.png",
+    "img": "assets/img/products/cooling-towers/02.webp",
     "images": [
-      "assets/img/products/cooling-towers/02.png"
+      "assets/img/products/cooling-towers/02.webp"
     ]
   },
   {
@@ -201,9 +201,9 @@ const PRODUCTS = [
     "group": "برج تبريد دائري",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/03.jpg",
+    "img": "assets/img/products/cooling-towers/03.webp",
     "images": [
-      "assets/img/products/cooling-towers/03.jpg"
+      "assets/img/products/cooling-towers/03.webp"
     ]
   },
   {
@@ -213,9 +213,9 @@ const PRODUCTS = [
     "group": "برج تبريد دائري",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/04.jpg",
+    "img": "assets/img/products/cooling-towers/04.webp",
     "images": [
-      "assets/img/products/cooling-towers/04.jpg"
+      "assets/img/products/cooling-towers/04.webp"
     ]
   },
   {
@@ -225,9 +225,9 @@ const PRODUCTS = [
     "group": "برج تبريد دائري",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/05.jpg",
+    "img": "assets/img/products/cooling-towers/05.webp",
     "images": [
-      "assets/img/products/cooling-towers/05.jpg"
+      "assets/img/products/cooling-towers/05.webp"
     ]
   },
   {
@@ -237,9 +237,9 @@ const PRODUCTS = [
     "group": "برج تبريد دائري",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/06.jpg",
+    "img": "assets/img/products/cooling-towers/06.webp",
     "images": [
-      "assets/img/products/cooling-towers/06.jpg"
+      "assets/img/products/cooling-towers/06.webp"
     ]
   },
   {
@@ -249,9 +249,9 @@ const PRODUCTS = [
     "group": "برج تبريد دائري",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/07.jpg",
+    "img": "assets/img/products/cooling-towers/07.webp",
     "images": [
-      "assets/img/products/cooling-towers/07.jpg"
+      "assets/img/products/cooling-towers/07.webp"
     ]
   },
   {
@@ -261,9 +261,9 @@ const PRODUCTS = [
     "group": "برج تبريد دائري",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/08.jpg",
+    "img": "assets/img/products/cooling-towers/08.webp",
     "images": [
-      "assets/img/products/cooling-towers/08.jpg"
+      "assets/img/products/cooling-towers/08.webp"
     ]
   },
   {
@@ -273,9 +273,9 @@ const PRODUCTS = [
     "group": "برج تبريد دائري",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/09.jpg",
+    "img": "assets/img/products/cooling-towers/09.webp",
     "images": [
-      "assets/img/products/cooling-towers/09.jpg"
+      "assets/img/products/cooling-towers/09.webp"
     ]
   },
   {
@@ -285,9 +285,9 @@ const PRODUCTS = [
     "group": "برج تبريد مربع",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/10.jpg",
+    "img": "assets/img/products/cooling-towers/10.webp",
     "images": [
-      "assets/img/products/cooling-towers/10.jpg"
+      "assets/img/products/cooling-towers/10.webp"
     ]
   },
   {
@@ -297,9 +297,9 @@ const PRODUCTS = [
     "group": "برج تبريد مربع",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/11.jpg",
+    "img": "assets/img/products/cooling-towers/11.webp",
     "images": [
-      "assets/img/products/cooling-towers/11.jpg"
+      "assets/img/products/cooling-towers/11.webp"
     ]
   },
   {
@@ -309,9 +309,9 @@ const PRODUCTS = [
     "group": "برج تبريد مربع",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/12.jpg",
+    "img": "assets/img/products/cooling-towers/12.webp",
     "images": [
-      "assets/img/products/cooling-towers/12.jpg"
+      "assets/img/products/cooling-towers/12.webp"
     ]
   },
   {
@@ -321,9 +321,9 @@ const PRODUCTS = [
     "group": "برج تبريد مربع",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/13.jpg",
+    "img": "assets/img/products/cooling-towers/13.webp",
     "images": [
-      "assets/img/products/cooling-towers/13.jpg"
+      "assets/img/products/cooling-towers/13.webp"
     ]
   },
   {
@@ -333,9 +333,9 @@ const PRODUCTS = [
     "group": "برج تبريد مربع",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/14.jpg",
+    "img": "assets/img/products/cooling-towers/14.webp",
     "images": [
-      "assets/img/products/cooling-towers/14.jpg"
+      "assets/img/products/cooling-towers/14.webp"
     ]
   },
   {
@@ -345,9 +345,9 @@ const PRODUCTS = [
     "group": "برج تبريد مربع",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/15.jpg",
+    "img": "assets/img/products/cooling-towers/15.webp",
     "images": [
-      "assets/img/products/cooling-towers/15.jpg"
+      "assets/img/products/cooling-towers/15.webp"
     ]
   },
   {
@@ -357,9 +357,9 @@ const PRODUCTS = [
     "group": "برج تبريد مربع",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/16.jpg",
+    "img": "assets/img/products/cooling-towers/16.webp",
     "images": [
-      "assets/img/products/cooling-towers/16.jpg"
+      "assets/img/products/cooling-towers/16.webp"
     ]
   },
   {
@@ -369,9 +369,9 @@ const PRODUCTS = [
     "group": "حشو أبراج التبريد",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/17.jpg",
+    "img": "assets/img/products/cooling-towers/17.webp",
     "images": [
-      "assets/img/products/cooling-towers/17.jpg"
+      "assets/img/products/cooling-towers/17.webp"
     ]
   },
   {
@@ -381,9 +381,9 @@ const PRODUCTS = [
     "group": "حشو أبراج التبريد",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/18.jpg",
+    "img": "assets/img/products/cooling-towers/18.webp",
     "images": [
-      "assets/img/products/cooling-towers/18.jpg"
+      "assets/img/products/cooling-towers/18.webp"
     ]
   },
   {
@@ -393,9 +393,9 @@ const PRODUCTS = [
     "group": "حشو أبراج التبريد",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/19.jpg",
+    "img": "assets/img/products/cooling-towers/19.webp",
     "images": [
-      "assets/img/products/cooling-towers/19.jpg"
+      "assets/img/products/cooling-towers/19.webp"
     ]
   },
   {
@@ -405,9 +405,9 @@ const PRODUCTS = [
     "group": "حشو أبراج التبريد",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/20.jpg",
+    "img": "assets/img/products/cooling-towers/20.webp",
     "images": [
-      "assets/img/products/cooling-towers/20.jpg"
+      "assets/img/products/cooling-towers/20.webp"
     ]
   },
   {
@@ -417,9 +417,9 @@ const PRODUCTS = [
     "group": "حشو أبراج التبريد",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/21.jpg",
+    "img": "assets/img/products/cooling-towers/21.webp",
     "images": [
-      "assets/img/products/cooling-towers/21.jpg"
+      "assets/img/products/cooling-towers/21.webp"
     ]
   },
   {
@@ -429,9 +429,9 @@ const PRODUCTS = [
     "group": "حشو أبراج التبريد",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/22.jpg",
+    "img": "assets/img/products/cooling-towers/22.webp",
     "images": [
-      "assets/img/products/cooling-towers/22.jpg"
+      "assets/img/products/cooling-towers/22.webp"
     ]
   },
   {
@@ -441,9 +441,9 @@ const PRODUCTS = [
     "group": "حشو أبراج التبريد",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/23.jpg",
+    "img": "assets/img/products/cooling-towers/23.webp",
     "images": [
-      "assets/img/products/cooling-towers/23.jpg"
+      "assets/img/products/cooling-towers/23.webp"
     ]
   },
   {
@@ -453,9 +453,9 @@ const PRODUCTS = [
     "group": "حشو أبراج التبريد",
     "desc": "أبراج تبريد من الفيبر جلاس المقاوم للتآكل، دائرية ومربعة، من 10 طن تبريد إلى 5000 طن تبريد.",
     "featured": false,
-    "img": "assets/img/products/cooling-towers/24.jpg",
+    "img": "assets/img/products/cooling-towers/24.webp",
     "images": [
-      "assets/img/products/cooling-towers/24.jpg"
+      "assets/img/products/cooling-towers/24.webp"
     ]
   },
   {
@@ -465,9 +465,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "أكصدامات فيبر جلاس، وش أتوبيس فيبر جلاس، وجميع أجزاء الأتوبيسات والسيارات من الفيبر جلاس.",
     "featured": true,
-    "img": "assets/img/products/bus-parts/01.jpg",
+    "img": "assets/img/products/bus-parts/01.webp",
     "images": [
-      "assets/img/products/bus-parts/01.jpg"
+      "assets/img/products/bus-parts/01.webp"
     ]
   },
   {
@@ -477,9 +477,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "أكصدامات فيبر جلاس، وش أتوبيس فيبر جلاس، وجميع أجزاء الأتوبيسات والسيارات من الفيبر جلاس.",
     "featured": false,
-    "img": "assets/img/products/bus-parts/02.jpg",
+    "img": "assets/img/products/bus-parts/02.webp",
     "images": [
-      "assets/img/products/bus-parts/02.jpg"
+      "assets/img/products/bus-parts/02.webp"
     ]
   },
   {
@@ -489,9 +489,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "أكصدامات فيبر جلاس، وش أتوبيس فيبر جلاس، وجميع أجزاء الأتوبيسات والسيارات من الفيبر جلاس.",
     "featured": false,
-    "img": "assets/img/products/bus-parts/03.jpg",
+    "img": "assets/img/products/bus-parts/03.webp",
     "images": [
-      "assets/img/products/bus-parts/03.jpg"
+      "assets/img/products/bus-parts/03.webp"
     ]
   },
   {
@@ -501,9 +501,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "أكصدامات فيبر جلاس، وش أتوبيس فيبر جلاس، وجميع أجزاء الأتوبيسات والسيارات من الفيبر جلاس.",
     "featured": false,
-    "img": "assets/img/products/bus-parts/04.jpg",
+    "img": "assets/img/products/bus-parts/04.webp",
     "images": [
-      "assets/img/products/bus-parts/04.jpg"
+      "assets/img/products/bus-parts/04.webp"
     ]
   },
   {
@@ -513,9 +513,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "أكصدامات فيبر جلاس، وش أتوبيس فيبر جلاس، وجميع أجزاء الأتوبيسات والسيارات من الفيبر جلاس.",
     "featured": false,
-    "img": "assets/img/products/bus-parts/05.jpg",
+    "img": "assets/img/products/bus-parts/05.webp",
     "images": [
-      "assets/img/products/bus-parts/05.jpg"
+      "assets/img/products/bus-parts/05.webp"
     ]
   },
   {
@@ -525,9 +525,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "أكصدامات فيبر جلاس، وش أتوبيس فيبر جلاس، وجميع أجزاء الأتوبيسات والسيارات من الفيبر جلاس.",
     "featured": false,
-    "img": "assets/img/products/bus-parts/06.jpg",
+    "img": "assets/img/products/bus-parts/06.webp",
     "images": [
-      "assets/img/products/bus-parts/06.jpg"
+      "assets/img/products/bus-parts/06.webp"
     ]
   },
   {
@@ -537,9 +537,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع أنواع أحواض الزهور فيبر جلاس، مربعة ودائرية، بمقاسات وألوان مختلفة.",
     "featured": true,
-    "img": "assets/img/products/planters/01.jpg",
+    "img": "assets/img/products/planters/01.webp",
     "images": [
-      "assets/img/products/planters/01.jpg"
+      "assets/img/products/planters/01.webp"
     ]
   },
   {
@@ -549,9 +549,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع أنواع أحواض الزهور فيبر جلاس، مربعة ودائرية، بمقاسات وألوان مختلفة.",
     "featured": false,
-    "img": "assets/img/products/planters/02.jpg",
+    "img": "assets/img/products/planters/02.webp",
     "images": [
-      "assets/img/products/planters/02.jpg"
+      "assets/img/products/planters/02.webp"
     ]
   },
   {
@@ -561,9 +561,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع أنواع أحواض الزهور فيبر جلاس، مربعة ودائرية، بمقاسات وألوان مختلفة.",
     "featured": false,
-    "img": "assets/img/products/planters/03.jpg",
+    "img": "assets/img/products/planters/03.webp",
     "images": [
-      "assets/img/products/planters/03.jpg"
+      "assets/img/products/planters/03.webp"
     ]
   },
   {
@@ -573,9 +573,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع أنواع أحواض الزهور فيبر جلاس، مربعة ودائرية، بمقاسات وألوان مختلفة.",
     "featured": false,
-    "img": "assets/img/products/planters/04.jpg",
+    "img": "assets/img/products/planters/04.webp",
     "images": [
-      "assets/img/products/planters/04.jpg"
+      "assets/img/products/planters/04.webp"
     ]
   },
   {
@@ -585,9 +585,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع أنواع أحواض الزهور فيبر جلاس، مربعة ودائرية، بمقاسات وألوان مختلفة.",
     "featured": false,
-    "img": "assets/img/products/planters/05.jpg",
+    "img": "assets/img/products/planters/05.webp",
     "images": [
-      "assets/img/products/planters/05.jpg"
+      "assets/img/products/planters/05.webp"
     ]
   },
   {
@@ -597,9 +597,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع أنواع أحواض الزهور فيبر جلاس، مربعة ودائرية، بمقاسات وألوان مختلفة.",
     "featured": false,
-    "img": "assets/img/products/planters/06.jpg",
+    "img": "assets/img/products/planters/06.webp",
     "images": [
-      "assets/img/products/planters/06.jpg"
+      "assets/img/products/planters/06.webp"
     ]
   },
   {
@@ -609,9 +609,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع أنواع أحواض الزهور فيبر جلاس، مربعة ودائرية، بمقاسات وألوان مختلفة.",
     "featured": false,
-    "img": "assets/img/products/planters/07.jpg",
+    "img": "assets/img/products/planters/07.webp",
     "images": [
-      "assets/img/products/planters/07.jpg"
+      "assets/img/products/planters/07.webp"
     ]
   },
   {
@@ -621,9 +621,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع أنواع أحواض الزهور فيبر جلاس، مربعة ودائرية، بمقاسات وألوان مختلفة.",
     "featured": false,
-    "img": "assets/img/products/planters/08.jpg",
+    "img": "assets/img/products/planters/08.webp",
     "images": [
-      "assets/img/products/planters/08.jpg"
+      "assets/img/products/planters/08.webp"
     ]
   },
   {
@@ -633,9 +633,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع أنواع أحواض الزهور فيبر جلاس، مربعة ودائرية، بمقاسات وألوان مختلفة.",
     "featured": false,
-    "img": "assets/img/products/planters/09.jpg",
+    "img": "assets/img/products/planters/09.webp",
     "images": [
-      "assets/img/products/planters/09.jpg"
+      "assets/img/products/planters/09.webp"
     ]
   },
   {
@@ -645,9 +645,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع أنواع أحواض الزهور فيبر جلاس، مربعة ودائرية، بمقاسات وألوان مختلفة.",
     "featured": false,
-    "img": "assets/img/products/planters/10.jpg",
+    "img": "assets/img/products/planters/10.webp",
     "images": [
-      "assets/img/products/planters/10.jpg"
+      "assets/img/products/planters/10.webp"
     ]
   },
   {
@@ -657,9 +657,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع أنواع أحواض الزهور فيبر جلاس، مربعة ودائرية، بمقاسات وألوان مختلفة.",
     "featured": false,
-    "img": "assets/img/products/planters/11.jpg",
+    "img": "assets/img/products/planters/11.webp",
     "images": [
-      "assets/img/products/planters/11.jpg"
+      "assets/img/products/planters/11.webp"
     ]
   },
   {
@@ -669,9 +669,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "أعمدة إنارة فيبر جلاس بمقاسات وتصميمات مختلفة، خفيفة الوزن وعازلة للكهرباء ومقاومة للصدأ.",
     "featured": true,
-    "img": "assets/img/products/light-poles/01.jpg",
+    "img": "assets/img/products/light-poles/01.webp",
     "images": [
-      "assets/img/products/light-poles/01.jpg"
+      "assets/img/products/light-poles/01.webp"
     ]
   },
   {
@@ -681,9 +681,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "أعمدة إنارة فيبر جلاس بمقاسات وتصميمات مختلفة، خفيفة الوزن وعازلة للكهرباء ومقاومة للصدأ.",
     "featured": false,
-    "img": "assets/img/products/light-poles/02.jpg",
+    "img": "assets/img/products/light-poles/02.webp",
     "images": [
-      "assets/img/products/light-poles/02.jpg"
+      "assets/img/products/light-poles/02.webp"
     ]
   },
   {
@@ -693,9 +693,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "أعمدة إنارة فيبر جلاس بمقاسات وتصميمات مختلفة، خفيفة الوزن وعازلة للكهرباء ومقاومة للصدأ.",
     "featured": false,
-    "img": "assets/img/products/light-poles/03.jpg",
+    "img": "assets/img/products/light-poles/03.webp",
     "images": [
-      "assets/img/products/light-poles/03.jpg"
+      "assets/img/products/light-poles/03.webp"
     ]
   },
   {
@@ -705,9 +705,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "تبطين أحواض وخزانات الحديد والخرسانة بالفيبر جلاس المقاوم للكيماويات.",
     "featured": true,
-    "img": "assets/img/products/tank-lining/01.jpg",
+    "img": "assets/img/products/tank-lining/01.webp",
     "images": [
-      "assets/img/products/tank-lining/01.jpg"
+      "assets/img/products/tank-lining/01.webp"
     ]
   },
   {
@@ -717,9 +717,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "تبطين أحواض وخزانات الحديد والخرسانة بالفيبر جلاس المقاوم للكيماويات.",
     "featured": false,
-    "img": "assets/img/products/tank-lining/02.jpg",
+    "img": "assets/img/products/tank-lining/02.webp",
     "images": [
-      "assets/img/products/tank-lining/02.jpg"
+      "assets/img/products/tank-lining/02.webp"
     ]
   },
   {
@@ -729,9 +729,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "وحدات حمامات السباحة والمنطّات وجميع مقاسات حمامات السباحة فيبر جلاس.",
     "featured": true,
-    "img": "assets/img/products/pools/01.jpg",
+    "img": "assets/img/products/pools/01.webp",
     "images": [
-      "assets/img/products/pools/01.jpg"
+      "assets/img/products/pools/01.webp"
     ]
   },
   {
@@ -741,10 +741,10 @@ const PRODUCTS = [
     "group": null,
     "desc": "وحدات حمامات السباحة والمنطّات وجميع مقاسات حمامات السباحة فيبر جلاس.",
     "featured": false,
-    "img": "assets/img/products/pools/02.jpg",
+    "img": "assets/img/products/pools/02.webp",
     "images": [
-      "assets/img/products/pools/02.jpg",
-      "assets/img/products/pools/03.jpg"
+      "assets/img/products/pools/02.webp",
+      "assets/img/products/pools/03.webp"
     ]
   },
   {
@@ -754,9 +754,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "وحدات حمامات السباحة والمنطّات وجميع مقاسات حمامات السباحة فيبر جلاس.",
     "featured": false,
-    "img": "assets/img/products/pools/04.jpg",
+    "img": "assets/img/products/pools/04.webp",
     "images": [
-      "assets/img/products/pools/04.jpg"
+      "assets/img/products/pools/04.webp"
     ]
   },
   {
@@ -766,9 +766,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "وحدات حمامات السباحة والمنطّات وجميع مقاسات حمامات السباحة فيبر جلاس.",
     "featured": false,
-    "img": "assets/img/products/pools/05.jpg",
+    "img": "assets/img/products/pools/05.webp",
     "images": [
-      "assets/img/products/pools/05.jpg"
+      "assets/img/products/pools/05.webp"
     ]
   },
   {
@@ -778,9 +778,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "وحدات حمامات السباحة والمنطّات وجميع مقاسات حمامات السباحة فيبر جلاس.",
     "featured": false,
-    "img": "assets/img/products/pools/06.jpg",
+    "img": "assets/img/products/pools/06.webp",
     "images": [
-      "assets/img/products/pools/06.jpg"
+      "assets/img/products/pools/06.webp"
     ]
   },
   {
@@ -790,9 +790,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": true,
-    "img": "assets/img/products/roof-curb/01.jpg",
+    "img": "assets/img/products/roof-curb/01.webp",
     "images": [
-      "assets/img/products/roof-curb/01.jpg"
+      "assets/img/products/roof-curb/01.webp"
     ]
   },
   {
@@ -802,9 +802,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": false,
-    "img": "assets/img/products/roof-curb/02.jpg",
+    "img": "assets/img/products/roof-curb/02.webp",
     "images": [
-      "assets/img/products/roof-curb/02.jpg"
+      "assets/img/products/roof-curb/02.webp"
     ]
   },
   {
@@ -814,9 +814,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": false,
-    "img": "assets/img/products/roof-curb/03.jpg",
+    "img": "assets/img/products/roof-curb/03.webp",
     "images": [
-      "assets/img/products/roof-curb/03.jpg"
+      "assets/img/products/roof-curb/03.webp"
     ]
   },
   {
@@ -826,9 +826,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": false,
-    "img": "assets/img/products/roof-curb/04.jpg",
+    "img": "assets/img/products/roof-curb/04.webp",
     "images": [
-      "assets/img/products/roof-curb/04.jpg"
+      "assets/img/products/roof-curb/04.webp"
     ]
   },
   {
@@ -838,10 +838,10 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": false,
-    "img": "assets/img/products/roof-curb/05.jpg",
+    "img": "assets/img/products/roof-curb/05.webp",
     "images": [
-      "assets/img/products/roof-curb/05.jpg",
-      "assets/img/products/roof-curb/16.jpg"
+      "assets/img/products/roof-curb/05.webp",
+      "assets/img/products/roof-curb/16.webp"
     ]
   },
   {
@@ -851,10 +851,10 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": false,
-    "img": "assets/img/products/roof-curb/06.jpg",
+    "img": "assets/img/products/roof-curb/06.webp",
     "images": [
-      "assets/img/products/roof-curb/06.jpg",
-      "assets/img/products/roof-curb/15.jpg"
+      "assets/img/products/roof-curb/06.webp",
+      "assets/img/products/roof-curb/15.webp"
     ]
   },
   {
@@ -864,10 +864,10 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": false,
-    "img": "assets/img/products/roof-curb/07.jpg",
+    "img": "assets/img/products/roof-curb/07.webp",
     "images": [
-      "assets/img/products/roof-curb/07.jpg",
-      "assets/img/products/roof-curb/14.jpg"
+      "assets/img/products/roof-curb/07.webp",
+      "assets/img/products/roof-curb/14.webp"
     ]
   },
   {
@@ -877,9 +877,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": false,
-    "img": "assets/img/products/roof-curb/08.jpg",
+    "img": "assets/img/products/roof-curb/08.webp",
     "images": [
-      "assets/img/products/roof-curb/08.jpg"
+      "assets/img/products/roof-curb/08.webp"
     ]
   },
   {
@@ -889,9 +889,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": false,
-    "img": "assets/img/products/roof-curb/09.jpg",
+    "img": "assets/img/products/roof-curb/09.webp",
     "images": [
-      "assets/img/products/roof-curb/09.jpg"
+      "assets/img/products/roof-curb/09.webp"
     ]
   },
   {
@@ -901,9 +901,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": false,
-    "img": "assets/img/products/roof-curb/10.jpg",
+    "img": "assets/img/products/roof-curb/10.webp",
     "images": [
-      "assets/img/products/roof-curb/10.jpg"
+      "assets/img/products/roof-curb/10.webp"
     ]
   },
   {
@@ -913,9 +913,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": false,
-    "img": "assets/img/products/roof-curb/11.jpg",
+    "img": "assets/img/products/roof-curb/11.webp",
     "images": [
-      "assets/img/products/roof-curb/11.jpg"
+      "assets/img/products/roof-curb/11.webp"
     ]
   },
   {
@@ -925,9 +925,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": false,
-    "img": "assets/img/products/roof-curb/12.jpg",
+    "img": "assets/img/products/roof-curb/12.webp",
     "images": [
-      "assets/img/products/roof-curb/12.jpg"
+      "assets/img/products/roof-curb/12.webp"
     ]
   },
   {
@@ -937,9 +937,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": false,
-    "img": "assets/img/products/roof-curb/13.jpg",
+    "img": "assets/img/products/roof-curb/13.webp",
     "images": [
-      "assets/img/products/roof-curb/13.jpg"
+      "assets/img/products/roof-curb/13.webp"
     ]
   },
   {
@@ -949,9 +949,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": false,
-    "img": "assets/img/products/roof-curb/17.jpg",
+    "img": "assets/img/products/roof-curb/17.webp",
     "images": [
-      "assets/img/products/roof-curb/17.jpg"
+      "assets/img/products/roof-curb/17.webp"
     ]
   },
   {
@@ -961,9 +961,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": false,
-    "img": "assets/img/products/roof-curb/18.jpg",
+    "img": "assets/img/products/roof-curb/18.webp",
     "images": [
-      "assets/img/products/roof-curb/18.jpg"
+      "assets/img/products/roof-curb/18.webp"
     ]
   },
   {
@@ -973,9 +973,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": false,
-    "img": "assets/img/products/roof-curb/19.jpg",
+    "img": "assets/img/products/roof-curb/19.webp",
     "images": [
-      "assets/img/products/roof-curb/19.jpg"
+      "assets/img/products/roof-curb/19.webp"
     ]
   },
   {
@@ -985,9 +985,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": false,
-    "img": "assets/img/products/roof-curb/20.jpg",
+    "img": "assets/img/products/roof-curb/20.webp",
     "images": [
-      "assets/img/products/roof-curb/20.jpg"
+      "assets/img/products/roof-curb/20.webp"
     ]
   },
   {
@@ -997,9 +997,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "رووف كيرب فيبر جلاس مربعة ودائرية لأعمال شفط الهواء.",
     "featured": false,
-    "img": "assets/img/products/roof-curb/21.jpg",
+    "img": "assets/img/products/roof-curb/21.webp",
     "images": [
-      "assets/img/products/roof-curb/21.jpg"
+      "assets/img/products/roof-curb/21.webp"
     ]
   },
   {
@@ -1009,9 +1009,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "زحاليق فيبر جلاس للأطفال بمقاسات وألوان مختلفة، آمنة وسطح ناعم لا يسبب احتكاكاً.",
     "featured": true,
-    "img": "assets/img/products/slides/01.jpg",
+    "img": "assets/img/products/slides/01.webp",
     "images": [
-      "assets/img/products/slides/01.jpg"
+      "assets/img/products/slides/01.webp"
     ]
   },
   {
@@ -1021,9 +1021,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "زحاليق فيبر جلاس للأطفال بمقاسات وألوان مختلفة، آمنة وسطح ناعم لا يسبب احتكاكاً.",
     "featured": false,
-    "img": "assets/img/products/slides/02.jpg",
+    "img": "assets/img/products/slides/02.webp",
     "images": [
-      "assets/img/products/slides/02.jpg"
+      "assets/img/products/slides/02.webp"
     ]
   },
   {
@@ -1033,9 +1033,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "ألواح شفافة ومعرجة فيبر جلاس لإضاءة وتغطية المنشآت.",
     "featured": true,
-    "img": "assets/img/products/skylight/01.jpg",
+    "img": "assets/img/products/skylight/01.webp",
     "images": [
-      "assets/img/products/skylight/01.jpg"
+      "assets/img/products/skylight/01.webp"
     ]
   },
   {
@@ -1045,9 +1045,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "شيتات وبلمات فيبر جلاس للعربات المثلجة.",
     "featured": true,
-    "img": "assets/img/products/reefer-panels/01.jpg",
+    "img": "assets/img/products/reefer-panels/01.webp",
     "images": [
-      "assets/img/products/reefer-panels/01.jpg"
+      "assets/img/products/reefer-panels/01.webp"
     ]
   },
   {
@@ -1057,9 +1057,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "شيتات وبلمات فيبر جلاس للعربات المثلجة.",
     "featured": false,
-    "img": "assets/img/products/reefer-panels/02.jpg",
+    "img": "assets/img/products/reefer-panels/02.webp",
     "images": [
-      "assets/img/products/reefer-panels/02.jpg"
+      "assets/img/products/reefer-panels/02.webp"
     ]
   },
   {
@@ -1069,9 +1069,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "featured": true,
-    "img": "assets/img/products/roof-insulation/01.jpg",
+    "img": "assets/img/products/roof-insulation/01.webp",
     "images": [
-      "assets/img/products/roof-insulation/01.jpg"
+      "assets/img/products/roof-insulation/01.webp"
     ]
   },
   {
@@ -1081,9 +1081,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "featured": false,
-    "img": "assets/img/products/roof-insulation/02.jpg",
+    "img": "assets/img/products/roof-insulation/02.webp",
     "images": [
-      "assets/img/products/roof-insulation/02.jpg"
+      "assets/img/products/roof-insulation/02.webp"
     ]
   },
   {
@@ -1093,9 +1093,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "featured": false,
-    "img": "assets/img/products/roof-insulation/03.jpg",
+    "img": "assets/img/products/roof-insulation/03.webp",
     "images": [
-      "assets/img/products/roof-insulation/03.jpg"
+      "assets/img/products/roof-insulation/03.webp"
     ]
   },
   {
@@ -1105,9 +1105,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "featured": false,
-    "img": "assets/img/products/roof-insulation/04.jpg",
+    "img": "assets/img/products/roof-insulation/04.webp",
     "images": [
-      "assets/img/products/roof-insulation/04.jpg"
+      "assets/img/products/roof-insulation/04.webp"
     ]
   },
   {
@@ -1117,9 +1117,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "featured": false,
-    "img": "assets/img/products/roof-insulation/05.jpg",
+    "img": "assets/img/products/roof-insulation/05.webp",
     "images": [
-      "assets/img/products/roof-insulation/05.jpg"
+      "assets/img/products/roof-insulation/05.webp"
     ]
   },
   {
@@ -1129,9 +1129,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "featured": false,
-    "img": "assets/img/products/roof-insulation/06.jpg",
+    "img": "assets/img/products/roof-insulation/06.webp",
     "images": [
-      "assets/img/products/roof-insulation/06.jpg"
+      "assets/img/products/roof-insulation/06.webp"
     ]
   },
   {
@@ -1141,9 +1141,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "featured": false,
-    "img": "assets/img/products/roof-insulation/07.jpg",
+    "img": "assets/img/products/roof-insulation/07.webp",
     "images": [
-      "assets/img/products/roof-insulation/07.jpg"
+      "assets/img/products/roof-insulation/07.webp"
     ]
   },
   {
@@ -1153,10 +1153,10 @@ const PRODUCTS = [
     "group": null,
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "featured": false,
-    "img": "assets/img/products/roof-insulation/08.jpg",
+    "img": "assets/img/products/roof-insulation/08.webp",
     "images": [
-      "assets/img/products/roof-insulation/08.jpg",
-      "assets/img/products/roof-insulation/18.jpg"
+      "assets/img/products/roof-insulation/08.webp",
+      "assets/img/products/roof-insulation/18.webp"
     ]
   },
   {
@@ -1166,9 +1166,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "featured": false,
-    "img": "assets/img/products/roof-insulation/09.jpg",
+    "img": "assets/img/products/roof-insulation/09.webp",
     "images": [
-      "assets/img/products/roof-insulation/09.jpg"
+      "assets/img/products/roof-insulation/09.webp"
     ]
   },
   {
@@ -1178,9 +1178,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "featured": false,
-    "img": "assets/img/products/roof-insulation/10.jpg",
+    "img": "assets/img/products/roof-insulation/10.webp",
     "images": [
-      "assets/img/products/roof-insulation/10.jpg"
+      "assets/img/products/roof-insulation/10.webp"
     ]
   },
   {
@@ -1190,11 +1190,11 @@ const PRODUCTS = [
     "group": null,
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "featured": false,
-    "img": "assets/img/products/roof-insulation/11.jpg",
+    "img": "assets/img/products/roof-insulation/11.webp",
     "images": [
-      "assets/img/products/roof-insulation/11.jpg",
-      "assets/img/products/roof-insulation/13.jpg",
-      "assets/img/products/roof-insulation/17.jpg"
+      "assets/img/products/roof-insulation/11.webp",
+      "assets/img/products/roof-insulation/13.webp",
+      "assets/img/products/roof-insulation/17.webp"
     ]
   },
   {
@@ -1204,9 +1204,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "featured": false,
-    "img": "assets/img/products/roof-insulation/12.jpg",
+    "img": "assets/img/products/roof-insulation/12.webp",
     "images": [
-      "assets/img/products/roof-insulation/12.jpg"
+      "assets/img/products/roof-insulation/12.webp"
     ]
   },
   {
@@ -1216,9 +1216,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "featured": false,
-    "img": "assets/img/products/roof-insulation/14.jpg",
+    "img": "assets/img/products/roof-insulation/14.webp",
     "images": [
-      "assets/img/products/roof-insulation/14.jpg"
+      "assets/img/products/roof-insulation/14.webp"
     ]
   },
   {
@@ -1228,9 +1228,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "featured": false,
-    "img": "assets/img/products/roof-insulation/15.jpg",
+    "img": "assets/img/products/roof-insulation/15.webp",
     "images": [
-      "assets/img/products/roof-insulation/15.jpg"
+      "assets/img/products/roof-insulation/15.webp"
     ]
   },
   {
@@ -1240,9 +1240,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "featured": false,
-    "img": "assets/img/products/roof-insulation/16.jpg",
+    "img": "assets/img/products/roof-insulation/16.webp",
     "images": [
-      "assets/img/products/roof-insulation/16.jpg"
+      "assets/img/products/roof-insulation/16.webp"
     ]
   },
   {
@@ -1252,9 +1252,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "featured": false,
-    "img": "assets/img/products/roof-insulation/19.jpg",
+    "img": "assets/img/products/roof-insulation/19.webp",
     "images": [
-      "assets/img/products/roof-insulation/19.jpg"
+      "assets/img/products/roof-insulation/19.webp"
     ]
   },
   {
@@ -1264,9 +1264,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "عزل الأسطح الحديدية والمداخن بالفيبر جلاس ضد خرير المياه والتآكل.",
     "featured": false,
-    "img": "assets/img/products/roof-insulation/20.jpg",
+    "img": "assets/img/products/roof-insulation/20.webp",
     "images": [
-      "assets/img/products/roof-insulation/20.jpg"
+      "assets/img/products/roof-insulation/20.webp"
     ]
   },
   {
@@ -1276,9 +1276,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات مشايات الفيبر جلاس (الجريتينج) والهندريل والسلالم والأسوار.",
     "featured": true,
-    "img": "assets/img/products/grating/01.jpg",
+    "img": "assets/img/products/grating/01.webp",
     "images": [
-      "assets/img/products/grating/01.jpg"
+      "assets/img/products/grating/01.webp"
     ]
   },
   {
@@ -1288,9 +1288,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات مشايات الفيبر جلاس (الجريتينج) والهندريل والسلالم والأسوار.",
     "featured": false,
-    "img": "assets/img/products/grating/02.jpg",
+    "img": "assets/img/products/grating/02.webp",
     "images": [
-      "assets/img/products/grating/02.jpg"
+      "assets/img/products/grating/02.webp"
     ]
   },
   {
@@ -1300,12 +1300,12 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": true,
-    "img": "assets/img/products/caravans/01.jpg",
+    "img": "assets/img/products/caravans/01.webp",
     "images": [
-      "assets/img/products/caravans/01.jpg",
-      "assets/img/products/caravans/25.jpg",
-      "assets/img/products/caravans/27.jpg",
-      "assets/img/products/caravans/28.jpg"
+      "assets/img/products/caravans/01.webp",
+      "assets/img/products/caravans/25.webp",
+      "assets/img/products/caravans/27.webp",
+      "assets/img/products/caravans/28.webp"
     ]
   },
   {
@@ -1315,9 +1315,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/02.jpg",
+    "img": "assets/img/products/caravans/02.webp",
     "images": [
-      "assets/img/products/caravans/02.jpg"
+      "assets/img/products/caravans/02.webp"
     ]
   },
   {
@@ -1327,9 +1327,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/03.jpg",
+    "img": "assets/img/products/caravans/03.webp",
     "images": [
-      "assets/img/products/caravans/03.jpg"
+      "assets/img/products/caravans/03.webp"
     ]
   },
   {
@@ -1339,9 +1339,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/04.jpg",
+    "img": "assets/img/products/caravans/04.webp",
     "images": [
-      "assets/img/products/caravans/04.jpg"
+      "assets/img/products/caravans/04.webp"
     ]
   },
   {
@@ -1351,9 +1351,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/05.jpg",
+    "img": "assets/img/products/caravans/05.webp",
     "images": [
-      "assets/img/products/caravans/05.jpg"
+      "assets/img/products/caravans/05.webp"
     ]
   },
   {
@@ -1363,9 +1363,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/06.jpg",
+    "img": "assets/img/products/caravans/06.webp",
     "images": [
-      "assets/img/products/caravans/06.jpg"
+      "assets/img/products/caravans/06.webp"
     ]
   },
   {
@@ -1375,9 +1375,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/07.jpg",
+    "img": "assets/img/products/caravans/07.webp",
     "images": [
-      "assets/img/products/caravans/07.jpg"
+      "assets/img/products/caravans/07.webp"
     ]
   },
   {
@@ -1387,9 +1387,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/08.jpg",
+    "img": "assets/img/products/caravans/08.webp",
     "images": [
-      "assets/img/products/caravans/08.jpg"
+      "assets/img/products/caravans/08.webp"
     ]
   },
   {
@@ -1399,10 +1399,10 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/09.jpg",
+    "img": "assets/img/products/caravans/09.webp",
     "images": [
-      "assets/img/products/caravans/09.jpg",
-      "assets/img/products/caravans/10.jpg"
+      "assets/img/products/caravans/09.webp",
+      "assets/img/products/caravans/10.webp"
     ]
   },
   {
@@ -1412,9 +1412,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/11.jpg",
+    "img": "assets/img/products/caravans/11.webp",
     "images": [
-      "assets/img/products/caravans/11.jpg"
+      "assets/img/products/caravans/11.webp"
     ]
   },
   {
@@ -1424,9 +1424,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/12.jpg",
+    "img": "assets/img/products/caravans/12.webp",
     "images": [
-      "assets/img/products/caravans/12.jpg"
+      "assets/img/products/caravans/12.webp"
     ]
   },
   {
@@ -1436,9 +1436,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/13.jpg",
+    "img": "assets/img/products/caravans/13.webp",
     "images": [
-      "assets/img/products/caravans/13.jpg"
+      "assets/img/products/caravans/13.webp"
     ]
   },
   {
@@ -1448,9 +1448,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/14.jpg",
+    "img": "assets/img/products/caravans/14.webp",
     "images": [
-      "assets/img/products/caravans/14.jpg"
+      "assets/img/products/caravans/14.webp"
     ]
   },
   {
@@ -1460,10 +1460,10 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/15.jpg",
+    "img": "assets/img/products/caravans/15.webp",
     "images": [
-      "assets/img/products/caravans/15.jpg",
-      "assets/img/products/caravans/17.jpg"
+      "assets/img/products/caravans/15.webp",
+      "assets/img/products/caravans/17.webp"
     ]
   },
   {
@@ -1473,9 +1473,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/16.jpg",
+    "img": "assets/img/products/caravans/16.webp",
     "images": [
-      "assets/img/products/caravans/16.jpg"
+      "assets/img/products/caravans/16.webp"
     ]
   },
   {
@@ -1485,9 +1485,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/18.jpg",
+    "img": "assets/img/products/caravans/18.webp",
     "images": [
-      "assets/img/products/caravans/18.jpg"
+      "assets/img/products/caravans/18.webp"
     ]
   },
   {
@@ -1497,9 +1497,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/19.jpg",
+    "img": "assets/img/products/caravans/19.webp",
     "images": [
-      "assets/img/products/caravans/19.jpg"
+      "assets/img/products/caravans/19.webp"
     ]
   },
   {
@@ -1509,9 +1509,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/20.jpg",
+    "img": "assets/img/products/caravans/20.webp",
     "images": [
-      "assets/img/products/caravans/20.jpg"
+      "assets/img/products/caravans/20.webp"
     ]
   },
   {
@@ -1521,9 +1521,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/21.jpg",
+    "img": "assets/img/products/caravans/21.webp",
     "images": [
-      "assets/img/products/caravans/21.jpg"
+      "assets/img/products/caravans/21.webp"
     ]
   },
   {
@@ -1533,9 +1533,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/22.jpg",
+    "img": "assets/img/products/caravans/22.webp",
     "images": [
-      "assets/img/products/caravans/22.jpg"
+      "assets/img/products/caravans/22.webp"
     ]
   },
   {
@@ -1545,9 +1545,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/23.jpg",
+    "img": "assets/img/products/caravans/23.webp",
     "images": [
-      "assets/img/products/caravans/23.jpg"
+      "assets/img/products/caravans/23.webp"
     ]
   },
   {
@@ -1557,9 +1557,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/24.jpg",
+    "img": "assets/img/products/caravans/24.webp",
     "images": [
-      "assets/img/products/caravans/24.jpg"
+      "assets/img/products/caravans/24.webp"
     ]
   },
   {
@@ -1569,9 +1569,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/26.jpg",
+    "img": "assets/img/products/caravans/26.webp",
     "images": [
-      "assets/img/products/caravans/26.jpg"
+      "assets/img/products/caravans/26.webp"
     ]
   },
   {
@@ -1581,9 +1581,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/29.jpg",
+    "img": "assets/img/products/caravans/29.webp",
     "images": [
-      "assets/img/products/caravans/29.jpg"
+      "assets/img/products/caravans/29.webp"
     ]
   },
   {
@@ -1593,9 +1593,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/30.jpg",
+    "img": "assets/img/products/caravans/30.webp",
     "images": [
-      "assets/img/products/caravans/30.jpg"
+      "assets/img/products/caravans/30.webp"
     ]
   },
   {
@@ -1605,9 +1605,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/31.jpg",
+    "img": "assets/img/products/caravans/31.webp",
     "images": [
-      "assets/img/products/caravans/31.jpg"
+      "assets/img/products/caravans/31.webp"
     ]
   },
   {
@@ -1617,9 +1617,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/32.jpg",
+    "img": "assets/img/products/caravans/32.webp",
     "images": [
-      "assets/img/products/caravans/32.jpg"
+      "assets/img/products/caravans/32.webp"
     ]
   },
   {
@@ -1629,9 +1629,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/33.jpg",
+    "img": "assets/img/products/caravans/33.webp",
     "images": [
-      "assets/img/products/caravans/33.jpg"
+      "assets/img/products/caravans/33.webp"
     ]
   },
   {
@@ -1641,9 +1641,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/34.jpg",
+    "img": "assets/img/products/caravans/34.webp",
     "images": [
-      "assets/img/products/caravans/34.jpg"
+      "assets/img/products/caravans/34.webp"
     ]
   },
   {
@@ -1653,9 +1653,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/35.jpg",
+    "img": "assets/img/products/caravans/35.webp",
     "images": [
-      "assets/img/products/caravans/35.jpg"
+      "assets/img/products/caravans/35.webp"
     ]
   },
   {
@@ -1665,9 +1665,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/36.jpg",
+    "img": "assets/img/products/caravans/36.webp",
     "images": [
-      "assets/img/products/caravans/36.jpg"
+      "assets/img/products/caravans/36.webp"
     ]
   },
   {
@@ -1677,9 +1677,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/37.jpg",
+    "img": "assets/img/products/caravans/37.webp",
     "images": [
-      "assets/img/products/caravans/37.jpg"
+      "assets/img/products/caravans/37.webp"
     ]
   },
   {
@@ -1689,9 +1689,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/38.jpg",
+    "img": "assets/img/products/caravans/38.webp",
     "images": [
-      "assets/img/products/caravans/38.jpg"
+      "assets/img/products/caravans/38.webp"
     ]
   },
   {
@@ -1701,9 +1701,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/39.jpg",
+    "img": "assets/img/products/caravans/39.webp",
     "images": [
-      "assets/img/products/caravans/39.jpg"
+      "assets/img/products/caravans/39.webp"
     ]
   },
   {
@@ -1713,9 +1713,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/40.jpg",
+    "img": "assets/img/products/caravans/40.webp",
     "images": [
-      "assets/img/products/caravans/40.jpg"
+      "assets/img/products/caravans/40.webp"
     ]
   },
   {
@@ -1725,9 +1725,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/41.jpg",
+    "img": "assets/img/products/caravans/41.webp",
     "images": [
-      "assets/img/products/caravans/41.jpg"
+      "assets/img/products/caravans/41.webp"
     ]
   },
   {
@@ -1737,9 +1737,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/42.jpg",
+    "img": "assets/img/products/caravans/42.webp",
     "images": [
-      "assets/img/products/caravans/42.jpg"
+      "assets/img/products/caravans/42.webp"
     ]
   },
   {
@@ -1749,9 +1749,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/43.jpg",
+    "img": "assets/img/products/caravans/43.webp",
     "images": [
-      "assets/img/products/caravans/43.jpg"
+      "assets/img/products/caravans/43.webp"
     ]
   },
   {
@@ -1761,9 +1761,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/44.jpg",
+    "img": "assets/img/products/caravans/44.webp",
     "images": [
-      "assets/img/products/caravans/44.jpg"
+      "assets/img/products/caravans/44.webp"
     ]
   },
   {
@@ -1773,9 +1773,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/45.jpg",
+    "img": "assets/img/products/caravans/45.webp",
     "images": [
-      "assets/img/products/caravans/45.jpg"
+      "assets/img/products/caravans/45.webp"
     ]
   },
   {
@@ -1785,9 +1785,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/46.jpg",
+    "img": "assets/img/products/caravans/46.webp",
     "images": [
-      "assets/img/products/caravans/46.jpg"
+      "assets/img/products/caravans/46.webp"
     ]
   },
   {
@@ -1797,9 +1797,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/47.jpg",
+    "img": "assets/img/products/caravans/47.webp",
     "images": [
-      "assets/img/products/caravans/47.jpg"
+      "assets/img/products/caravans/47.webp"
     ]
   },
   {
@@ -1809,9 +1809,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/48.jpg",
+    "img": "assets/img/products/caravans/48.webp",
     "images": [
-      "assets/img/products/caravans/48.jpg"
+      "assets/img/products/caravans/48.webp"
     ]
   },
   {
@@ -1821,9 +1821,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/49.jpg",
+    "img": "assets/img/products/caravans/49.webp",
     "images": [
-      "assets/img/products/caravans/49.jpg"
+      "assets/img/products/caravans/49.webp"
     ]
   },
   {
@@ -1833,9 +1833,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/50.jpg",
+    "img": "assets/img/products/caravans/50.webp",
     "images": [
-      "assets/img/products/caravans/50.jpg"
+      "assets/img/products/caravans/50.webp"
     ]
   },
   {
@@ -1845,9 +1845,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/51.jpg",
+    "img": "assets/img/products/caravans/51.webp",
     "images": [
-      "assets/img/products/caravans/51.jpg"
+      "assets/img/products/caravans/51.webp"
     ]
   },
   {
@@ -1857,9 +1857,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/52.jpg",
+    "img": "assets/img/products/caravans/52.webp",
     "images": [
-      "assets/img/products/caravans/52.jpg"
+      "assets/img/products/caravans/52.webp"
     ]
   },
   {
@@ -1869,9 +1869,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/53.jpg",
+    "img": "assets/img/products/caravans/53.webp",
     "images": [
-      "assets/img/products/caravans/53.jpg"
+      "assets/img/products/caravans/53.webp"
     ]
   },
   {
@@ -1881,9 +1881,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/54.jpg",
+    "img": "assets/img/products/caravans/54.webp",
     "images": [
-      "assets/img/products/caravans/54.jpg"
+      "assets/img/products/caravans/54.webp"
     ]
   },
   {
@@ -1893,9 +1893,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/55.jpg",
+    "img": "assets/img/products/caravans/55.webp",
     "images": [
-      "assets/img/products/caravans/55.jpg"
+      "assets/img/products/caravans/55.webp"
     ]
   },
   {
@@ -1905,9 +1905,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/56.jpg",
+    "img": "assets/img/products/caravans/56.webp",
     "images": [
-      "assets/img/products/caravans/56.jpg"
+      "assets/img/products/caravans/56.webp"
     ]
   },
   {
@@ -1917,9 +1917,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/57.jpg",
+    "img": "assets/img/products/caravans/57.webp",
     "images": [
-      "assets/img/products/caravans/57.jpg"
+      "assets/img/products/caravans/57.webp"
     ]
   },
   {
@@ -1929,9 +1929,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/58.jpg",
+    "img": "assets/img/products/caravans/58.webp",
     "images": [
-      "assets/img/products/caravans/58.jpg"
+      "assets/img/products/caravans/58.webp"
     ]
   },
   {
@@ -1941,9 +1941,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/59.jpg",
+    "img": "assets/img/products/caravans/59.webp",
     "images": [
-      "assets/img/products/caravans/59.jpg"
+      "assets/img/products/caravans/59.webp"
     ]
   },
   {
@@ -1953,9 +1953,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات الكرفانات الحديدية والفيبر جلاس — مكاتب، أكشاك حراسة، غرف استراحة ووحدات متنقلة.",
     "featured": false,
-    "img": "assets/img/products/caravans/60.jpg",
+    "img": "assets/img/products/caravans/60.webp",
     "images": [
-      "assets/img/products/caravans/60.jpg"
+      "assets/img/products/caravans/60.webp"
     ]
   },
   {
@@ -1965,9 +1965,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "أغطية بلاعات فيبر جلاس خفيفة الوزن وغير قابلة للصدأ أو السرقة.",
     "featured": true,
-    "img": "assets/img/products/manhole-covers/01.jpg",
+    "img": "assets/img/products/manhole-covers/01.webp",
     "images": [
-      "assets/img/products/manhole-covers/01.jpg"
+      "assets/img/products/manhole-covers/01.webp"
     ]
   },
   {
@@ -1977,9 +1977,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "أغطية بلاعات فيبر جلاس خفيفة الوزن وغير قابلة للصدأ أو السرقة.",
     "featured": false,
-    "img": "assets/img/products/manhole-covers/02.jpg",
+    "img": "assets/img/products/manhole-covers/02.webp",
     "images": [
-      "assets/img/products/manhole-covers/02.jpg"
+      "assets/img/products/manhole-covers/02.webp"
     ]
   },
   {
@@ -1989,9 +1989,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "أغطية بلاعات فيبر جلاس خفيفة الوزن وغير قابلة للصدأ أو السرقة.",
     "featured": false,
-    "img": "assets/img/products/manhole-covers/03.jpg",
+    "img": "assets/img/products/manhole-covers/03.webp",
     "images": [
-      "assets/img/products/manhole-covers/03.jpg"
+      "assets/img/products/manhole-covers/03.webp"
     ]
   }
 ];

@@ -1558,7 +1558,7 @@ p:last-child {
   color: #fff;
   background:
     linear-gradient(120deg, rgba(1, 18, 47, 0.93), rgba(1, 46, 118, 0.88)),
-    url("../img/products/caravans/01.jpg") center/cover fixed no-repeat;
+    url("../img/products/caravans/01.webp") center/cover fixed no-repeat;
 }
 .stats__grid {
   display: grid;
@@ -1816,7 +1816,7 @@ p:last-child {
   text-align: center;
   background:
     linear-gradient(120deg, rgba(10, 30, 54, 0.93), rgba(27, 63, 99, 0.86)),
-    url("../img/products/cooling-towers/15.jpg") center/cover no-repeat;
+    url("../img/products/cooling-towers/15.webp") center/cover no-repeat;
 }
 .cta h2 {
   color: #fff;
@@ -2202,7 +2202,7 @@ p:last-child {
   color: #fff;
   background:
     linear-gradient(120deg, rgba(1, 18, 47, 0.94), rgba(1, 65, 160, 0.86)),
-    url("../img/products/caravans/20.jpg") center/cover no-repeat;
+    url("../img/products/caravans/20.webp") center/cover no-repeat;
 }
 .page-hero h1 {
   color: #fff;

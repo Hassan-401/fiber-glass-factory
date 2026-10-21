@@ -25,3 +25,5 @@ tools/hashes.json
 i18n.sql
 names.sql
 fix-grating.sql
+
+webp.sql

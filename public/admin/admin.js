@@ -29,6 +29,72 @@ const post = (p, b) => call(p, { method: 'POST', body: JSON.stringify(b) });
 const put = (p, b) => call(p, { method: 'PUT', body: JSON.stringify(b) });
 const del = p => call(p, { method: 'DELETE' });
 
+/* ============================================================
+   معالجة الصور قبل الرفع
+   ------------------------------------------------------------
+   أي صورة بتتحوّل لـ WebP في المتصفح قبل ما تتبعت للسيرفر:
+   تصغير لأقصى عرض 1600px + ضغط بجودة 85%. ده بيقلّل الحجم كتير
+   ويخلّي كل صور الموقع بنفس الصيغة.
+   لو المتصفح مش داعم WebP بنرفع الملف الأصلي زي ما هو.
+   ============================================================ */
+const MAX_UPLOAD_W = 1600;
+const WEBP_QUALITY = 0.85;
+
+function loadImage(file) {
+  return new Promise((res, rej) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => { URL.revokeObjectURL(url); res(img); };
+    img.onerror = e => { URL.revokeObjectURL(url); rej(e); };
+    img.src = url;
+  });
+}
+
+/* بنكشف الشفافية عشان نحافظ عليها بدل ما نحط خلفية بيضا */
+function imageHasAlpha(img) {
+  const n = 40, c = document.createElement('canvas');
+  c.width = n; c.height = n;
+  const x = c.getContext('2d', { willReadFrequently: true });
+  x.clearRect(0, 0, n, n);
+  x.drawImage(img, 0, 0, n, n);
+  const d = x.getImageData(0, 0, n, n).data;
+  for (let i = 3; i < d.length; i += 4) if (d[i] < 250) return true;
+  return false;
+}
+
+async function toWebp(file) {
+  if (!/^image\//.test(file.type)) throw new Error('الملف لازم يكون صورة');
+  if (file.type === 'image/svg+xml' || /\.svg$/i.test(file.name)) return file;  // SVG يفضل زي ما هو
+
+  let img;
+  try { img = await loadImage(file); }
+  catch { return file; }          // مش قادرين نقراها → نرفعها زي ما هي
+
+  const scale = Math.min(1, MAX_UPLOAD_W / img.naturalWidth);
+  const w = Math.round(img.naturalWidth * scale);
+  const h = Math.round(img.naturalHeight * scale);
+  const c = document.createElement('canvas');
+  c.width = w; c.height = h;
+  const ctx = c.getContext('2d');
+  if (!imageHasAlpha(img)) { ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, w, h); }
+  ctx.drawImage(img, 0, 0, w, h);
+
+  const blob = await new Promise(r => c.toBlob(r, 'image/webp', WEBP_QUALITY));
+  if (!blob || !blob.type.includes('webp')) return file;   // المتصفح مش داعم WebP
+
+  const name = file.name.replace(/\.[^.]+$/, '') + '.webp';
+  return new File([blob], name, { type: 'image/webp' });
+}
+
+/* يحوّل ويرفع ويرجّع رابط الصورة */
+async function uploadImage(file) {
+  const out = await toWebp(file);
+  const fd = new FormData();
+  fd.append('file', out);
+  const r = await call('/admin/upload', { method: 'POST', body: fd });
+  return { ...r, from: file.size, to: out.size, converted: out !== file };
+}
+
 /* ---------------- تنبيه ---------------- */
 let toastT;
 function toast(msg, isErr) {
@@ -351,12 +417,16 @@ function editProd(id) {
 
   renderModalImages();
   $('#f_up').addEventListener('change', guard(async e => {
-    for (const file of e.target.files) {
-      const fd = new FormData(); fd.append('file', file);
-      const r = await call('/admin/upload', { method: 'POST', body: fd });
+    const files = [...e.target.files];
+    e.target.value = '';
+    let saved = 0;
+    for (const file of files) {
+      const r = await uploadImage(file);          // بيتحوّل WebP قبل الرفع
       modalImages.push(r.url);
+      saved += r.from - r.to;
+      renderModalImages();
     }
-    e.target.value = ''; renderModalImages(); toast('تم الرفع');
+    toast(`تم رفع ${files.length} صورة` + (saved > 0 ? ` — توفير ${Math.round(saved / 1024)}KB` : ''));
   }));
   $('#f_pick').addEventListener('click', guard(async () => {
     await loadMedia();
@@ -401,12 +471,15 @@ async function loadMedia() {
   })));
 }
 $('#uploadInput').addEventListener('change', guard(async e => {
-  for (const file of e.target.files) {
-    const fd = new FormData(); fd.append('file', file);
-    await call('/admin/upload', { method: 'POST', body: fd });
-  }
+  const files = [...e.target.files];
   e.target.value = '';
-  await loadMedia(); toast('تم الرفع');
+  let saved = 0;
+  for (const file of files) {
+    const r = await uploadImage(file);            // بيتحوّل WebP قبل الرفع
+    saved += r.from - r.to;
+  }
+  await loadMedia();
+  toast(`تم رفع ${files.length} صورة` + (saved > 0 ? ` — توفير ${Math.round(saved / 1024)}KB` : ''));
 }));
 
 function openPicker(urls, onPick) {
