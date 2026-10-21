@@ -157,9 +157,20 @@ const ICONS = ['tower', 'bus', 'planter', 'lamp', 'lining', 'pool', 'roof', 'sli
 
 function catForm(c = {}) {
   return `
-    <label>اسم القسم <input id="f_name" value="${esc(c.name || '')}"></label>
-    <label>اسم مختصر (يظهر في القوائم) <input id="f_short" value="${esc(c.short || '')}"></label>
-    <label>الوصف <textarea id="f_descr" rows="3">${esc(c.descr || '')}</textarea></label>
+    <div class="lang-tabs"><button type="button" class="is-active" data-ltab="ar">عربي</button><button type="button" data-ltab="en">English</button></div>
+
+    <div data-lpane="ar">
+      <label>اسم القسم <input id="f_name" value="${esc(c.name || '')}"></label>
+      <label>اسم مختصر (يظهر في القوائم) <input id="f_short" value="${esc(c.short || '')}"></label>
+      <label>الوصف <textarea id="f_descr" rows="3">${esc(c.descr || '')}</textarea></label>
+    </div>
+
+    <div data-lpane="en" hidden dir="ltr" style="text-align:start">
+      <label>Category name <input id="f_name_en" value="${esc(c.name_en || '')}"></label>
+      <label>Short name <input id="f_short_en" value="${esc(c.short_en || '')}"></label>
+      <label>Description <textarea id="f_descr_en" rows="3">${esc(c.descr_en || '')}</textarea></label>
+      <p class="hint">لو سبت الحقول الإنجليزية فاضية، الموقع هيعرض العربي في النسخة الإنجليزية.</p>
+    </div>
     <label>الأيقونة
       <select id="f_icon">${ICONS.map(i =>
         `<option value="${i}"${c.icon === i ? ' selected' : ''}>${i}</option>`).join('')}</select>
@@ -174,6 +185,9 @@ function editCat(id) {
       name: $('#f_name').value.trim(),
       short: $('#f_short').value.trim() || $('#f_name').value.trim(),
       descr: $('#f_descr').value.trim(),
+      name_en: $('#f_name_en').value.trim(),
+      short_en: $('#f_short_en').value.trim() || $('#f_name_en').value.trim(),
+      descr_en: $('#f_descr_en').value.trim(),
       icon: $('#f_icon').value,
       visible: $('#f_visible').checked
     };
@@ -215,7 +229,8 @@ function renderProds() {
         p.images.length ? `<img src="${esc(p.images[0])}" alt="">` : ''}</span>
       <span class="row__main">
         <b>${esc(p.name)}</b>
-        <span>${esc(c ? c.name : p.cat)}${p.grp ? ' — ' + esc(p.grp) : ''}</span>
+        <span>${esc(c ? c.name : p.cat)}${p.grp ? ' — ' + esc(p.grp) : ''}${
+          p.name_en ? ' · ' + esc(p.name_en) : ''}</span>
       </span>
       <span class="row__tags">
         ${p.images.length > 1 ? `<span class="tag">${p.images.length} صور</span>` : ''}
@@ -249,13 +264,25 @@ $('#searchProd').addEventListener('input', renderProds);
 let modalImages = [];
 function prodForm(p = {}) {
   return `
-    <label>اسم المنتج <input id="f_name" value="${esc(p.name || '')}"></label>
     <label>القسم
       <select id="f_cat">${S.categories.map(c =>
         `<option value="${esc(c.id)}"${p.cat === c.id ? ' selected' : ''}>${esc(c.name)}</option>`).join('')}</select>
     </label>
-    <label>النوع الفرعي (اختياري) <input id="f_grp" value="${esc(p.grp || '')}" placeholder="مثال: برج تبريد دائري"></label>
-    <label>الوصف <textarea id="f_descr" rows="3">${esc(p.descr || '')}</textarea></label>
+
+    <div class="lang-tabs"><button type="button" class="is-active" data-ltab="ar">عربي</button><button type="button" data-ltab="en">English</button></div>
+
+    <div data-lpane="ar">
+      <label>اسم المنتج <input id="f_name" value="${esc(p.name || '')}"></label>
+      <label>النوع الفرعي (اختياري) <input id="f_grp" value="${esc(p.grp || '')}" placeholder="مثال: برج تبريد دائري"></label>
+      <label>الوصف <textarea id="f_descr" rows="3">${esc(p.descr || '')}</textarea></label>
+    </div>
+
+    <div data-lpane="en" hidden dir="ltr" style="text-align:start">
+      <label>Product name <input id="f_name_en" value="${esc(p.name_en || '')}"></label>
+      <label>Sub-type (optional) <input id="f_grp_en" value="${esc(p.grp_en || '')}" placeholder="e.g. Round Cooling Tower"></label>
+      <label>Description <textarea id="f_descr_en" rows="3">${esc(p.descr_en || '')}</textarea></label>
+      <p class="hint">لو سبت الحقول الإنجليزية فاضية، الموقع هيعرض العربي في النسخة الإنجليزية.</p>
+    </div>
 
     <label style="margin-bottom:6px">صور المنتج (الأولى هي الرئيسية — الباقي يظهر ككاروسيل)</label>
     <div class="imgs" id="f_imgs"></div>
@@ -305,6 +332,9 @@ function editProd(id) {
       cat: $('#f_cat').value,
       grp: $('#f_grp').value.trim(),
       descr: $('#f_descr').value.trim(),
+      name_en: $('#f_name_en').value.trim(),
+      grp_en: $('#f_grp_en').value.trim(),
+      descr_en: $('#f_descr_en').value.trim(),
       featured: $('#f_featured').checked,
       visible: $('#f_visible').checked,
       images: modalImages
@@ -406,9 +436,22 @@ const FIELDS = [
   ['address', 'العنوان'], ['hours', 'مواعيد العمل'], ['hoursNote', 'ملاحظة المواعيد'],
   ['mapEmbed', 'رابط الخريطة (embed)'], ['logo', 'مسار الشعار']
 ];
+/* الحقول اللي ليها نسخة إنجليزية */
+const FIELDS_EN = [
+  ['name_en', 'Factory name'], ['short_en', 'Short name'],
+  ['tagline_en', 'Tagline'], ['address_en', 'Address'],
+  ['hours_en', 'Working hours'], ['hoursNote_en', 'Hours note']
+];
 function renderSettings() {
-  $('#setBasic').innerHTML = FIELDS.map(([k, l]) =>
-    `<label>${l}<input data-set="${k}" value="${esc(S.settings[k] ?? '')}"></label>`).join('');
+  $('#setBasic').innerHTML =
+    FIELDS.map(([k, l]) =>
+      `<label>${l}<input data-set="${k}" value="${esc(S.settings[k] ?? '')}"></label>`).join('') +
+    `<div style="grid-column:1/-1;border-top:1px solid var(--line);margin:10px 0 14px;padding-top:12px">
+       <b style="color:var(--ink);font-size:.9rem">النسخة الإنجليزية</b>
+       <p class="hint">سيب أي حقل فاضي عشان الموقع يعرض العربي بدله.</p>
+     </div>` +
+    FIELDS_EN.map(([k, l]) =>
+      `<label dir="ltr" style="text-align:start">${l}<input data-set="${k}" value="${esc(S.settings[k] ?? '')}"></label>`).join('');
   renderSocial();
 }
 function renderSocial() {
@@ -473,22 +516,39 @@ const FAQ_F = [['q', 'السؤال'], ['a', 'الإجابة', 'area']];
 
 function renderContent() {
   $('#aboutText').value = S.settings.about || '';
-  S.settings.why = Array.isArray(S.settings.why) ? S.settings.why : [];
-  S.settings.steps = Array.isArray(S.settings.steps) ? S.settings.steps : [];
-  S.settings.faq = Array.isArray(S.settings.faq) ? S.settings.faq : [];
+  $('#aboutTextEn').value = S.settings.about_en || '';
+  ['why', 'steps', 'faq', 'why_en', 'steps_en', 'faq_en'].forEach(k => {
+    S.settings[k] = Array.isArray(S.settings[k]) ? S.settings[k] : [];
+  });
   listEditor($('#whyList'), S.settings.why, WHY_F);
   listEditor($('#stepsList'), S.settings.steps, STEP_F);
   listEditor($('#faqList'), S.settings.faq, FAQ_F);
+  listEditor($('#whyListEn'), S.settings.why_en, WHY_F);
+  listEditor($('#stepsListEn'), S.settings.steps_en, STEP_F);
+  listEditor($('#faqListEn'), S.settings.faq_en, FAQ_F);
 }
 $('#addWhy').addEventListener('click', () => { S.settings.why.push({ icon: 'shield', title: '', text: '' }); renderContent(); });
 $('#addStep').addEventListener('click', () => { S.settings.steps.push({ t: '', d: '' }); renderContent(); });
 $('#addFaq').addEventListener('click', () => { S.settings.faq.push({ q: '', a: '' }); renderContent(); });
+$('#addWhyEn').addEventListener('click', () => { S.settings.why_en.push({ icon: 'shield', title: '', text: '' }); renderContent(); });
+$('#addStepEn').addEventListener('click', () => { S.settings.steps_en.push({ t: '', d: '' }); renderContent(); });
+$('#addFaqEn').addEventListener('click', () => { S.settings.faq_en.push({ q: '', a: '' }); renderContent(); });
+
+/* تبويبات عربي/إنجليزي في صفحة المحتوى */
+$('[data-ctab]').forEach(b => b.addEventListener('click', () => {
+  $('[data-ctab]').forEach(x => x.classList.toggle('is-active', x === b));
+  $('[data-cpane]').forEach(p => p.hidden = p.dataset.cpane !== b.dataset.ctab);
+}));
 $('#saveContent').addEventListener('click', guard(async () => {
   await put('/admin/settings', {
     about: $('#aboutText').value.trim(),
     why: collect($('#whyList'), WHY_F),
     steps: collect($('#stepsList'), STEP_F),
-    faq: collect($('#faqList'), FAQ_F)
+    faq: collect($('#faqList'), FAQ_F),
+    about_en: $('#aboutTextEn').value.trim(),
+    why_en: collect($('#whyListEn'), WHY_F),
+    steps_en: collect($('#stepsListEn'), STEP_F),
+    faq_en: collect($('#faqListEn'), FAQ_F)
   });
   await refresh(); toast('تم حفظ المحتوى'); flagSaved();
 }));
@@ -519,8 +579,19 @@ function openModal(title, body, onSave, onDelete) {
   $('#modal').hidden = false;
   modalSave = onSave; modalDel = onDelete;
   $('#modalDelete').hidden = !onDelete;
+  bindLangTabs();
 }
 function closeModal() { $('#modal').hidden = true; $('#modalBody').innerHTML = ''; }
+
+/* تبويبات عربي/إنجليزي جوّه النافذة */
+function bindLangTabs() {
+  const tabs = $('#modalBody [data-ltab]');
+  if (!tabs.length) return;
+  tabs.forEach(b => b.addEventListener('click', () => {
+    tabs.forEach(x => x.classList.toggle('is-active', x === b));
+    $('#modalBody [data-lpane]').forEach(p => p.hidden = p.dataset.lpane !== b.dataset.ltab);
+  }));
+}
 $$('#modal [data-close]').forEach(b => b.addEventListener('click', closeModal));
 $('#modalSave').addEventListener('click', () => modalSave && modalSave());
 $('#modalDelete').addEventListener('click', () => modalDel && modalDel());

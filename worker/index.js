@@ -111,8 +111,11 @@ async function buildSite(env) {
     id: p.id,
     cat: p.cat,
     name: p.name,
+    name_en: p.name_en || '',
     desc: p.descr,
+    desc_en: p.descr_en || '',
     group: p.grp || null,
+    group_en: p.grp_en || null,
     featured: !!p.featured,
     images: byProduct[p.id] || [],
     img: (byProduct[p.id] || [])[0] || null
@@ -121,7 +124,11 @@ async function buildSite(env) {
   const categories = cats.results.filter(c => c.visible).map(c => {
     const mine = products.filter(p => p.cat === c.id);
     return {
-      id: c.id, name: c.name, short: c.short, desc: c.descr, icon: c.icon,
+      id: c.id,
+      name: c.name, name_en: c.name_en || '',
+      short: c.short, short_en: c.short_en || '',
+      desc: c.descr, desc_en: c.descr_en || '',
+      icon: c.icon,
       count: mine.length,
       img: mine.length ? mine[0].img : null
     };
@@ -318,9 +325,11 @@ async function api(req, env, url, ctx) {
     const id = await uniqueId(env, 'categories', b.id ? slugify(b.id) : slugify(b.name));
     const max = await env.DB.prepare('SELECT COALESCE(MAX(sort), 0) AS s FROM categories').first();
     await env.DB.prepare(
-      'INSERT INTO categories (id, name, short, descr, icon, sort, visible) VALUES (?,?,?,?,?,?,?)'
+      'INSERT INTO categories (id, name, short, descr, icon, sort, visible, name_en, short_en, descr_en) ' +
+      'VALUES (?,?,?,?,?,?,?,?,?,?)'
     ).bind(id, b.name, b.short || b.name, b.descr || '', b.icon || 'box',
-           max.s + 1, b.visible === false ? 0 : 1).run();
+           max.s + 1, b.visible === false ? 0 : 1,
+           b.name_en || '', b.short_en || '', b.descr_en || '').run();
     return json({ ok: true, id });
   }
 
@@ -331,9 +340,12 @@ async function api(req, env, url, ctx) {
       await env.DB.prepare(
         `UPDATE categories SET name = COALESCE(?, name), short = COALESCE(?, short),
          descr = COALESCE(?, descr), icon = COALESCE(?, icon),
-         sort = COALESCE(?, sort), visible = COALESCE(?, visible) WHERE id = ?`
+         sort = COALESCE(?, sort), visible = COALESCE(?, visible),
+         name_en = COALESCE(?, name_en), short_en = COALESCE(?, short_en),
+         descr_en = COALESCE(?, descr_en) WHERE id = ?`
       ).bind(b.name ?? null, b.short ?? null, b.descr ?? null, b.icon ?? null,
-             b.sort ?? null, b.visible === undefined ? null : (b.visible ? 1 : 0), id).run();
+             b.sort ?? null, b.visible === undefined ? null : (b.visible ? 1 : 0),
+             b.name_en ?? null, b.short_en ?? null, b.descr_en ?? null, id).run();
       return json({ ok: true });
     }
     if (m === 'DELETE') {
@@ -354,9 +366,11 @@ async function api(req, env, url, ctx) {
     const max = await env.DB.prepare('SELECT COALESCE(MAX(sort), 0) AS s FROM products WHERE cat = ?')
       .bind(b.cat).first();
     await env.DB.prepare(
-      'INSERT INTO products (id, cat, name, descr, grp, featured, sort, visible) VALUES (?,?,?,?,?,?,?,?)'
+      'INSERT INTO products (id, cat, name, descr, grp, featured, sort, visible, name_en, descr_en, grp_en) ' +
+      'VALUES (?,?,?,?,?,?,?,?,?,?,?)'
     ).bind(id, b.cat, b.name, b.descr || '', b.grp || null,
-           b.featured ? 1 : 0, max.s + 1, b.visible === false ? 0 : 1).run();
+           b.featured ? 1 : 0, max.s + 1, b.visible === false ? 0 : 1,
+           b.name_en || '', b.descr_en || '', b.grp_en || null).run();
     await replaceImages(env, id, b.images || []);
     return json({ ok: true, id });
   }
@@ -368,10 +382,13 @@ async function api(req, env, url, ctx) {
       await env.DB.prepare(
         `UPDATE products SET cat = COALESCE(?, cat), name = COALESCE(?, name),
          descr = COALESCE(?, descr), grp = ?, featured = COALESCE(?, featured),
-         sort = COALESCE(?, sort), visible = COALESCE(?, visible) WHERE id = ?`
+         sort = COALESCE(?, sort), visible = COALESCE(?, visible),
+         name_en = COALESCE(?, name_en), descr_en = COALESCE(?, descr_en),
+         grp_en = ? WHERE id = ?`
       ).bind(b.cat ?? null, b.name ?? null, b.descr ?? null, b.grp || null,
              b.featured === undefined ? null : (b.featured ? 1 : 0),
-             b.sort ?? null, b.visible === undefined ? null : (b.visible ? 1 : 0), id).run();
+             b.sort ?? null, b.visible === undefined ? null : (b.visible ? 1 : 0),
+             b.name_en ?? null, b.descr_en ?? null, b.grp_en || null, id).run();
       if (Array.isArray(b.images)) await replaceImages(env, id, b.images);
       return json({ ok: true });
     }

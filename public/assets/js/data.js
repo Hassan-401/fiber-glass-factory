@@ -111,7 +111,7 @@ const CATEGORIES = [
     "desc": "جميع مقاسات مشايات الفيبر جلاس (الجريتينج) والهندريل والسلالم والأسوار.",
     "icon": "grating",
     "count": 2,
-    "img": "assets/img/products/grating/01"
+    "img": "assets/img/products/grating/01.jpg"
   },
   {
     "id": "caravans",
@@ -1276,9 +1276,9 @@ const PRODUCTS = [
     "group": null,
     "desc": "جميع مقاسات مشايات الفيبر جلاس (الجريتينج) والهندريل والسلالم والأسوار.",
     "featured": true,
-    "img": "assets/img/products/grating/01",
+    "img": "assets/img/products/grating/01.jpg",
     "images": [
-      "assets/img/products/grating/01"
+      "assets/img/products/grating/01.jpg"
     ]
   },
   {

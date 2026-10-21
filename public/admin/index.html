@@ -123,25 +123,58 @@
 
     <!-- محتوى الصفحات -->
     <section class="tab" data-tab="content" hidden>
-      <div class="panel">
-        <h3>نبذة المصنع</h3>
-        <textarea id="aboutText" rows="4"></textarea>
+      <div class="lang-tabs lang-tabs--page">
+        <button type="button" class="is-active" data-ctab="ar">المحتوى العربي</button>
+        <button type="button" data-ctab="en">English content</button>
       </div>
-      <div class="panel">
-        <h3>لماذا نحن</h3>
-        <div id="whyList"></div>
-        <button class="btn btn-ghost" id="addWhy">+ إضافة ميزة</button>
+
+      <div data-cpane="ar">
+        <div class="panel">
+          <h3>نبذة المصنع</h3>
+          <textarea id="aboutText" rows="4"></textarea>
+        </div>
+        <div class="panel">
+          <h3>لماذا نحن</h3>
+          <div id="whyList"></div>
+          <button class="btn btn-ghost" id="addWhy">+ إضافة ميزة</button>
+        </div>
+        <div class="panel">
+          <h3>خطوات العمل</h3>
+          <div id="stepsList"></div>
+          <button class="btn btn-ghost" id="addStep">+ إضافة خطوة</button>
+        </div>
+        <div class="panel">
+          <h3>الأسئلة الشائعة</h3>
+          <div id="faqList"></div>
+          <button class="btn btn-ghost" id="addFaq">+ إضافة سؤال</button>
+        </div>
       </div>
-      <div class="panel">
-        <h3>خطوات العمل</h3>
-        <div id="stepsList"></div>
-        <button class="btn btn-ghost" id="addStep">+ إضافة خطوة</button>
+
+      <div data-cpane="en" hidden dir="ltr" style="text-align:start">
+        <p class="hint" dir="rtl" style="text-align:start;margin-bottom:12px">
+          سيب أي قسم فاضي عشان الموقع يعرض المحتوى العربي بدله في النسخة الإنجليزية.
+        </p>
+        <div class="panel">
+          <h3>About the factory</h3>
+          <textarea id="aboutTextEn" rows="4"></textarea>
+        </div>
+        <div class="panel">
+          <h3>Why us</h3>
+          <div id="whyListEn"></div>
+          <button class="btn btn-ghost" id="addWhyEn">+ Add feature</button>
+        </div>
+        <div class="panel">
+          <h3>How it works</h3>
+          <div id="stepsListEn"></div>
+          <button class="btn btn-ghost" id="addStepEn">+ Add step</button>
+        </div>
+        <div class="panel">
+          <h3>FAQ</h3>
+          <div id="faqListEn"></div>
+          <button class="btn btn-ghost" id="addFaqEn">+ Add question</button>
+        </div>
       </div>
-      <div class="panel">
-        <h3>الأسئلة الشائعة</h3>
-        <div id="faqList"></div>
-        <button class="btn btn-ghost" id="addFaq">+ إضافة سؤال</button>
-      </div>
+
       <div class="bar bar--sticky">
         <button class="btn btn-primary" id="saveContent">حفظ محتوى الصفحات</button>
       </div>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>معرض الصور | سوق مصرية فيبر جلاس</title>
+<meta name="description" content="معرض صور إنتاج مصنع سوق مصرية فيبر جلاس — أبراج تبريد، كرفانات، رووف كيرب، عزل أسطح، أحواض زهور وغيرها.">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="gallery">
+
+<div id="site-topbar"></div>
+<div id="site-header"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>معرض الصور</h1>
+    <p>كل صور إنتاج المصنع في مكان واحد — اضغط أي صورة لعرضها بالحجم الكامل.</p>
+  </div>
+</section>
+
+<nav class="crumbs" aria-label="مسار التنقل">
+  <div class="container">
+    <ol id="crumbs">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li aria-current="page">معرض الصور</li>
+    </ol>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <div class="gal-filters" id="galFilters"></div>
+    <div class="gal-grid" id="galGrid"></div>
+    <div id="galEmpty"></div>
+    <div class="gal-more">
+      <button class="btn btn-navy" id="galMore" hidden>عرض المزيد</button>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>تحتاج مقاساً أو تصميماً خاصاً؟</h2>
+    <p>ننفذ أي منتج فيبر جلاس حسب الرسم أو الفكرة أو حتى صورة ترسلها لنا. تواصل معنا وسنتولى الباقي.</p>
+    <div class="cta__btns" id="ctaBtns"></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<!-- عارض الصور -->
+<div class="lb" id="lb" hidden>
+  <button class="lb__close" id="lbClose" aria-label="إغلاق المعرض">&#10005;</button>
+  <button class="lb__nav lb__nav--prev" id="lbPrev" aria-label="الصورة السابقة"></button>
+  <button class="lb__nav lb__nav--next" id="lbNext" aria-label="الصورة التالية"></button>
+  <figure class="lb__fig">
+    <img id="lbImg" src="" alt="">
+    <figcaption>
+      <span id="lbCap"></span>
+      <a id="lbLink" class="lb__link" href="#">عرض المنتج</a>
+      <span class="lb__count" id="lbCount"></span>
+    </figcaption>
+  </figure>
+</div>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+boot(function () {
+
+  /* كل الصور: صورة لكل منتج × كل صوره */
+  const ALL = PRODUCTS.flatMap(p =>
+    (p.images && p.images.length ? p.images : [p.img])
+      .filter(Boolean)
+      .map((url, i) => ({ url, product: p, cat: p.cat, n: i + 1 })));
+
+  const PAGE = 24;
+  let activeCat = new URLSearchParams(location.search).get('cat') || 'all';
+  if (activeCat !== 'all' && !catById(activeCat)) activeCat = 'all';
+  let shown = PAGE;
+  let view = [];
+
+  /* شرائح الفلترة — الأقسام اللي فيها صور بس */
+  const withPhotos = CATEGORIES.filter(c => ALL.some(x => x.cat === c.id));
+  $('#galFilters').innerHTML =
+    `<button class="chip" data-cat="all">كل الصور (${ALL.length})</button>` +
+    withPhotos.map(c => {
+      const n = ALL.filter(x => x.cat === c.id).length;
+      return `<button class="chip" data-cat="${c.id}">${esc(c.short)} (${n})</button>`;
+    }).join('');
+
+  function render() {
+    $$('#galFilters .chip').forEach(b =>
+      b.classList.toggle('is-active', b.dataset.cat === activeCat));
+
+    view = activeCat === 'all' ? ALL : ALL.filter(x => x.cat === activeCat);
+    const slice = view.slice(0, shown);
+
+    $('#galGrid').innerHTML = slice.map((x, i) => {
+      const c = catById(x.cat);
+      return `
+      <figure class="gal-item" data-i="${i}">
+        <img src="${x.url}" alt="${esc(x.product.name)}" loading="lazy">
+        <figcaption>
+          <b>${esc(x.product.name)}</b>
+          <span>${esc(c ? c.short : '')}</span>
+        </figcaption>
+      </figure>`;
+    }).join('');
+
+    $('#galEmpty').innerHTML = view.length ? '' :
+      `<div class="empty">${icon('box')}<h3>لا توجد صور في هذا القسم</h3></div>`;
+
+    $('#galMore').hidden = shown >= view.length;
+    $('#galMore').textContent = `عرض المزيد (${view.length - shown})`;
+
+    $$('#galGrid .gal-item').forEach(el =>
+      el.addEventListener('click', () => openLb(+el.dataset.i)));
+
+    try {
+      const u = new URL(location.href);
+      activeCat === 'all' ? u.searchParams.delete('cat') : u.searchParams.set('cat', activeCat);
+      history.replaceState(null, '', u);
+    } catch (e) { /* file:// */ }
+  }
+
+  $$('#galFilters .chip').forEach(b => b.addEventListener('click', () => {
+    activeCat = b.dataset.cat; shown = PAGE; render();
+    const top = $('#galFilters').getBoundingClientRect().top + window.scrollY - 110;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }));
+  $('#galMore').addEventListener('click', () => { shown += PAGE; render(); });
+
+  /* ---------- عارض الصور ---------- */
+  let cur = 0;
+  const lb = $('#lb');
+  $('#lbPrev').innerHTML = icon('chevron');
+  $('#lbNext').innerHTML = icon('chevron');
+
+  function show(i) {
+    cur = (i + view.length) % view.length;
+    const x = view[cur];
+    const c = catById(x.cat);
+    $('#lbImg').src = x.url;
+    $('#lbImg').alt = x.product.name;
+    $('#lbCap').textContent = x.product.name + (c ? ' — ' + c.short : '');
+    $('#lbLink').href = 'product.html?id=' + x.product.id;
+    $('#lbCount').textContent = `${cur + 1} / ${view.length}`;
+  }
+  function openLb(i) {
+    show(i);
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    lb.hidden = true;
+    document.body.style.overflow = '';
+  }
+  $('#lbClose').addEventListener('click', closeLb);
+  $('#lbPrev').addEventListener('click', () => show(cur - 1));
+  $('#lbNext').addEventListener('click', () => show(cur + 1));
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', e => {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowRight') show(cur - 1);   // يمين = السابق في RTL
+    if (e.key === 'ArrowLeft') show(cur + 1);
+  });
+  /* السحب باللمس */
+  let x0 = null;
+  $('.lb__fig').addEventListener('touchstart', e => x0 = e.touches[0].clientX, { passive: true });
+  $('.lb__fig').addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) show(cur + (dx > 0 ? -1 : 1));
+    x0 = null;
+  }, { passive: true });
+
+  render();
+
+  $('#ctaBtns').innerHTML =
+    `<a class="btn btn-wa btn-lg" href="${waLink()}" target="_blank" rel="noopener">${icon('whatsapp')} اطلب عبر واتساب</a>` +
+    `<a class="btn btn-ghost-light btn-lg" href="products.html">${icon('box')} تصفح المنتجات</a>`;
+});
+</script>
+</body>
+</html>

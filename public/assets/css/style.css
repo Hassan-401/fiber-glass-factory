@@ -2686,3 +2686,225 @@ bdi {
   border-radius: 999px;
   z-index: 2;
 }
+
+/* ---------- 30. زر تبديل اللغة ---------- */
+.lang {
+  display: inline-flex;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-inline-end: 14px;
+}
+.lang button {
+  border: 0;
+  background: none;
+  color: #c9dcee;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 800;
+  padding: 3px 11px;
+  cursor: pointer;
+  transition: 0.2s var(--ease);
+  line-height: 1.7;
+}
+.lang button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+.lang button.is-active {
+  background: var(--gold-500);
+  color: #fff;
+}
+
+/* ---------- 31. صفحة معرض الصور ---------- */
+.gal-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+.gal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+}
+.gal-item {
+  margin: 0;
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  cursor: zoom-in;
+  transition: 0.3s var(--ease);
+}
+.gal-item img {
+  width: 100%;
+  height: 196px;
+  object-fit: cover;
+  transition: 0.5s var(--ease);
+}
+.gal-item figcaption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 26px 12px 10px;
+  background: linear-gradient(transparent, rgba(1, 18, 47, 0.9));
+  color: #fff;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: 0.3s var(--ease);
+}
+.gal-item figcaption b {
+  display: block;
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+.gal-item figcaption span {
+  font-size: 0.72rem;
+  color: var(--gold-400);
+  font-weight: 700;
+}
+.gal-item:hover {
+  border-color: var(--gold-500);
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+.gal-item:hover img {
+  transform: scale(1.06);
+}
+.gal-item:hover figcaption {
+  opacity: 1;
+  transform: none;
+}
+.gal-more {
+  text-align: center;
+  margin-top: 28px;
+}
+
+/* ---------- 32. عارض الصور ---------- */
+.lb {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  padding: 50px 16px 16px;
+  background: rgba(1, 18, 47, 0.94);
+  backdrop-filter: blur(4px);
+}
+.lb[hidden] {
+  display: none !important;
+}
+.lb__fig {
+  margin: 0;
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+}
+.lb__fig img {
+  max-width: 100%;
+  max-height: calc(100vh - 170px);
+  margin-inline: auto;
+  border-radius: var(--radius);
+  object-fit: contain;
+}
+.lb__fig figcaption {
+  margin-top: 14px;
+  color: #dcebfa;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.lb__link {
+  color: var(--gold-400);
+  font-weight: 700;
+  border-bottom: 1px solid currentColor;
+}
+.lb__count {
+  color: #8fb3d6;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+.lb__close,
+.lb__nav {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(146, 200, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s var(--ease);
+}
+.lb__close {
+  top: 14px;
+  inset-inline-end: 16px;
+  width: 42px;
+  height: 42px;
+  font-size: 1.05rem;
+}
+.lb__nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+}
+.lb__nav svg {
+  width: 24px;
+  height: 24px;
+}
+.lb__nav--prev {
+  inset-inline-end: 18px;
+}
+.lb__nav--next {
+  inset-inline-start: 18px;
+}
+.lb__nav--prev svg {
+  transform: rotate(90deg);
+}
+.lb__nav--next svg {
+  transform: rotate(-90deg);
+}
+.lb__close:hover,
+.lb__nav:hover {
+  background: var(--gold-500);
+  border-color: var(--gold-500);
+}
+@media (max-width: 640px) {
+  .gal-item img {
+    height: 150px;
+  }
+  .lb__nav {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ---------- 33. دعم الاتجاه من اليسار لليمين (الإنجليزية) ---------- */
+[dir="ltr"] .hero__title,
+[dir="ltr"] .sec-head--start {
+  text-align: start;
+}
+/* الدرج الجانبي بيطلع من الجهة الصحيحة في كل اتجاه */
+[dir="ltr"] .drawer__panel {
+  transform: translateX(-100%);
+}
+[dir="ltr"] .drawer.is-open .drawer__panel {
+  transform: none;
+}
+/* الأسهم في الأزرار بتتقلب مع الاتجاه */
+[dir="ltr"] .btn svg.arrow,
+[dir="ltr"] .cat-card__link svg,
+[dir="ltr"] .btn-gold svg {
+  transform: scaleX(-1);
+}
+[dir="ltr"] .lang {
+  margin-inline-end: 0;
+  margin-inline-start: 14px;
+}

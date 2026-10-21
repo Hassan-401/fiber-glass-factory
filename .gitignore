@@ -20,3 +20,8 @@ node_modules/
 # ملفات مولَّدة تحتوي على هاش كلمة السر — متترفعش
 seed.sql
 tools/hashes.json
+
+# ملفات SQL مولَّدة
+i18n.sql
+names.sql
+fix-grating.sql

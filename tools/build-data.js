@@ -217,7 +217,13 @@ for (const cat of CATEGORIES) {
   let i = 0;
   for (const e of entries) {
     i++;
-    const ext = path.extname(e.file).toLowerCase().replace('.jpeg', '.jpg');
+    // ملفات اسمها امتداد فقط (مثل «.jpg») بترجع extname فاضي — نستنتج الامتداد من الاسم
+    let ext = path.extname(e.file).toLowerCase();
+    if (!ext) {
+      const base = path.basename(e.file).toLowerCase();
+      ext = /^.(jpe?g|png|webp)$/.test(base) ? base : '.jpg';
+    }
+    ext = ext.replace('.jpeg', '.jpg');
     const outName = String(i).padStart(2, '0') + ext;
     fs.copyFileSync(e.file, path.join(destDir, outName));
     copied++;

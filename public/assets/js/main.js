@@ -20,16 +20,25 @@ function waLink(product) {
     const c = catById(product.cat);
     let url = '';
     try { url = new URL('product.html?id=' + product.id, location.href).href; } catch (e) {}
-    msg =
-      `السلام عليكم ${SITE.name} 👋\n\n` +
-      `أرغب في الاستفسار وطلب عرض سعر للمنتج التالي:\n\n` +
-      `📦 المنتج: ${product.name}\n` +
-      `🏷️ القسم: ${c ? c.name : ''}\n` +
-      `🔢 الكود: ${product.id.toUpperCase()}\n` +
-      (url ? `🔗 الرابط: ${url}\n` : '') +
-      `\nبرجاء إفادتي بالسعر ومدة التنفيذ. وشكراً.`;
+    msg = isEn()
+      ? `Hello ${SITE.name} 👋\n\n` +
+        `I'd like a quote for the following product:\n\n` +
+        `📦 Product: ${product.name}\n` +
+        `🏷️ Category: ${c ? c.name : ''}\n` +
+        `🔢 Code: ${product.id.toUpperCase()}\n` +
+        (url ? `🔗 Link: ${url}\n` : '') +
+        `\nCould you share the price and lead time? Thank you.`
+      : `السلام عليكم ${SITE.name} 👋\n\n` +
+        `أرغب في الاستفسار وطلب عرض سعر للمنتج التالي:\n\n` +
+        `📦 المنتج: ${product.name}\n` +
+        `🏷️ القسم: ${c ? c.name : ''}\n` +
+        `🔢 الكود: ${product.id.toUpperCase()}\n` +
+        (url ? `🔗 الرابط: ${url}\n` : '') +
+        `\nبرجاء إفادتي بالسعر ومدة التنفيذ. وشكراً.`;
   } else {
-    msg = `السلام عليكم ${SITE.name} 👋\nأرغب في الاستفسار عن منتجاتكم وطلب عرض سعر.`;
+    msg = isEn()
+      ? `Hello ${SITE.name} 👋\nI'd like to know more about your products and request a quote.`
+      : `السلام عليكم ${SITE.name} 👋\nأرغب في الاستفسار عن منتجاتكم وطلب عرض سعر.`;
   }
   return `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(msg)}`;
 }
@@ -46,11 +55,29 @@ async function loadLive() {
     const r = await fetch('/api/site', { cache: 'no-store' });
     if (!r.ok) return;
     const d = await r.json();
-    if (d.settings && Object.keys(d.settings).length) Object.assign(SITE, d.settings);
+    if (d.settings && Object.keys(d.settings).length) {
+      Object.assign(SITE, d.settings);
+      // الإعدادات الإنجليزية بتحلّ محل العربية لما اللغة إنجليزي
+      if (isEn()) ['name', 'short', 'tagline', 'address', 'hours', 'hoursNote', 'about', 'why', 'steps', 'faq']
+        .forEach(k => {
+          const v = d.settings[k + '_en'];
+          if (v && (!Array.isArray(v) || v.length)) SITE[k] = v;
+        });
+    }
+    /* يستبدل الحقول العربية بالإنجليزية لما اللغة إنجليزي */
+    const byLang = (o, map) => {
+      if (!isEn()) return o;
+      const out = { ...o };
+      for (const [to, from] of Object.entries(map))
+        if (o[from] && String(o[from]).trim()) out[to] = o[from];
+      return out;
+    };
     if (Array.isArray(d.categories) && d.categories.length)
-      CATEGORIES.splice(0, CATEGORIES.length, ...d.categories);
+      CATEGORIES.splice(0, CATEGORIES.length, ...d.categories.map(c =>
+        byLang(c, { name: 'name_en', short: 'short_en', desc: 'desc_en' })));
     if (Array.isArray(d.products) && d.products.length)
-      PRODUCTS.splice(0, PRODUCTS.length, ...d.products);
+      PRODUCTS.splice(0, PRODUCTS.length, ...d.products.map(p =>
+        byLang(p, { name: 'name_en', desc: 'desc_en', group: 'group_en' })));
   } catch (e) {
     /* الموقع بيشتغل بالنسخة المدمجة لو الـ API مش متاح */
   }
@@ -67,6 +94,7 @@ function renderTopbar() {
         ${SITE.email ? `<li class="hide-xs"><a href="mailto:${SITE.email}">${icon('mail')}<span>${SITE.email}</span></a></li>` : ''}
         <li class="hide-xs"><span>${icon('clock')}${SITE.hours}</span></li>
       </ul>
+      ${langToggleHTML()}
       <div class="topbar__social">
         ${socialLinks().map(s => `<a href="${s.url}" target="_blank" rel="noopener" title="${s.name}" aria-label="${s.name}">${icon(s.key)}</a>`).join('')}
       </div>
@@ -102,6 +130,7 @@ function renderHeader() {
             </div>
           </li>
           <li><a href="products.html"${on('products')}>المنتجات</a></li>
+          <li><a href="gallery.html"${on('gallery')}>معرض الصور</a></li>
           <li><a href="contact.html"${on('contact')}>تواصل معنا</a></li>
         </ul>
       </nav>
@@ -130,6 +159,7 @@ function renderHeader() {
         <a href="about.html"${on('about')}>عن المصنع</a>
         <a href="categories.html"${on('categories')}>الأقسام</a>
         <a href="products.html"${on('products')}>كل المنتجات</a>
+        <a href="gallery.html"${on('gallery')}>معرض الصور</a>
         <a href="contact.html"${on('contact')}>تواصل معنا</a>
         <div class="drawer__group">
           <div class="drawer__label">تصفح الأقسام</div>
@@ -172,6 +202,7 @@ function renderFooter() {
             <li><a href="about.html">عن المصنع</a></li>
             <li><a href="categories.html">أقسام المنتجات</a></li>
             <li><a href="products.html">كل المنتجات</a></li>
+            <li><a href="gallery.html">معرض الصور</a></li>
             <li><a href="contact.html">تواصل معنا</a></li>
             <li><a href="contact.html#faq-anchor">الأسئلة الشائعة</a></li>
           </ul>
@@ -345,7 +376,7 @@ function initUI() {
         const dur = 1500, t0 = performance.now();
         const tick = now => {
           const k = Math.min((now - t0) / dur, 1);
-          el.textContent = Math.round(target * (1 - Math.pow(1 - k, 3))).toLocaleString('ar-EG') + sfx;
+          el.textContent = Math.round(target * (1 - Math.pow(1 - k, 3))).toLocaleString(locale()) + sfx;
           if (k < 1) requestAnimationFrame(tick);
         };
         requestAnimationFrame(tick);
@@ -412,7 +443,7 @@ function initVisits() {
 /* عدّ تصاعدي قصير للرقم */
 function countUp(el, target) {
   const dur = 1100, t0 = performance.now();
-  const fmt = n => n.toLocaleString('ar-EG');
+  const fmt = n => n.toLocaleString(locale());
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = fmt(target); return; }
   const tick = now => {
     const k = Math.min((now - t0) / dur, 1);
@@ -440,4 +471,8 @@ async function boot(pageInit) {
   renderFooter();
   initUI();
   initVisits();
+  translateTitle();
+  translateTree(document.body);   // ترجمة نصوص الواجهة الثابتة
+  watchTranslate();               // وأي محتوى بيتضاف بعد كده
+  bindLangToggle();
 }
