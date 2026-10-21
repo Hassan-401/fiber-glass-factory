@@ -11,3 +11,12 @@ Desktop.ini
 # ملفات مؤقتة
 _sheet.html
 *.log
+
+# أسرار محلية — متترفعش
+ADMIN-PASSWORD.txt
+node_modules/
+.wrangler/
+
+# ملفات مولَّدة تحتوي على هاش كلمة السر — متترفعش
+seed.sql
+tools/hashes.json

@@ -10,6 +10,9 @@ const prodById = id => PRODUCTS.find(p => p.id === id);
 const esc = s => String(s).replace(/[&<>"']/g, m =>
   ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[m]));
 
+/* الشبكات اللي ليها رابط فعلي بس */
+const socialLinks = () => (SITE.social || []).filter(s => s.url && s.url !== '#');
+
 /* رابط طلب عبر واتساب */
 function waLink(product) {
   let msg;
@@ -31,6 +34,28 @@ function waLink(product) {
   return `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(msg)}`;
 }
 
+/* ============================================================
+   تحميل البيانات الحيّة من قاعدة البيانات
+   ------------------------------------------------------------
+   الملفات config.js و data.js نسخة احتياطية مدمجة مع الموقع،
+   ولو الـ API رد بنجاح بنستبدل محتواها بالبيانات الحالية من D1.
+   التعديل بيتم في نفس الكائنات (مش إعادة تعيين) عشان تفضل const.
+   ============================================================ */
+async function loadLive() {
+  try {
+    const r = await fetch('/api/site', { cache: 'no-store' });
+    if (!r.ok) return;
+    const d = await r.json();
+    if (d.settings && Object.keys(d.settings).length) Object.assign(SITE, d.settings);
+    if (Array.isArray(d.categories) && d.categories.length)
+      CATEGORIES.splice(0, CATEGORIES.length, ...d.categories);
+    if (Array.isArray(d.products) && d.products.length)
+      PRODUCTS.splice(0, PRODUCTS.length, ...d.products);
+  } catch (e) {
+    /* الموقع بيشتغل بالنسخة المدمجة لو الـ API مش متاح */
+  }
+}
+
 /* ---------- الشريط العلوي ---------- */
 function renderTopbar() {
   const el = $('#site-topbar'); if (!el) return;
@@ -39,11 +64,11 @@ function renderTopbar() {
     <div class="container topbar__in">
       <ul class="topbar__list">
         <li><a href="tel:${SITE.phone1.replace(/\s/g,'')}">${icon('phone')}<bdi>${SITE.phone1}</bdi></a></li>
-        <li class="hide-xs"><a href="mailto:${SITE.email}">${icon('mail')}<span>${SITE.email}</span></a></li>
+        ${SITE.email ? `<li class="hide-xs"><a href="mailto:${SITE.email}">${icon('mail')}<span>${SITE.email}</span></a></li>` : ''}
         <li class="hide-xs"><span>${icon('clock')}${SITE.hours}</span></li>
       </ul>
       <div class="topbar__social">
-        ${SITE.social.map(s => `<a href="${s.url}" target="_blank" rel="noopener" title="${s.name}" aria-label="${s.name}">${icon(s.key)}</a>`).join('')}
+        ${socialLinks().map(s => `<a href="${s.url}" target="_blank" rel="noopener" title="${s.name}" aria-label="${s.name}">${icon(s.key)}</a>`).join('')}
       </div>
     </div>
   </div>`;
@@ -136,7 +161,7 @@ function renderFooter() {
           </div>
           <p>${SITE.about}</p>
           <div class="footer__social">
-            ${SITE.social.map(s => `<a href="${s.url}" target="_blank" rel="noopener" title="${s.name}" aria-label="${s.name}">${icon(s.key)}</a>`).join('')}
+            ${socialLinks().map(s => `<a href="${s.url}" target="_blank" rel="noopener" title="${s.name}" aria-label="${s.name}">${icon(s.key)}</a>`).join('')}
           </div>
         </div>
 
@@ -164,10 +189,11 @@ function renderFooter() {
           <h4>بيانات التواصل</h4>
           <ul class="footer__contact">
             <li>${icon('pin')}<span>${SITE.address}</span></li>
-            <li>${icon('phone')}<span>
-              <a href="tel:${SITE.phone1.replace(/\s/g,'')}"><bdi>${SITE.phone1}</bdi></a><br>
-              <a href="tel:${SITE.phone2.replace(/\s/g,'')}"><bdi>${SITE.phone2}</bdi></a></span></li>
-            <li>${icon('mail')}<span><a href="mailto:${SITE.email}">${SITE.email}</a></span></li>
+            <li>${icon('phone')}<span>${
+              [SITE.phone1, SITE.phone2, SITE.landline].filter(Boolean)
+                .map(n => `<a href="tel:${String(n).replace(/\s/g,'')}"><bdi>${n}</bdi></a>`)
+                .join('<br>')}</span></li>
+            ${SITE.email ? `<li>${icon('mail')}<span><a href="mailto:${SITE.email}">${SITE.email}</a></span></li>` : ''}
             <li>${icon('clock')}<span>${SITE.hours}<br>${SITE.hoursNote}</span></li>
           </ul>
           <a class="btn btn-wa btn-sm" href="${waLink()}" target="_blank" rel="noopener" style="margin-top:6px">
@@ -227,6 +253,8 @@ function productCard(p) {
     <div class="prod__media">
       <img src="${p.img}" alt="${esc(p.name)}" loading="lazy" width="800" height="600">
       ${p.tag ? `<span class="prod__badge">${esc(p.tag)}</span>` : ''}
+      ${p.images && p.images.length > 1
+        ? `<span class="prod__shots">${p.images.length} صور</span>` : ''}
       <span class="prod__cat">${esc(c ? c.short : '')}</span>
       <a class="prod__quick" href="product.html?id=${p.id}" aria-label="عرض ${esc(p.name)}"><span>عرض التفاصيل</span></a>
     </div>
@@ -362,31 +390,23 @@ function monthKey(d = new Date()) {
 
 function initVisits() {
   const elTotal = $('#visitsTotal'), elMonth = $('#visitsMonth');
-  if (!elTotal || !elMonth || !SITE.counter) return;
+  if (!elTotal || !elMonth) return;
 
-  const { api, ns } = SITE.counter;
-  const mKey = monthKey();
-
-  // أول زيارة في الجلسة = hit (زيادة)، وبعدها get (قراءة فقط)
+  // أول زيارة في الجلسة بتزوّد العدّاد، وباقي الصفحات بتقرأ بس
   let counted = false;
   try { counted = sessionStorage.getItem('sm-visit') === '1'; } catch (e) {}
-  const verb = counted ? 'get' : 'hit';
   if (!counted) { try { sessionStorage.setItem('sm-visit', '1'); } catch (e) {} }
 
-  const ask = key =>
-    fetch(`${api}/${verb}/${encodeURIComponent(ns)}/${encodeURIComponent(key)}`, { cache: 'no-store' })
-      .then(r => r.json())
-      .then(j => (typeof j.value === 'number' ? j.value : null))
-      .catch(() => null);
-
-  const show = (el, v) => {
-    if (v === null) { el.textContent = '—'; return; }          // الخدمة مش متاحة
-    el.classList.remove('is-loading');
-    countUp(el, v);
-  };
-
-  ask('total').then(v => show(elTotal, v));
-  ask(mKey).then(v => show(elMonth, v === null ? null : v));
+  fetch('/api/visits', { method: counted ? 'GET' : 'POST', cache: 'no-store' })
+    .then(r => r.ok ? r.json() : null)
+    .then(d => {
+      if (!d) throw new Error('no data');
+      [[elTotal, d.total], [elMonth, d.month]].forEach(([el, v]) => {
+        el.classList.remove('is-loading');
+        countUp(el, v || 0);
+      });
+    })
+    .catch(() => { elTotal.textContent = '—'; elMonth.textContent = '—'; });
 }
 
 /* عدّ تصاعدي قصير للرقم */
@@ -412,7 +432,8 @@ function toast(msg) {
 }
 
 /* ---------- التشغيل ---------- */
-function boot(pageInit) {
+async function boot(pageInit) {
+  await loadLive();
   renderTopbar();
   renderHeader();
   if (typeof pageInit === 'function') pageInit();

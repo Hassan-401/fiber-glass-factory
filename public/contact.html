@@ -147,23 +147,24 @@ boot(function () {
   $('#infoStack').innerHTML = [
     ['pin',   'عنوان المصنع', `<span>${SITE.address}</span>`],
     ['phone', 'أرقام الهاتف',
-      `<a href="tel:${SITE.phone1.replace(/\s/g,'')}"><bdi>${SITE.phone1}</bdi></a>
-       <a href="tel:${SITE.phone2.replace(/\s/g,'')}"><bdi>${SITE.phone2}</bdi></a>
-       <a href="tel:${SITE.landline.replace(/\s/g,'')}"><bdi>${SITE.landline}</bdi> (أرضي)</a>`],
+      [[SITE.phone1, ''], [SITE.phone2, ''], [SITE.landline, ' (أرضي)']]
+        .filter(([n]) => n)
+        .map(([n, sfx]) => `<a href="tel:${String(n).replace(/\s/g,'')}"><bdi>${n}</bdi>${sfx}</a>`)
+        .join('')],
     ['mail',  'البريد الإلكتروني',
-      `<a href="mailto:${SITE.email}">${SITE.email}</a>
-       <a href="mailto:${SITE.email2}">${SITE.email2}</a>`],
+      [SITE.email, SITE.email2].filter(Boolean)
+        .map(e => `<a href="mailto:${e}">${e}</a>`).join('')],
     ['clock', 'مواعيد العمل', `<span>${SITE.hours}</span><span>${SITE.hoursNote}</span>`],
     ['whatsapp', 'واتساب المبيعات',
       `<a href="${waLink()}" target="_blank" rel="noopener"><bdi>+${SITE.whatsapp}</bdi> — رد فوري خلال دقائق</a>`]
-  ].map(([i, t, body]) => `
+  ].filter(([, , body]) => body && String(body).trim()).map(([i, t, body]) => `
     <div class="info-card">
       <span class="info-card__ico">${icon(i)}</span>
       <span><b>${t}</b>${body}</span>
     </div>`).join('');
 
   /* السوشيال ميديا */
-  $('#socialGrid').innerHTML = SITE.social.map(s =>
+  $('#socialGrid').innerHTML = socialLinks().map(s =>
     `<a href="${s.url}" target="_blank" rel="noopener" title="${s.name}" aria-label="${s.name}">${icon(s.key)}</a>`).join('');
 
   /* قائمة الأقسام في النموذج */
@@ -231,6 +232,7 @@ boot(function () {
 
   $('#submitBtn').innerHTML = icon('whatsapp') + ' إرسال عبر واتساب';
   $('#mailBtn').innerHTML   = icon('mail') + ' إرسال بالبريد';
+  $('#mailBtn').hidden = !SITE.email;      // مفيش بريد → نخفي الزر
 
   $('#ctaBtns').innerHTML =
     `<a class="btn btn-gold btn-lg" href="tel:${SITE.phone1.replace(/\s/g,'')}">${icon('phone')} <bdi>${SITE.phone1}</bdi></a>` +

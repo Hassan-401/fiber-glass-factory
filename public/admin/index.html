@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>لوحة التحكم | سوق مصرية فيبر جلاس</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/assets/img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+
+<!-- ============ شاشة الدخول ============ -->
+<div id="login" class="login" hidden>
+  <form class="login__box" id="loginForm">
+    <img src="/assets/img/logo.png" alt="سوق مصرية فيبر جلاس" class="login__logo">
+    <h1>لوحة التحكم</h1>
+    <p class="login__sub">سجّل دخولك للتحكم في محتوى الموقع</p>
+    <label>اسم المستخدم
+      <input id="lgUser" name="username" autocomplete="username" required>
+    </label>
+    <label>كلمة السر
+      <input id="lgPass" name="password" type="password" autocomplete="current-password" required>
+    </label>
+    <div class="err" id="lgErr" hidden></div>
+    <button class="btn btn-primary btn-block" type="submit" id="lgBtn">دخول</button>
+    <a class="login__back" href="/">← رجوع للموقع</a>
+  </form>
+</div>
+
+<!-- ============ اللوحة ============ -->
+<div id="app" class="app" hidden>
+  <aside class="side">
+    <div class="side__head">
+      <img src="/assets/img/logo.png" alt="">
+      <div>
+        <b>لوحة التحكم</b>
+        <span id="whoami"></span>
+      </div>
+    </div>
+    <nav class="side__nav">
+      <button data-tab="dash"     class="is-active">لوحة المعلومات</button>
+      <button data-tab="cats">الأقسام</button>
+      <button data-tab="prods">المنتجات</button>
+      <button data-tab="media">الصور</button>
+      <button data-tab="settings">بيانات الموقع</button>
+      <button data-tab="content">محتوى الصفحات</button>
+      <button data-tab="account">حسابي</button>
+    </nav>
+    <div class="side__foot">
+      <a class="btn btn-ghost btn-block" href="/" target="_blank">فتح الموقع ↗</a>
+      <button class="btn btn-ghost btn-block" id="logoutBtn">تسجيل الخروج</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="burger" id="burger" aria-label="القائمة"><span></span></button>
+      <h2 id="pageTitle">لوحة المعلومات</h2>
+      <span class="saved" id="savedFlag" hidden>تم الحفظ ✔</span>
+    </header>
+
+    <!-- لوحة المعلومات -->
+    <section class="tab" data-tab="dash">
+      <div class="cards" id="dashCards"></div>
+      <div class="panel">
+        <h3>أكثر الأقسام منتجات</h3>
+        <div id="dashCats"></div>
+      </div>
+    </section>
+
+    <!-- الأقسام -->
+    <section class="tab" data-tab="cats" hidden>
+      <div class="bar">
+        <button class="btn btn-primary" id="addCat">+ قسم جديد</button>
+        <span class="hint">اسحب الصفوف لإعادة الترتيب — الترتيب ده بيظهر في الموقع</span>
+      </div>
+      <div class="list" id="catList"></div>
+    </section>
+
+    <!-- المنتجات -->
+    <section class="tab" data-tab="prods" hidden>
+      <div class="bar">
+        <button class="btn btn-primary" id="addProd">+ منتج جديد</button>
+        <select id="filterCat"></select>
+        <input id="searchProd" placeholder="ابحث باسم المنتج…">
+        <span class="grow"></span>
+        <button class="btn btn-ghost" id="mergeBtn" hidden>دمج المحدد في منتج واحد</button>
+        <span class="hint" id="prodCount"></span>
+      </div>
+      <div class="list" id="prodList"></div>
+    </section>
+
+    <!-- الصور -->
+    <section class="tab" data-tab="media" hidden>
+      <div class="bar">
+        <label class="btn btn-primary">
+          + رفع صور
+          <input type="file" id="uploadInput" accept="image/*" multiple hidden>
+        </label>
+        <span class="hint">الصور المرفوعة تتخزّن في قاعدة البيانات — أقصى حجم 3 ميجا للصورة</span>
+      </div>
+      <div class="media" id="mediaGrid"></div>
+    </section>
+
+    <!-- بيانات الموقع -->
+    <section class="tab" data-tab="settings" hidden>
+      <div class="panel">
+        <h3>بيانات المصنع</h3>
+        <div class="grid2" id="setBasic"></div>
+      </div>
+      <div class="panel">
+        <h3>السوشيال ميديا</h3>
+        <p class="hint">سيب الرابط فاضي عشان الأيقونة تختفي من الموقع.</p>
+        <div id="setSocial"></div>
+        <button class="btn btn-ghost" id="addSocial">+ إضافة شبكة</button>
+      </div>
+      <div class="bar bar--sticky">
+        <button class="btn btn-primary" id="saveSettings">حفظ بيانات الموقع</button>
+      </div>
+    </section>
+
+    <!-- محتوى الصفحات -->
+    <section class="tab" data-tab="content" hidden>
+      <div class="panel">
+        <h3>نبذة المصنع</h3>
+        <textarea id="aboutText" rows="4"></textarea>
+      </div>
+      <div class="panel">
+        <h3>لماذا نحن</h3>
+        <div id="whyList"></div>
+        <button class="btn btn-ghost" id="addWhy">+ إضافة ميزة</button>
+      </div>
+      <div class="panel">
+        <h3>خطوات العمل</h3>
+        <div id="stepsList"></div>
+        <button class="btn btn-ghost" id="addStep">+ إضافة خطوة</button>
+      </div>
+      <div class="panel">
+        <h3>الأسئلة الشائعة</h3>
+        <div id="faqList"></div>
+        <button class="btn btn-ghost" id="addFaq">+ إضافة سؤال</button>
+      </div>
+      <div class="bar bar--sticky">
+        <button class="btn btn-primary" id="saveContent">حفظ محتوى الصفحات</button>
+      </div>
+    </section>
+
+    <!-- حسابي -->
+    <section class="tab" data-tab="account" hidden>
+      <div class="panel panel--narrow">
+        <h3>تغيير كلمة السر</h3>
+        <label>كلمة السر الحالية <input type="password" id="pwCur" autocomplete="current-password"></label>
+        <label>كلمة السر الجديدة <input type="password" id="pwNew" autocomplete="new-password"></label>
+        <label>تأكيد كلمة السر الجديدة <input type="password" id="pwNew2" autocomplete="new-password"></label>
+        <p class="hint">8 حروف على الأقل. بعد التغيير هتفضل داخل، لكن أي جهاز تاني مسجّل دخول هيتسجّل خروجه.</p>
+        <div class="err" id="pwErr" hidden></div>
+        <button class="btn btn-primary" id="savePw">تغيير كلمة السر</button>
+      </div>
+      <div class="panel panel--narrow">
+        <h3>تغيير اسم المستخدم</h3>
+        <label>اسم المستخدم الجديد <input id="unNew" autocomplete="username"></label>
+        <label>كلمة السر للتأكيد <input type="password" id="unPw" autocomplete="current-password"></label>
+        <div class="err" id="unErr" hidden></div>
+        <button class="btn btn-primary" id="saveUn">تغيير اسم المستخدم</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ============ نافذة التحرير ============ -->
+<div class="modal" id="modal" hidden>
+  <div class="modal__mask" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true">
+    <header><h3 id="modalTitle"></h3><button data-close aria-label="إغلاق">✕</button></header>
+    <div class="modal__body" id="modalBody"></div>
+    <footer>
+      <button class="btn btn-primary" id="modalSave">حفظ</button>
+      <button class="btn btn-ghost" data-close>إلغاء</button>
+      <span class="grow"></span>
+      <button class="btn btn-danger" id="modalDelete" hidden>حذف</button>
+    </footer>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="/admin/admin.js"></script>
+</body>
+</html>

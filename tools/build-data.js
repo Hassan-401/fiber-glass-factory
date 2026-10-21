@@ -15,8 +15,18 @@ const zlib = require('zlib');
 
 const ROOT = path.resolve(__dirname, '..');
 const SRC = path.join(ROOT, 'داتا');
-const IMG_OUT = path.join(ROOT, 'assets', 'img', 'products');
-const DATA_OUT = path.join(ROOT, 'assets', 'js', 'data.js');
+const IMG_OUT = path.join(ROOT, 'public', 'assets', 'img', 'products');
+const DATA_OUT = path.join(ROOT, 'public', 'assets', 'js', 'data.js');
+const GROUPS_FILE = path.join(__dirname, 'groups.json');
+
+/* مجموعات الصور: صور لنفس المنتج تتجمّع في منتج واحد بكاروسيل.
+   الملف مراجَع يدوياً — تقدر تعدّله أو تعدّل التجميع من لوحة التحكم. */
+const IMAGE_GROUPS = fs.existsSync(GROUPS_FILE)
+  ? JSON.parse(fs.readFileSync(GROUPS_FILE, 'utf8'))
+  : [];
+/* خريطة: مسار صورة ← رقم المجموعة */
+const GROUP_OF = {};
+IMAGE_GROUPS.forEach((g, gi) => g.forEach(p => { GROUP_OF[p] = gi; }));
 
 /* ------------------------------------------------------------------ */
 /* خريطة الأقسام: مجلد المصدر ← بيانات القسم في الموقع                  */
@@ -202,6 +212,8 @@ for (const cat of CATEGORIES) {
       order.indexOf(a.group) - order.indexOf(b.group) || cap(a.file) - cap(b.file));
   }
 
+  // نسخ الصور أولاً عشان نعرف مسارها النهائي قبل التجميع
+  const copiedEntries = [];
   let i = 0;
   for (const e of entries) {
     i++;
@@ -209,21 +221,44 @@ for (const cat of CATEGORIES) {
     const outName = String(i).padStart(2, '0') + ext;
     fs.copyFileSync(e.file, path.join(destDir, outName));
     copied++;
+    copiedEntries.push({
+      ...e,
+      idx: i,
+      out: 'assets/img/products/' + cat.slug + '/' + outName
+    });
+  }
 
+  /* تجميع الصور اللي لنفس المنتج في مدخل واحد */
+  const seenGroup = {};
+  const items = [];
+  for (const e of copiedEntries) {
+    const gi = GROUP_OF[e.out];
+    if (gi !== undefined && seenGroup[gi] !== undefined) {
+      items[seenGroup[gi]].images.push(e.out);   // صورة إضافية لنفس المنتج
+      continue;
+    }
+    if (gi !== undefined) seenGroup[gi] = items.length;
+    items.push({ ...e, images: [e.out] });
+  }
+
+  let n = 0;
+  for (const e of items) {
+    n++;
     const groupLabel = e.group && cat.groups ? cat.groups[e.group] : null;
     let name = groupLabel
-      ? towerName(e.file, groupLabel, i)
-      : nameFromFile(e.file, cat.short, i);
+      ? towerName(e.file, groupLabel, n)
+      : nameFromFile(e.file, cat.short, n);
     if (NAME_FIXES[name]) name = NAME_FIXES[name];
 
     outProducts.push({
-      id: cat.slug + '-' + String(i).padStart(2, '0'),
+      id: cat.slug + '-' + String(n).padStart(2, '0'),
       cat: cat.slug,
       name,
       group: groupLabel || null,
       desc: cat.desc,
-      featured: i === 1,          // أول صورة في كل قسم تظهر في «منتجات مختارة»
-      img: 'assets/img/products/' + cat.slug + '/' + outName
+      featured: n === 1,          // أول منتج في كل قسم يظهر في «منتجات مختارة»
+      img: e.images[0],           // الصورة الرئيسية
+      images: e.images            // كل صور المنتج (كاروسيل)
     });
   }
 

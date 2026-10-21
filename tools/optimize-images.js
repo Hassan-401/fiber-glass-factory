@@ -13,7 +13,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const DIR = path.join(ROOT, 'assets', 'img', 'products');
+const DIR = path.join(ROOT, 'public', 'assets', 'img', 'products');
 const MAX_W = 1600;
 const MAX_BYTES = 300 * 1024;
 const PORT = 8792;
@@ -71,8 +71,8 @@ const server = http.createServer((req, res) => {
 
   if (u.pathname === '/save') {
     const rel = u.searchParams.get('f');
-    const abs = path.join(ROOT, rel);
-    if (!abs.startsWith(DIR)) { res.writeHead(403); return res.end('bad path'); }
+    const abs = path.join(ROOT, 'public', rel);
+    if (!path.resolve(abs).startsWith(path.resolve(DIR))) { res.writeHead(403); return res.end('bad path'); }
     let body = '';
     req.on('data', d => body += d);
     req.on('end', () => {
@@ -94,7 +94,7 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  const abs = path.join(ROOT, decodeURIComponent(u.pathname));
+  const abs = path.join(ROOT, 'public', decodeURIComponent(u.pathname));
   fs.readFile(abs, (e, d) => {
     if (e) { res.writeHead(404); return res.end(); }
     const ext = path.extname(abs).toLowerCase();
@@ -105,14 +105,14 @@ const server = http.createServer((req, res) => {
 
 /* بعد تحويل أي PNG إلى JPG، نصلّح المسارات في data.js */
 function syncDataPaths() {
-  const dataFile = path.join(ROOT, 'assets', 'js', 'data.js');
+  const dataFile = path.join(ROOT, 'public', 'assets', 'js', 'data.js');
   if (!fs.existsSync(dataFile)) return;
   let src = fs.readFileSync(dataFile, 'utf8');
   let n = 0;
   src = src.replace(/assets\/img\/products\/[^"']+\.png/g, rel => {
-    if (fs.existsSync(path.join(ROOT, rel))) return rel;
+    if (fs.existsSync(path.join(ROOT, 'public', rel))) return rel;
     const jpg = rel.replace(/\.png$/, '.jpg');
-    if (fs.existsSync(path.join(ROOT, jpg))) { n++; return jpg; }
+    if (fs.existsSync(path.join(ROOT, 'public', jpg))) { n++; return jpg; }
     return rel;
   });
   fs.writeFileSync(dataFile, src, 'utf8');

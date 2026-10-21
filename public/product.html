@@ -61,6 +61,8 @@ boot(function () {
   }
 
   const c = catById(p.cat);
+  /* صور المنتج — الأولى رئيسية والباقي كاروسيل */
+  const imgs = (p.images && p.images.length ? p.images : [p.img]).filter(Boolean);
   document.title = p.name + ' | ' + SITE.name;
   const md = document.querySelector('meta[name="description"]');
   if (md) md.setAttribute('content', p.desc);
@@ -74,7 +76,20 @@ boot(function () {
   $('#pdWrap').innerHTML = `
   <div class="pd">
     <div class="pd__media reveal">
-      <div class="pd__main"><img src="${p.img}" alt="${esc(p.name)}" width="800" height="600"></div>
+      <div class="pd__main">
+        <img id="pdImg" src="${imgs[0]}" alt="${esc(p.name)}" width="800" height="600">
+        ${imgs.length > 1 ? `
+          <button class="pd__nav pd__nav--prev" id="pdPrev" aria-label="الصورة السابقة">${icon('chevron')}</button>
+          <button class="pd__nav pd__nav--next" id="pdNext" aria-label="الصورة التالية">${icon('chevron')}</button>
+          <span class="pd__counter"><b id="pdNow">1</b> / ${imgs.length}</span>` : ''}
+      </div>
+      ${imgs.length > 1 ? `
+        <div class="pd__thumbs" id="pdThumbs">
+          ${imgs.map((u, i) => `
+            <button class="pd__thumb${i === 0 ? ' is-active' : ''}" data-i="${i}" aria-label="صورة ${i + 1}">
+              <img src="${u}" alt="" loading="lazy">
+            </button>`).join('')}
+        </div>` : ''}
     </div>
 
     <div class="reveal d1">
@@ -123,6 +138,35 @@ boot(function () {
       </div>
     </div>
   </div>`;
+
+  /* ---------- الكاروسيل ---------- */
+  if (imgs.length > 1) {
+    let cur = 0;
+    const show = i => {
+      cur = (i + imgs.length) % imgs.length;
+      $('#pdImg').src = imgs[cur];
+      $('#pdNow').textContent = cur + 1;
+      $$('#pdThumbs .pd__thumb').forEach((t, k) => t.classList.toggle('is-active', k === cur));
+    };
+    $('#pdPrev').addEventListener('click', () => show(cur - 1));
+    $('#pdNext').addEventListener('click', () => show(cur + 1));
+    $$('#pdThumbs .pd__thumb').forEach(t =>
+      t.addEventListener('click', () => show(+t.dataset.i)));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') show(cur - 1);      // RTL: يمين = السابق
+      if (e.key === 'ArrowLeft') show(cur + 1);
+    });
+    /* السحب باللمس */
+    const main = $('.pd__main');
+    let x0 = null;
+    main.addEventListener('touchstart', e => x0 = e.touches[0].clientX, { passive: true });
+    main.addEventListener('touchend', e => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 40) show(cur + (dx > 0 ? -1 : 1));
+      x0 = null;
+    }, { passive: true });
+  }
 
   /* مشاركة */
   $('#shareBtn').addEventListener('click', async () => {
