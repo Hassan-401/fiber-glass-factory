@@ -2211,6 +2211,10 @@ p:last-child {
 .page-hero h1 {
   color: #fff;
   font-size: clamp(1.6rem, 3.6vw, 2.4rem);
+  margin-bottom: 0;
+}
+/* لو اتضافت فقرة وصف تاني، الهامش بيرجع */
+.page-hero h1:not(:last-child) {
   margin-bottom: 10px;
 }
 .page-hero p {
