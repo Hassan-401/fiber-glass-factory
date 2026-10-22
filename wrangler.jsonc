@@ -7,8 +7,14 @@
     "directory": "./public",
     "binding": "ASSETS",
     "not_found_handling": "404-page",
-    "run_worker_first": ["/api/*"]
+    // الـ Worker بيشتغل على كل الطلبات عشان تحويل www يشتغل على الصفحات كمان
+    "run_worker_first": true
   },
+  // الدومين المخصص — Cloudflare بيعمل سجلات DNS وشهادة SSL تلقائياً
+  "routes": [
+    { "pattern": "souq-masreya-fiberglass.com", "custom_domain": true },
+    { "pattern": "www.souq-masreya-fiberglass.com", "custom_domain": true }
+  ],
   "d1_databases": [
     {
       "binding": "DB",

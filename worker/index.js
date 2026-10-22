@@ -193,6 +193,17 @@ export default {
     const url = new URL(req.url);
     const p = url.pathname;
 
+    /* توحيد العنوان: https دايماً، وبدون www.
+       المهم إن الدخول للوحة التحكم ميتمش أبداً على http عادي. */
+    const wantsHttps = url.protocol === 'http:';
+    const wantsApex = url.hostname.startsWith('www.');
+    if (wantsHttps || wantsApex) {
+      if (wantsHttps) url.protocol = 'https:';
+      if (wantsApex) url.hostname = url.hostname.slice(4);
+      url.port = '';
+      return Response.redirect(url.toString(), 301);
+    }
+
     try {
       if (p.startsWith('/api/')) return await api(req, env, url, ctx);
     } catch (e) {

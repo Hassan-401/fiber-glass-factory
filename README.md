@@ -5,8 +5,8 @@
 
 | | الرابط |
 |---|---|
-| الموقع | https://souq-masreya-fiberglass.go-sharm.workers.dev |
-| لوحة التحكم | https://souq-masreya-fiberglass.go-sharm.workers.dev/admin |
+| الموقع | https://souq-masreya-fiberglass.com |
+| لوحة التحكم | https://souq-masreya-fiberglass.com/admin |
 
 ---
 
@@ -98,6 +98,18 @@
 
 **من فين بتيجي البيانات؟** الموقع بيقرأ من `/api/site` (قاعدة البيانات).
 ملفات `config.js` و `data.js` نسخة احتياطية مدمجة بتشتغل لو الـ API مش متاح.
+
+---
+
+## الدومين
+
+الموقع على **souq-masreya-fiberglass.com** (مسجّل في Cloudflare Registrar).
+الدومين مربوط كـ Custom Domain على الـ Worker، والشهادة بتتجدّد تلقائياً.
+
+- `www` و `http` بيتحوّلوا 301 للعنوان الرسمي `https://souq-masreya-fiberglass.com`
+  (التحويل في `worker/index.js` أول دالة fetch)
+- رابط `workers.dev` القديم اتعطّل تلقائياً لما اتضافت الـ routes.
+  لو عايزه يرجع ضيف `"workers_dev": true` في `wrangler.jsonc`.
 
 ---
 
